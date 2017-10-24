@@ -1,9 +1,14 @@
 import Home from "./components/Home.vue"
 import Error404 from "./components/error404.vue"
 import NewExpenseForm from "./components/v-expense-form.vue"
-import { EmptyScreen } from "./Screens"
-import RoutingScreen from "./Screens/routing.vue"
-import ButtonsScreen from "./Screens/buttons.vue"
+import EmptyScreen from "./screens/empty.vue"
+import RoutingScreen from "./screens/routing.vue"
+import ButtonsScreen from "./screens/buttons.vue"
+import GridSystem from "./screens/ui/grid-system.vue"
+import UnderDevelopment from "./screens/under-development.vue"
+
+import PortletsLight from "./screens/portlets/light.vue"
+import PortletsBoxed from "./screens/portlets/boxed.vue"
 
 export const routes = [{
 	path: "/",
@@ -15,41 +20,64 @@ export const routes = [{
 	path: "/home",
 	name: "home",
 	component: Home,
-	children: [{
-		path: "novaPlatba",
-		name: "newExpense",
-		component: NewExpenseForm,
-		meta: {
-			Title: "Nová platba"
-		}
-	},
-	{
-		path: "buttons",
-		name: "buttons",
-		component: ButtonsScreen,
-		meta: {
-			Title: "Buttons  1 "
-		}
-	},
-	{
-		path: "empty",
-		name: "empty",
-		component: EmptyScreen,
-		meta: {
-			Title: "Empty"
-		}
-	}
-
-	],
+	children: [],
 	meta: {
-		Title: "Hauser"
+		title: "Home"
 	}
 },
 {
-	path: "/ui/buttons",
-	name: "ui-buttons",
-	component: ButtonsScreen
+	name: "ui-features",
+	path: "/ui/",
+	component: EmptyScreen,
+	children: [
+		{
+			path: "buttons",
+			name: "ui-buttons",
+			component: ButtonsScreen,
+			meta: {
+				title: "Buttons"
+			}
+		},
+		{
+			path: "grid-system",
+			name: "ui-grid-system",
+			component: GridSystem,
+			meta: {
+				title: "Metronic Grid System"
+			}
+		}
+	],
+	meta: {
+		title: "UI Features"
+	}
 },
+{
+	name: "portlets",
+	path: "/portlets/",
+	component: EmptyScreen,
+	children: [
+		{
+			path: "light",
+			name: "portlets-light",
+			component: PortletsLight,
+			meta: {
+				title: "Light Portlets"
+			}
+		},
+		{
+			path: "boxed",
+			name: "portlets-boxed",
+			component: PortletsBoxed,
+			meta: {
+				title: "Boxed Portlets"
+			}
+		}
+	],
+	meta: {
+		title: "Portlets"
+	}
+},
+
 {
 	path: "/routing",
 	name: "routing",
@@ -59,13 +87,13 @@ export const routes = [{
 		name: "routing/route1",
 		component: RoutingScreen,
 		meta: {
-			Title: "Route 1"
+			title: "Route 1"
 		}
 	}
 
 	],
 	meta: {
-		Title: "Routing"
+		title: "Routing"
 	}
 },
 {

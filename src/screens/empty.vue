@@ -1,13 +1,16 @@
 <template>
-    <div class="col-md-10 col-md-offset-1">
-        <h1>
-            Empty page
-        </h1>
-    </div>
+    <m-row>
+        <router-view></router-view>
+    </m-row>
 </template>
 
 <script>
+import Row from "../components/metronic/structure/m-row.vue"
+
 export default {
-  name: "EmptyScreen"
+  name: "EmptyScreen",
+  components: {
+      mRow: Row
+  }
 }
 </script>

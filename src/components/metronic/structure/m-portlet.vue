@@ -1,8 +1,9 @@
 <template>
-		<div class="portlet light tasks-widget bordered">
+		<div :class="portletStyle">
 				<div class="portlet-title">
-						<div class="caption">
-								<span class="caption-subject font-green-haze bold uppercase">{{title}}</span>
+						<div :class="captionStyle">
+								<i v-if="icon!=''" :class="icon"></i>
+								<span :class="subjectStyle">{{title}}</span>
 								<span v-if="caption!=''" class="caption-helper">{{caption}}</span>
 						</div>
 						<slot name="actions"></slot>
@@ -41,6 +42,78 @@
 <script>
 export default {
 	name: "PortletComponent",
-	props: ["title", "caption"]
+	props: {
+		type: {
+			type: String,
+			default: "solid",
+			options: ["box", "light", "solid"]
+		},
+		title: {
+			type: String,
+			default: ""
+		},
+		caption: {
+			type: String,
+			default: ""
+		},
+		captionBold: {
+			type: Boolean,
+			default: false
+		},
+		captionUppercased: {
+			type: Boolean,
+			default: false
+		},
+		captionColor: {
+			type: String,
+			default: ""
+		},
+		icon: {
+			type: String
+		},
+		color: {
+			type: String
+			}
+	},
+	computed: {
+		portletStyle: function () {
+			var style = {
+				portlet: true
+			}
+			style[this.type] = true
+
+			if (this.color != "") {
+				style[this.color] = true
+			}
+
+			return style
+		},
+		captionStyle: function () {
+			var style = {
+				caption: true
+			}
+
+			if (this.captionColor != "") {
+				style["font-" + this.captionColor] = true
+			}
+
+			return style
+		},
+		subjectStyle: function () {
+			var style = {
+				"caption-subject": true
+			}
+
+			if (this.captionBold) {
+				style["bold"] = true
+			}
+
+			if (this.captionUppercased) {
+				style["uppercase"] = true
+			}
+
+			return style
+		}
+	}
 }
 </script>

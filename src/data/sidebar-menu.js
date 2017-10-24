@@ -1,5 +1,5 @@
 const menu = [{
-	"Heading": "Hauser"
+	"Heading": "Home"
 },
 {
 	"Title": "Home",
@@ -7,18 +7,49 @@ const menu = [{
 	"RouteName": "home"
 },
 {
-	"Title": "Buttons",
-	"LinkIcon": "icon-puzzle",
-	"RouteName": "buttons"
-},
-{
 	"Title": "UI Features",
 	"LinkIcon": "icon-settings",
 	"SubMenu": [{
 		"Title": "Buttons",
 		"LinkIcon": "icon-puzzle",
-		"RouteName": "buttons"
+		"RouteName": "ui-buttons"
+	},
+	{
+		"Title": "Metronic Grid System",
+		"LinkIcon": "icon-puzzle",
+		"RouteName": "ui-grid-system"
+	},
+	{
+		"Title": "Buttons",
+		"LinkIcon": "icon-puzzle",
+		"RouteName": "ui-buttons"
 	}
+	]
+},
+{
+	"Title": "Portlets",
+	"LinkIcon": "icon-wallet",
+	"SubMenu": [
+		{
+			"Title": "Boxed Portlets",
+			"RouteName": "portlets-boxed"
+		},
+		{
+			"Title": "Light Portlets",
+			"RouteName": "portlets-light"
+		},
+		{
+			"Title": "Solid Portlets",
+			"RouteName": "portlets-solid"
+		}
+	]
+},
+{
+	"Title": "Form Stuff",
+	"SubMenu": [
+		{
+			"Title": "Something to home"
+		}
 	]
 },
 {

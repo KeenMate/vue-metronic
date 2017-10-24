@@ -16,7 +16,7 @@ export default {
 		breadcrumbs () {
 			return this.$route.matched.map(function (item) {
 				return {
-					Title: item.meta.Title,
+					Title: item.meta.title,
 					RouteName: item.name
 				}
 			})
