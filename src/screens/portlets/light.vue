@@ -5,7 +5,7 @@
 					<a href="ui_colors.html" target="_blank"> Color Library </a> for more colors for portlets. </p>
 		</m-note>
 	<m-row>
-			<m-column size=6>
+			<m-column :size=6>
 					<!-- BEGIN Portlet PORTLET-->
 				<m-portlet type="light" 
 					icon="icon-speech" 
@@ -14,86 +14,66 @@
 					captionBold 
 					captionUppercased>
 					<m-portlet-block>
-						<div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
-											<h4>Heading Text</h4>
-											<p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-													eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
-													sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis
-													mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
-											<p> nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras
-													mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
-													sit amet fermentum. </p>
-									</div>
+						<m-scroller :height=200 railColor="yellow">
+							<h4>Heading Text</h4>
+								<p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+										eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
+										sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis
+										mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
+								<p> nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras
+										mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
+										sit amet fermentum. </p>
+
+						</m-scroller>
 					</m-portlet-block>
+					<template slot="actions">
+						<a href="javascript:;" class="btn btn-circle btn-default">
+							<i class="fa fa-pencil"></i> Edit </a>
+						<a href="javascript:;" class="btn btn-circle btn-default">
+							<i class="fa fa-plus"></i> Add </a>
+						<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+					</template>
 				</m-portlet>
-					<div class="portlet light">
-							<div class="portlet-title">
-									<div class="caption">
-											<i class="icon-speech"></i>
-											<span class="caption-subject bold uppercase"> Portlet</span>
-											<span class="caption-helper">weekly stats...</span>
-									</div>
-									<div class="actions">
-											<a href="javascript:;" class="btn btn-circle btn-default">
-													<i class="fa fa-pencil"></i> Edit </a>
-											<a href="javascript:;" class="btn btn-circle btn-default">
-													<i class="fa fa-plus"></i> Add </a>
-											<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
-									</div>
-							</div>
-							<div class="portlet-body">
-									<div class="scroller" style="height:200px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
-											<h4>Heading Text</h4>
-											<p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-													eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
-													sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis
-													mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
-											<p> nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras
-													mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
-													sit amet fermentum. </p>
-									</div>
-							</div>
-					</div>
-					<!-- END Portlet PORTLET-->
+				<!-- END Portlet PORTLET-->
 			</m-column>
-			<m-column size=6>
+			<m-column :size=6>
 					<!-- BEGIN Portlet PORTLET-->
-					<div class="portlet light">
-							<div class="portlet-title">
-									<div class="caption font-green-sharp">
-											<i class="icon-share font-green-sharp"></i>
-											<span class="caption-subject bold uppercase"> Portlet</span>
-											<span class="caption-helper">monthly stats...</span>
-									</div>
-									<div class="actions">
-											<div class="btn-group btn-group-devided" data-toggle="buttons">
-													<label class="btn btn-circle btn-transparent grey-salsa active">
-															<input type="radio" name="options" class="toggle" id="option1">Today</label>
-													<label class="btn btn-circle btn-transparent grey-salsa">
-															<input type="radio" name="options" class="toggle" id="option2">Week</label>
-													<label class="btn btn-circle btn-transparent grey-salsa">
-															<input type="radio" name="options" class="toggle" id="option2">Month</label>
-											</div>
-									</div>
+					<m-portlet 
+					type="light"
+					icon="icon-share"
+					title="Portlet" 
+					caption="monthly stats..."
+					captionColor="green-sharp"
+					captionBold 
+					captionUppercased>
+						<m-portlet-block>
+							<div class="scroller" style="height:200px" data-always-visible="1" data-rail-visible="1" data-rail-color="red" data-handle-color="green">
+								<h4>Heading Text</h4>
+								<p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+										eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
+										sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis
+										mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
+								<p> nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras
+										mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
+										sit amet fermentum. </p>
 							</div>
-							<div class="portlet-body">
-									<div class="scroller" style="height:200px" data-always-visible="1" data-rail-visible="1" data-rail-color="red" data-handle-color="green">
-											<h4>Heading Text</h4>
-											<p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-													eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
-													sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis
-													mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
-											<p> nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras
-													mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus
-													sit amet fermentum. </p>
-									</div>
+						</m-portlet-block>
+						<template slot='actions'>
+							<div class="btn-group btn-group-devided" data-toggle="buttons">
+								<label class="btn btn-circle btn-transparent grey-salsa active">
+									<input type="radio" name="options" class="toggle" id="option1">Today</label>
+								<label class="btn btn-circle btn-transparent grey-salsa">
+									<input type="radio" name="options" class="toggle" id="option2">Week</label>
+								<label class="btn btn-circle btn-transparent grey-salsa">
+									<input type="radio" name="options" class="toggle" id="option2">Month</label>
 							</div>
-					</div>
+						</template>
+					</m-portlet>
 					<!-- END Portlet PORTLET-->
 			</m-column>
 	</m-row>
 	<m-row>
-			<m-column size=6>
+			<m-column :size=6>
 					<!-- BEGIN Portlet PORTLET-->
 					<div class="portlet light">
 							<div class="portlet-title">
@@ -150,7 +130,7 @@
 					</div>
 					<!-- END Portlet PORTLET-->
 			</m-column>
-			<m-column size=6>
+			<m-column :size=6>
 					<!-- BEGIN Portlet PORTLET-->
 					<div class="portlet light">
 							<div class="portlet-title">
@@ -220,7 +200,7 @@
 			</m-column>
 	</m-row>
 	<m-row>
-			<m-column size=6>
+			<m-column :size=6>
 					<!-- BEGIN Portlet PORTLET-->
 					<div class="portlet light">
 							<div class="portlet-title">
@@ -249,7 +229,7 @@
 					</div>
 					<!-- END Portlet PORTLET-->
 			</m-column>
-			<m-column size=6>
+			<m-column :size=6>
 					<!-- BEGIN Portlet PORTLET-->
 					<div class="portlet light">
 							<div class="portlet-title">
@@ -293,7 +273,7 @@
 			</m-column>
 	</m-row>
 	<m-row>
-			<m-column size=6>
+			<m-column :size=6>
 					<!-- BEGIN Portlet PORTLET-->
 					<div class="portlet light">
 							<div class="portlet-title">
@@ -320,7 +300,7 @@
 					</div>
 					<!-- END GRID PORTLET-->
 			</m-column>
-			<m-column size=6>
+			<m-column :size=6>
 					<!-- BEGIN Portlet PORTLET-->
 					<div class="portlet light">
 							<div class="portlet-title tabbable-line">
@@ -385,18 +365,22 @@
 
 <script>
 import mEmpty from "../../components/metronic/structure/empty.vue"
+import mRow from "../../components/metronic/structure/m-row.vue"
 import mColumn from "../../components/metronic/structure/m-column.vue"
 import mPortlet from "../../components/metronic/structure/m-portlet.vue"
 import mPortletBlock from "../../components/metronic/structure/m-portlet-block.vue"
+import mScroller from "../../components/metronic/structure/m-scroller.vue"
 import mNote from "../../components/metronic/informative/m-note.vue"
 
 export default {
 	components: {
 		mEmpty,
+		mRow,
 		mColumn,
 		mNote,
 		mPortlet,
-		mPortletBlock
+		mPortletBlock,
+		mScroller
 	}
 }
 </script>

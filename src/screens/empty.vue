@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import Row from "../components/metronic/structure/m-row.vue"
+import mRow from "../components/metronic/structure/m-row.vue"
 
 export default {
-  name: "EmptyScreen",
+	name: "EmptyScreen",
   components: {
-      mRow: Row
-  }
+		mRow
+}
 }
 </script>

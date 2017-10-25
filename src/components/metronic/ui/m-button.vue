@@ -35,44 +35,44 @@ export default {
 			var style = {
 				btn: true
 			}
-			if (this.size.toLowerCase() != "default") {
+			if (this.size.toLowerCase() !== "default") {
 				switch (this.size.toLowerCase()) {
-					case "large": {
-						style["btn-lg"] = true
-						break
-					}
-					case "small": {
-						style["btn-sm"] = true
-						break
-					}
-					case "extra-small": {
-						style["btn-xs"] = true
-						break
-					}
-					case "icon-only": {
-						style["btn-icon-only"] = true
-						break
-					}
+				case "large": {
+					style["btn-lg"] = true
+					break
+				}
+				case "small": {
+					style["btn-sm"] = true
+					break
+				}
+				case "extra-small": {
+					style["btn-xs"] = true
+					break
+				}
+				case "icon-only": {
+					style["btn-icon-only"] = true
+					break
+				}
 				}
 			}
 
-			if (this.color != "") {
+			if (this.color !== "") {
 				style[this.color] = true
 			}
 			switch (this.buttonStyle.toLowerCase()) {
-				case "bootstrap": {
-					if (!this.type || this.type == "") style["btn-default"] = true
-					else style["btn-" + this.type.toLowerCase()] = true
-					break
-				}
-				case "metronic-outline": {
-					style["btn-outline"] = true
-					break
-				}
-				case "block": {
-					style["btn-block"] = true
-					break
-				}
+			case "bootstrap": {
+				if (!this.type || this.type === "") style["btn-default"] = true
+				else style["btn-" + this.type.toLowerCase()] = true
+				break
+			}
+			case "metronic-outline": {
+				style["btn-outline"] = true
+				break
+			}
+			case "block": {
+				style["btn-block"] = true
+				break
+			}
 			}
 
 			return style

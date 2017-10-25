@@ -1,13 +1,13 @@
 <template>
 <m-row>
-	<m-column :size="6">
+	<m-column :size=6>
 		<m-portlet title="Buttons" caption="Not sure if this works..">
 			<m-portlet-block>
 				<h4 class="block">Default Bootstrap Buttons(Customized to Match Theme Style)</h4>
 				<!-- Standard gray button with gradient -->
 			</m-portlet-block>
 			<m-portlet-block>
-				<m-button icon="fa fa-user" size="large" color="blue" buttonStyle="metronic-outline">With icon</m-button>
+				<m-button icon="fa fa-user" size="small" color="blue" buttonStyle="metronic-outline">With icon</m-button>
 				<m-button type="primary" buttonStyle="bootstrap">Primary</m-button>
 				<m-button type="success" buttonStyle="bootstrap">Success</m-button>
 				<m-button type="info" buttonStyle="bootstrap">Info</m-button>
@@ -160,7 +160,7 @@
 			</m-portlet-block>
 		</m-portlet>
 	</m-column>
-	<m-column :size="6">
+	<m-column :size=6>
 		<m-portlet title="Button groups">
 			<m-portlet-block>
 				<h4>Basic Example</h4>
