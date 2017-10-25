@@ -48,7 +48,8 @@ const menu = [{
 	"Title": "Form Stuff",
 	"SubMenu": [
 		{
-			"Title": "Something to home"
+			"Title": "Something to home",
+			"RouteName": "home"
 		}
 	]
 },

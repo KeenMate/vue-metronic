@@ -3,7 +3,7 @@
 		<p>
 			Stránku "{{$route.path}}" se nepodařilo najít.
 		</p>
-		<router-link to="/">Úvodní stránka</router-link>
+		<router-link :to="{ name: 'home'}">Úvodní stránka</router-link>
 	</div>
 </template>
 

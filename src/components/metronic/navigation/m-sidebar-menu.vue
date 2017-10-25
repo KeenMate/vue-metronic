@@ -36,9 +36,6 @@ export default {
 	name: "PageSidebarMenu",
 	props: [
 		"listMenu"
-	],
-	mounted () {
-		console.log(this.listMenu)
-	}
+	]
 }
 </script>

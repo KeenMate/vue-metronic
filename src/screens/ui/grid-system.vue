@@ -12,7 +12,8 @@
 						<!-- begin: Demo 1 -->
 						<h3 class="">Adjusted Table With Equal Height Cells</h3>
 						<hr>
-						<div class="m-grid m-grid-demo">
+						<!-- <div class="m-grid m-grid-demo"> -->
+							<m-grid :custom-css="['m-grid-demo']">
 								<div class="m-grid-row">
 										<div class="m-grid-col m-grid-col-middle m-grid-col-center">Row 1, Column 1</div>
 										<div class="m-grid-col m-grid-col-middle m-grid-col-center">Row 1, Column 2</div>
@@ -33,7 +34,8 @@
 										<div class="m-grid-col m-grid-col-middle m-grid-col-center">Row 2, Column 7</div>
 										<div class="m-grid-col m-grid-col-middle m-grid-col-center">Row 2, Column 8</div>
 								</div>
-						</div>
+							</m-grid>
+						<!-- </div> -->
 						<!--end: Demo 1 -->
 						<!-- begin: Demo 2 -->
 						<br>
@@ -232,11 +234,13 @@
 <script>
 import mHeading from "../../components/metronic/informative/m-heading.vue"
 import mColumn from "../../components/metronic/structure/m-column.vue"
+import mGrid from "../../components/metronic/grid/m-grid.vue"
 
 export default {
 	components: {
 		mHeading,
-		mColumn
+		mColumn,
+		mGrid
 	}
 
 }

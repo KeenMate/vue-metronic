@@ -28,6 +28,9 @@ module.exports = {
 		"indent": ["warn", "tab"],
 		"eqeqeq": "warn",
 		"no-new": "off",
-		"no-unused-vars": "warn"
+		"no-unused-vars": "warn",
+		"space-before-function-paren": "warn",
+		"no-trailing-spaces": "warn",
+		"curly": "off"
   }
 }

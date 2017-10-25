@@ -1,6 +1,5 @@
 import Home from "./components/Home.vue"
-import Error404 from "./components/error404.vue"
-import NewExpenseForm from "./components/v-expense-form.vue"
+import Error404 from "./screens/error404.vue"
 import EmptyScreen from "./screens/empty.vue"
 import RoutingScreen from "./screens/routing.vue"
 import ButtonsScreen from "./screens/buttons.vue"
@@ -20,7 +19,6 @@ export const routes = [{
 	path: "/home",
 	name: "home",
 	component: Home,
-	children: [],
 	meta: {
 		title: "Home"
 	}
@@ -71,13 +69,17 @@ export const routes = [{
 			meta: {
 				title: "Boxed Portlets"
 			}
+		},
+		{
+			path: "solid",
+			name: "portlets-solid",
+			component: UnderDevelopment
 		}
 	],
 	meta: {
 		title: "Portlets"
 	}
 },
-
 {
 	path: "/routing",
 	name: "routing",
@@ -99,5 +101,4 @@ export const routes = [{
 {
 	path: "*",
 	component: Error404
-}
-]
+}]

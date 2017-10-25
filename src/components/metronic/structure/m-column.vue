@@ -10,7 +10,20 @@ export default {
 		size: {
 			type: Number,
 			default: 12
+		},
+		vAlignment: {
+			type: String,
+			default: "",
+			options: ["top", "middle", "bottom"]
+		},
+		hAlignment: {
+			type: String,
+			default: "",
+			options: ["left", "center", "right"]
 		}
+	},
+	computed: {
+
 	}
 }
 </script>
