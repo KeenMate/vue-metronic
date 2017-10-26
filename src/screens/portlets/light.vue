@@ -1,9 +1,8 @@
 <template>
 	<m-empty>
-		<m-note>
-			<p> See
+		<m-note bordered="true">
+			See
 				<a href="ui_colors.html" target="_blank"> Color Library </a> for more colors for portlets.
-			</p>
 		</m-note>
 		<m-row>
 			<m-column :size="6">

@@ -9,16 +9,39 @@ import MetronicComponent from "../mixins/metronic-component"
 
 export default {
 	mixins: [MetronicComponent],
+	props: {
+		deviceSize: {
+			type: String,
+			default: "",
+			options: ["xs", "sm", "md", "lg"]
+		},
+		responsive: {
+			type: Boolean,
+			default: false
+		},
+		flex: {
+			type: Boolean,
+			default: false
+		},
+		isFullHeight: {
+			type: Boolean,
+			default: false
+		}
+	},
 	computed: {
 		gridStyle: function () {
 			var style = {
-				"m-grid": true
+				mGrid: true
 			}
 
-			this.customCss.forEach(function (element) {
-				style[element] = true
-			}, this)
-
+			if (this.responsive)
+				style["m-grid-responsive-" + this.deviceSize] = true
+			if (this.flex)
+				style["m-grid-flex"] = true
+			if (this.isFullHeight)
+				style["m-grid-full-height"] = true
+				
+			this.combineCss(style)
 			return style
 		}
 	}
