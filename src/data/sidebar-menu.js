@@ -18,6 +18,10 @@ const menu = [{
 		"Title": "Metronic Grid System",
 		"LinkIcon": "icon-puzzle",
 		"RouteName": "ui-grid-system"
+	},
+	{
+		"Title": "General components",
+		"RouteName": "ui-general-components"
 	}]
 },
 {

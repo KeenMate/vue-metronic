@@ -4,6 +4,7 @@ import EmptyScreen from "./screens/empty.vue"
 import RoutingScreen from "./screens/routing.vue"
 import ButtonsScreen from "./screens/ui/buttons.vue"
 import GridSystem from "./screens/ui/grid-system.vue"
+import GeneralComponentsScreen from "./screens/ui/general-components.vue"
 import UnderDevelopment from "./screens/under-development.vue"
 
 import PortletsLight from "./screens/portlets/light.vue"
@@ -43,6 +44,14 @@ export const routes = [{
 			meta: {
 				title: "Metronic Grid System"
 			}
+		},
+		{
+			path: "general-components",
+			name: "ui-general-components",
+			component: GeneralComponentsScreen,
+			meta: {
+				title: "General Components"
+			}
 		}
 	],
 	meta: {
@@ -73,7 +82,10 @@ export const routes = [{
 		{
 			path: "solid",
 			name: "portlets-solid",
-			component: UnderDevelopment
+			component: UnderDevelopment,
+			meta: {
+				title: "Solid Portlets"
+			}
 		}
 	],
 	meta: {
