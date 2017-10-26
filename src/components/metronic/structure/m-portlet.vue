@@ -54,6 +54,10 @@ export default {
 			type: Boolean,
 			default: false
 		},
+		bordered: {
+			type: Boolean,
+			default: false
+		},
 		captionColor: {
 			type: String,
 			default: ""
@@ -75,6 +79,9 @@ export default {
 			if (this.color && this.color !== "") {
 				style[this.color] = true
 			}
+
+			if (this.bordered)
+				style["bordered"] = true
 
 			return style
 		},

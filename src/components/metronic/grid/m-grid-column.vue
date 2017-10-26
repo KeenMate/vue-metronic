@@ -1,5 +1,7 @@
 <template>
-	<div class="m-grid-col m-grid-col-middle m-grid-col-center">
+	<div :class="gridStyle">
+		<slot></slot>
+	</div>
 </template>
 
 <script>
@@ -48,18 +50,18 @@ export default {
 				"m-grid-col": true
 			}
 
-			if(this.size)
+			if (this.size)
 				style["m-grid-col-" + this.deviceSize + "-" + this.size] = true
-			if(this.vAlignment !== "")
+			if (this.vAlignment !== "")
 				style["m-grid-col-" + this.vAlignment] = true
-			if(this.hAlignment !== "")
+			if (this.hAlignment !== "")
 				style["m-grid-col-" + this.hAlignment] = true
-			if(this.order)
+			if (this.order)
 				style["m-grid-col-order-" + this.order] = true
-			if(this.backgroundColor != "")
-				style["bg-" + this.backgroundColor]
-			if(this.fontColor != "")
-				style["font-" + this.fontColor]
+			if (this.backgroundColor !== "")
+				style["bg-" + this.backgroundColor] = true
+			if (this.fontColor !== "")
+				style["font-" + this.fontColor] = true
 
 			return this.combineCss(style)
 		}

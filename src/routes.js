@@ -2,7 +2,7 @@ import Home from "./components/Home.vue"
 import Error404 from "./screens/error404.vue"
 import EmptyScreen from "./screens/empty.vue"
 import RoutingScreen from "./screens/routing.vue"
-import ButtonsScreen from "./screens/buttons.vue"
+import ButtonsScreen from "./screens/ui/buttons.vue"
 import GridSystem from "./screens/ui/grid-system.vue"
 import UnderDevelopment from "./screens/under-development.vue"
 

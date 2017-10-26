@@ -2,7 +2,7 @@ export default {
 	props: {
 		customCss: {
 			type: Array,
-			default: []
+			default: () => []
 		}
 	},
 	methods: {

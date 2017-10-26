@@ -182,20 +182,20 @@
 
 
 <script>
-import ButtonComponent from "../components/metronic/ui/m-button.vue"
-import PortletComponent from "../components/metronic/structure/m-portlet.vue"
-import PortletBlock from "../components/metronic/structure/m-portlet-block.vue"
-import Column from "../components/metronic/structure/m-column.vue"
-import Row from "../components/metronic/structure/m-row.vue"
+import mButton from "../../components/metronic/ui/m-button.vue"
+import mPortlet from "../../components/metronic/structure/m-portlet.vue"
+import mPortletBlock from "../../components/metronic/structure/m-portlet-block.vue"
+import mColumn from "../../components/metronic/structure/m-column.vue"
+import mRow from "../../components/metronic/structure/m-row.vue"
 
 export default {
 	name: "ButtonsScreen",
 	components: {
-		"m-button": ButtonComponent,
-		"m-portlet": PortletComponent,
-		"m-portlet-block": PortletBlock,
-		"m-column": Column,
-		"m-row": Row
+		"m-button": mButton,
+		"m-portlet": mPortlet,
+		"m-portlet-block": mPortletBlock,
+		"m-column": mColumn,
+		"m-row": mRow
 	}
 }
 </script>

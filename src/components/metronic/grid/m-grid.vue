@@ -31,7 +31,7 @@ export default {
 	computed: {
 		gridStyle: function () {
 			var style = {
-				mGrid: true
+				"m-grid": true
 			}
 
 			if (this.responsive)

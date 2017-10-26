@@ -1,5 +1,5 @@
 <template>
-	<div class="m-grid-row">
+	<div :class="gridStyle">
 		<slot></slot>
 	</div>
 </template>
