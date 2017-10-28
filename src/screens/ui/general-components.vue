@@ -625,80 +625,86 @@
                                             </p>
                                     </div>
                                     <h3>Basic</h3>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only"> 40% Complete (success) </span>
-                                        </div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                            <span class="sr-only"> 20% Complete </span>
-                                        </div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only"> 60% Complete (warning) </span>
-                                        </div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only"> 80% Complete </span>
-                                        </div>
-                                    </div>
+																		<m-progress
+																			level="success"
+																			:current-value="40"
+																		></m-progress>
+																		<m-progress
+																			level="info"
+																			:current-value="20"
+																			:min-value="20"
+																		></m-progress>
+																		<m-progress
+																			level="warning"
+																			:current-value="60"
+																		></m-progress>
+																		<m-progress
+																			level="danger"
+																			:current-value="80"
+																		></m-progress>
                                     <h3>Striped</h3>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only"> 40% Complete (success) </span>
-                                        </div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                            <span class="sr-only"> 20% Complete </span>
-                                        </div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only"> 60% Complete (warning) </span>
-                                        </div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only"> 80% Complete (danger) </span>
-                                        </div>
-                                    </div>
+																		<m-progress
+																			level="success"
+																			striped
+																			:current-value="40"
+																		></m-progress>
+																		<m-progress
+																			level="info"
+																			striped
+																			:current-value="20"
+																		></m-progress>
+																		<m-progress
+																			level="warning"
+																			striped
+																			:current-value="60"
+																		></m-progress>
+																		<m-progress
+																			level="danger"
+																			striped
+																			:current-value="80"
+																		></m-progress>
                                     <h3>Animated</h3>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only"> 40% Complete (success) </span>
-                                        </div>
-                                    </div>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                            <span class="sr-only"> 20% Complete </span>
-                                        </div>
-                                    </div>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only"> 60% Complete (warning) </span>
-                                        </div>
-                                    </div>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only"> 80% Complete (danger) </span>
-                                        </div>
-                                    </div>
+																		<m-progress
+																			level="success"
+																			striped
+																			animated
+																			:current-value="40"
+																		></m-progress>
+																		<m-progress
+																			level="info"
+																			striped
+																			animated
+																			:current-value="20"
+																		></m-progress>
+																		<m-progress
+																			level="warning"
+																			striped
+																			animated
+																			:current-value="60"
+																		></m-progress>
+																		<m-progress
+																			level="danger"
+																			striped
+																			animated
+																			:current-value="80"
+																		></m-progress>
                                     <h3>Stacked</h3>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-success" style="width: 35%">
-                                            <span class="sr-only"> 35% Complete (success) </span>
-                                        </div>
-                                        <div class="progress-bar progress-bar-warning" style="width: 20%">
-                                            <span class="sr-only"> 20% Complete (warning) </span>
-                                        </div>
-                                        <div class="progress-bar progress-bar-danger" style="width: 10%">
-                                            <span class="sr-only"> 10% Complete (danger) </span>
-                                        </div>
-                                    </div>
+																		<m-progress>
+																			<template slot="progressBars">
+																				<m-progress-bar
+																					level="success"
+																					:current-value="35"
+																				></m-progress-bar>
+																				<m-progress-bar
+																					level="warning"
+																					:current-value="20"
+																				></m-progress-bar>
+																				<m-progress-bar
+																					level="danger"
+																					:current-value="10"
+																				></m-progress-bar>
+																			</template>
+																		</m-progress>
                                 </div>
                             </div>
                             <!-- END PROGRESS BARS PORTLET-->
@@ -1193,20 +1199,23 @@
                                         <ul class="media-list">
                                             <li class="media">
                                                 <a class="pull-left" href="javascript:;">
-                                                    <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> </a>
+                                                    <!-- <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> -->
+																								</a>
                                                 <div class="media-body">
                                                     <h4 class="media-heading">Media heading</h4>
                                                     <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </p>
                                                     <!-- Nested media object -->
                                                     <div class="media">
                                                         <a class="pull-left" href="javascript:;">
-                                                            <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> </a>
+                                                            <!-- <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> -->
+																												</a>
                                                         <div class="media-body">
                                                             <h4 class="media-heading">Nested media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                                                             <!-- Nested media object -->
                                                             <div class="media">
                                                                 <a class="pull-left" href="javascript:;">
-                                                                    <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> </a>
+                                                                    <!-- <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> -->
+																																</a>
                                                                 <div class="media-body">
                                                                     <h4 class="media-heading">Nested media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
                                                                     turpis. </div>
@@ -1216,7 +1225,8 @@
                                                     <!-- Nested media object -->
                                                     <div class="media">
                                                         <a class="pull-left" href="javascript:;">
-                                                            <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> </a>
+                                                            <!-- <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> -->
+																												</a>
                                                         <div class="media-body">
                                                             <h4 class="media-heading">Nested media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                                                             </div>
@@ -1225,7 +1235,8 @@
                                             </li>
                                             <li class="media">
                                                 <a class="pull-right" href="javascript:;">
-                                                    <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> </a>
+                                                    <!-- <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> -->
+																								</a>
                                                 <div class="media-body">
                                                     <h4 class="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
                                             </li>
@@ -1261,26 +1272,30 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-md-3">
                                             <a href="javascript:;" class="thumbnail">
-                                                <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;"> </a>
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;"> -->
+																						</a>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <a href="javascript:;" class="thumbnail">
-                                                <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;"> </a>
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;"> -->
+																						</a>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <a href="javascript:;" class="thumbnail">
-                                                <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;"> </a>
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;"> -->
+																						</a>
                                         </div>
                                         <div class="col-sm-6 col-md-3">
                                             <a href="javascript:;" class="thumbnail">
-                                                <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;"> </a>
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;">-->
+																						</a>
                                         </div>
                                     </div>
                                     <h4 class="block">Custom Content</h4>
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6">
                                             <div class="thumbnail">
-                                                <img src="../assets/global/plugins/holder.js/100%x200" alt="" style="width: 100%; height: 200px;">
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x200" alt="" style="width: 100%; height: 200px;"> -->
                                                 <div class="caption">
                                                     <h3>Thumbnail label</h3>
                                                     <p> Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
@@ -1293,7 +1308,7 @@
                                         </div>
                                         <div class="col-sm-12 col-md-6">
                                             <div class="thumbnail">
-                                                <img src="../assets/global/plugins/holder.js/100%x200" alt="" style="width: 100%; height: 200px;">
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x200" alt="" style="width: 100%; height: 200px;"> -->
                                                 <div class="caption">
                                                     <h3>Thumbnail label</h3>
                                                     <p> Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
@@ -1314,10 +1329,12 @@
 
 <script>
 import mProgress from "../../components/metronic/informative/m-progress.vue"
+import mProgressBar from "../../components/metronic/informative/m-progress-bar.vue"
 
 export default {
 	components: {
-		mProgress
+		mProgress,
+		mProgressBar
 	}
 }
 </script>
