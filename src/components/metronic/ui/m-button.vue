@@ -1,5 +1,5 @@
 <template>
-	<button :class="btnStyle" @click="onClick" :disabled="isDisabled">
+	<button :class="btnStyle" @click="onClick" :disabled="isDisabled" :data-dismiss="dismiss">
 		<i v-if="preIcon?preIcon.length>0:false" :class="preIcon"></i>
 		<i v-if="preIcon?preIcon.length>0:false" :class="icon"></i>
 		<slot></slot>
@@ -28,7 +28,11 @@ export default {
 		color: String,
 		preIcon: String,
 		postIcon: String,
-		isDisabled: Boolean
+		isDisabled: Boolean,
+		dismiss: {
+			type: String,
+			default: null
+		}
 	},
 	computed: {
 		btnStyle: function () {

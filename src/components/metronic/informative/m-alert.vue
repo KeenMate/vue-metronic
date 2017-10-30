@@ -1,6 +1,7 @@
 <template>
 	<div :class="alertStyle">
-		<button v-if="this.dismissable" class="close" aria-hidden="true" type="button" data-dismiss="alert"></button>
+		<button v-if="this.dismissable || this.closeButton" class="close" aria-hidden="true" type="button" data-dismiss="alert"></button>
+		<h4 v-if="this.heading.length > 0" class="alert-heading">{{heading}}</h4>
 		<slot></slot>
 </div>
 </template>
@@ -11,14 +12,26 @@ import MetronicComponent from "../mixins/metronic-component"
 export default {
 	mixins: [MetronicComponent],
 	props: {
+		heading: {
+			type: String,
+			default: ""
+		},
 		dismissable: {
 			type: Boolean,
-			default: true
+			default: false
+		},
+		closeButton: {
+			type: Boolean,
+			default: false
 		},
 		level: {
 			type: String,
 			default: "info",
 			options: ["success", "info", "warning", "danger"]
+		},
+		fadeIn: {
+			type: Boolean,
+			default: false
 		}
 	},
 	computed: {
@@ -30,8 +43,13 @@ export default {
 
 			style["alert-" + this.level] = true
 			
-			if(this.dismissable)
+			if (this.dismissable)
 				style["alert-dismissable"] = true
+
+			if (this.fadeIn) {
+				style["fade"] = true
+				style["in"] = true
+			}
 
 			return this.combineCss(style)
 		}

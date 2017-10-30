@@ -63,7 +63,12 @@ export default {
 			default: ""
 		},
 		icon: {
-			type: String
+			type: String,
+			default: ""
+		},
+		iconColor: {
+			type: String,
+			default: ""
 		},
 		color: {
 			type: String
@@ -90,10 +95,6 @@ export default {
 				caption: true
 			}
 
-			if (this.captionColor && this.captionColor !== "") {
-				style["font-" + this.captionColor] = true
-			}
-
 			return style
 		},
 		subjectStyle: function () {
@@ -107,6 +108,10 @@ export default {
 			if (this.captionUppercased)
 				style["uppercase"] = true
 
+			if (this.captionColor && this.captionColor !== "") {
+				style["font-" + this.captionColor] = true
+			}
+
 			return style
 		},
 		iconStyle: function () {
@@ -115,10 +120,11 @@ export default {
 			if (this.icon)
 				style[this.icon] = true
 
-			if (this.captionColor)
-				style["font-" + this.captionColor] = true
+			if (this.iconColor && this.iconColor !== "") {
+				style["font-" + this.iconColor] = true
 
 			return style
+			}
 		}
 	}
 }
