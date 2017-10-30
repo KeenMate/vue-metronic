@@ -40,7 +40,7 @@ export default {
 				style["m-grid-flex"] = true
 			if (this.isFullHeight)
 				style["m-grid-full-height"] = true
-				
+
 			this.combineCss(style)
 			return style
 		}

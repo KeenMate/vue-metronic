@@ -245,6 +245,7 @@
                                 <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
                                 <button data-dismiss="modal" class="btn blue">Confirm</button>
                             </div>
+<<<<<<< HEAD
                         </div>
                     </div>
                 </div>
@@ -1230,6 +1231,115 @@
                                                 turpis. </div>
                                         </div>
                                     </div>
+=======
+                            <!-- END PORTLET-->
+                            <!-- BEGIN PROGRESS BARS PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-share font-red-sunglo"></i>
+                                        <span class="caption-subject font-red-sunglo bold uppercase">Progress Bars</span>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-cloud-upload"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-wrench"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="note note-warning">
+                                        <h4 class="block">Cross-browser compatibility</h4>
+                                        <p> Progress bars use CSS3 transitions and animations to achieve some of their effects. These features are not supported in Internet Explorer 9 and below or older versions of Firefox. Opera 12 does not support animations.
+                                            </p>
+                                    </div>
+                                    <h3>Basic</h3>
+																		<m-progress
+																			level="success"
+																			:current-value="40"
+																		></m-progress>
+																		<m-progress
+																			level="info"
+																			:current-value="20"
+																			:min-value="20"
+																		></m-progress>
+																		<m-progress
+																			level="warning"
+																			:current-value="60"
+																		></m-progress>
+																		<m-progress
+																			level="danger"
+																			:current-value="80"
+																		></m-progress>
+                                    <h3>Striped</h3>
+																		<m-progress
+																			level="success"
+																			striped
+																			:current-value="40"
+																		></m-progress>
+																		<m-progress
+																			level="info"
+																			striped
+																			:current-value="20"
+																		></m-progress>
+																		<m-progress
+																			level="warning"
+																			striped
+																			:current-value="60"
+																		></m-progress>
+																		<m-progress
+																			level="danger"
+																			striped
+																			:current-value="80"
+																		></m-progress>
+                                    <h3>Animated</h3>
+																		<m-progress
+																			level="success"
+																			striped
+																			animated
+																			:current-value="40"
+																		></m-progress>
+																		<m-progress
+																			level="info"
+																			striped
+																			animated
+																			:current-value="20"
+																		></m-progress>
+																		<m-progress
+																			level="warning"
+																			striped
+																			animated
+																			:current-value="60"
+																		></m-progress>
+																		<m-progress
+																			level="danger"
+																			striped
+																			animated
+																			:current-value="80"
+																		></m-progress>
+                                    <h3>Stacked</h3>
+																		<m-progress>
+																			<template slot="progressBars">
+																				<m-progress-bar
+																					level="success"
+																					:current-value="35"
+																				></m-progress-bar>
+																				<m-progress-bar
+																					level="warning"
+																					:current-value="20"
+																				></m-progress-bar>
+																				<m-progress-bar
+																					level="danger"
+																					:current-value="10"
+																				></m-progress-bar>
+																			</template>
+																		</m-progress>
+>>>>>>> origin/master
                                 </div>
                                 <!-- Nested media object -->
                                 <div class="media">
@@ -1240,6 +1350,7 @@
                                         </div>
                                 </div>
                             </div>
+<<<<<<< HEAD
                         </li>
                         <li class="media">
                             <a class="pull-right" href="javascript:;">
@@ -1319,6 +1430,193 @@
                                     <a href="javascript:;" class="btn red"> Button </a>
                                     <a href="javascript:;" class="btn default"> Button </a>
                                 </p>
+=======
+                            <!-- END PAGINATION PORTLET-->
+                            <!-- BEGIN WELL PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-share font-red-sunglo"></i>
+                                        <span class="caption-subject font-red-sunglo bold uppercase">Wells</span>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-cloud-upload"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-wrench"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="well well-lg">
+                                        <h4 class="block">I am a large well</h4>
+                                        <p> Tight pants next level keffiyeh trigger me on click haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. </p>
+                                    </div>
+                                    <div class="well">
+                                        <h4 class="block">I am a default well</h4>
+                                        <p> Tight pants next level keffiyeh trigger me on click haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. </p>
+                                    </div>
+                                    <div class="well well-sm">
+                                        <h4 class="block">I am a small well</h4>
+                                        <p> Tight pants next level keffiyeh trigger me on click haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END WELL PORTLET-->
+                            <!-- BEGIN MEDIA PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-share font-red-sunglo"></i>
+                                        <span class="caption-subject font-red-sunglo bold uppercase">Media Objects</span>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-cloud-upload"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-wrench"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="note note-success">
+                                        <p> Abstract object styles for building various types of components (like blog comments, Tweets, etc) that feature a left or right aligned image alongside textual content. </p>
+                                    </div>
+                                    <div class="clearfix">
+                                        <ul class="media-list">
+                                            <li class="media">
+                                                <a class="pull-left" href="javascript:;">
+                                                    <!-- <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> -->
+																								</a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Media heading</h4>
+                                                    <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </p>
+                                                    <!-- Nested media object -->
+                                                    <div class="media">
+                                                        <a class="pull-left" href="javascript:;">
+                                                            <!-- <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> -->
+																												</a>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Nested media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                                            <!-- Nested media object -->
+                                                            <div class="media">
+                                                                <a class="pull-left" href="javascript:;">
+                                                                    <!-- <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> -->
+																																</a>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading">Nested media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                                                    turpis. </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Nested media object -->
+                                                    <div class="media">
+                                                        <a class="pull-left" href="javascript:;">
+                                                            <!-- <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> -->
+																												</a>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Nested media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="media">
+                                                <a class="pull-right" href="javascript:;">
+                                                    <!-- <img class="media-object" src="../assets/global/plugins/holder.js/64x64" alt=""> -->
+																								</a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END MEDIA PORTLET-->
+                            <!-- BEGIN THUMBNAILS PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-share font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Thumbnails</span>
+                                    </div>
+                                    <div class="actions">
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-cloud-upload"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-wrench"></i>
+                                        </a>
+                                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                            <i class="icon-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="note note-info">
+                                        <p> Extend Bootstrap's grid system with the thumbnail component to easily display grids of images, videos, text, and more. </p>
+                                    </div>
+                                    <h4 class="block">Default</h4>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-3">
+                                            <a href="javascript:;" class="thumbnail">
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;"> -->
+																						</a>
+                                        </div>
+                                        <div class="col-sm-6 col-md-3">
+                                            <a href="javascript:;" class="thumbnail">
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;"> -->
+																						</a>
+                                        </div>
+                                        <div class="col-sm-6 col-md-3">
+                                            <a href="javascript:;" class="thumbnail">
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;"> -->
+																						</a>
+                                        </div>
+                                        <div class="col-sm-6 col-md-3">
+                                            <a href="javascript:;" class="thumbnail">
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x180" alt="100%x180" style="height: 180px; width: 100%; display: block;">-->
+																						</a>
+                                        </div>
+                                    </div>
+                                    <h4 class="block">Custom Content</h4>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="thumbnail">
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x200" alt="" style="width: 100%; height: 200px;"> -->
+                                                <div class="caption">
+                                                    <h3>Thumbnail label</h3>
+                                                    <p> Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
+                                                    <p>
+                                                        <a href="javascript:;" class="btn blue"> Button </a>
+                                                        <a href="javascript:;" class="btn default"> Button </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="thumbnail">
+                                                <!-- <img src="../assets/global/plugins/holder.js/100%x200" alt="" style="width: 100%; height: 200px;"> -->
+                                                <div class="caption">
+                                                    <h3>Thumbnail label</h3>
+                                                    <p> Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
+                                                    <p>
+                                                        <a href="javascript:;" class="btn red"> Button </a>
+                                                        <a href="javascript:;" class="btn default"> Button </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+>>>>>>> origin/master
                             </div>
                         </div>
                     </div>
@@ -1337,6 +1635,7 @@ import mPortlet from "../../components/metronic/structure/m-portlet.vue"
 import mPortletBlock from "../../components/metronic/structure/m-portlet-block.vue"
 
 import mProgress from "../../components/metronic/informative/m-progress.vue"
+<<<<<<< HEAD
 import mAlert from "../../components/metronic/informative/m-alert.vue"
 import mNote from "../../components/metronic/informative/m-note.vue"
 import mModalDialog from "../../components/metronic/informative/m-modalDialog.vue"
@@ -1364,6 +1663,15 @@ export default {
             this.$refs.myModal4.open()
         }
     }
+=======
+import mProgressBar from "../../components/metronic/informative/m-progress-bar.vue"
+
+export default {
+	components: {
+		mProgress,
+		mProgressBar
+	}
+>>>>>>> origin/master
 }
 </script>
 

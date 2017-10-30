@@ -42,7 +42,11 @@ export default {
 			}
 
 			style["alert-" + this.level] = true
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> origin/master
 			if (this.dismissable)
 				style["alert-dismissable"] = true
 

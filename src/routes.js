@@ -93,21 +93,37 @@ export const routes = [{
 	}
 },
 {
-	path: "/routing",
+	path: "/routing-examples",
 	name: "routing",
 	component: RoutingScreen,
-	children: [{
-		path: "route1",
-		name: "routing/route1",
-		component: RoutingScreen,
-		meta: {
-			title: "Route 1"
+	children: [
+		{
+			path: "route1",
+			name: "route1",
+			component: RoutingScreen,
+			meta: {
+				title: "Route 1"
+			}
+		},
+		{
+			path: "route2",
+			name: "route2",
+			component: RoutingScreen,
+			meta: {
+				title: "Route 2"
+			}
+		},
+		{
+			path: "route3",
+			name: "route3",
+			component: RoutingScreen,
+			meta: {
+				title: "Route 3"
+			}
 		}
-	}
-
 	],
 	meta: {
-		title: "Routing"
+		title: "Routing Examples"
 	}
 },
 {

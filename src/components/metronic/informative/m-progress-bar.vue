@@ -29,6 +29,14 @@ export default {
 			type: String,
 			default: "info",
 			options: ["success", "warning", "info", "danger"]
+		},
+		striped: {
+			type: Boolean,
+			default: false
+		},
+		animated: {
+			type: Boolean,
+			default: false
 		}
 	},
 	computed: {
@@ -39,6 +47,10 @@ export default {
 
 			if (this.level)
 				style["progress-bar-" + this.level] = true
+			if (this.striped)
+				style["progress-bar-striped"] = true
+			if (this.animated)
+				style["active"] = true
 
 			return style
 		}

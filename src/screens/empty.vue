@@ -9,8 +9,8 @@ import mRow from "../components/metronic/structure/m-row.vue"
 
 export default {
 	name: "EmptyScreen",
-  components: {
+	components: {
 		mRow
-}
+	}
 }
 </script>

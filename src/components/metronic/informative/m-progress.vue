@@ -14,7 +14,10 @@
 <script>
 import mProgressBar from "./m-progress-bar.vue"
 
+import MetronicComponent from "../mixins/metronic-component"
+
 export default {
+	mixins: [MetronicComponent],
 	components: {
 		mProgressBar
 	},
@@ -55,6 +58,7 @@ export default {
 			if (this.animated)
 				style["active"] = true
 
+			this.combineCss(style)
 			return style
 		}
 	}
