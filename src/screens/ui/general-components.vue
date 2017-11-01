@@ -2,51 +2,66 @@
 <m-row>
     <m-column :size="6">
         <!-- BEGIN PORTLET-->
-        <m-portlet type="light" title="Alerts" icon="icon-share" 
-            iconColor="dark" captionColor="dark" bordered captionBold captionUppercased>
-						<template slot="actions">
-							<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-								<m-icon name="icon-cloud-upload"></m-icon>
-							</a>
-							<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-								<m-icon name="icon-wrench"></m-icon>
-							</a>
-							<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
-							<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-								<m-icon name="icon-trash"></m-icon>
-							</a>
-            </template>
-            <m-portlet-block>
-                <h4 class="block">Default Alerts</h4>
-                
-                <m-alert level="success">
-                    <strong>Success!</strong> The page has been added.
-                </m-alert>
-                <m-alert>
-                    <strong>Info!</strong> You have 198 unread messages. 
-                </m-alert>
-                <m-alert level="warning">
-                    <strong>Warning!</strong> Your monthly traffic is reaching limit.
-                </m-alert>
-                <m-alert level="danger">
-                    <strong>Error!</strong> The daily cronjob has failed.
-                </m-alert>
-                               
-                <h4 class="block">Dismissable Alerts</h4>
-                <m-alert level="warning" dismissable>
-                    <strong>Warning!</strong> Something went wrong. Please check.
-                </m-alert>
-                <h4 class="block">Links in alerts</h4>
-                <m-alert level="success" dismissable>
-                    <strong>WOW!</strong> Well done and everything looks OK.
-                    <a href="" class="alert-link"> Please check this one as well </a>
-                </m-alert>                
-            </m-portlet-block>
+        <m-portlet
+					type="light"
+					title="Alerts"
+					icon="icon-share" 
+          iconColor="dark"
+					captionColor="dark"
+					bordered
+					captionBold
+					captionUppercased
+				>
+					<template slot="actions">
+						<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+							<m-icon name="icon-cloud-upload"></m-icon>
+						</a>
+						<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+							<m-icon name="icon-wrench"></m-icon>
+						</a>
+						<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+						<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+							<m-icon name="icon-trash"></m-icon>
+						</a>
+					</template>
+					<m-portlet-block>
+						<h4 class="block">Default Alerts</h4>
+						<m-alert level="success">
+								<strong>Success!</strong> The page has been added.
+						</m-alert>
+						<m-alert>
+								<strong>Info!</strong> You have 198 unread messages. 
+						</m-alert>
+						<m-alert level="warning">
+								<strong>Warning!</strong> Your monthly traffic is reaching limit.
+						</m-alert>
+						<m-alert level="danger">
+								<strong>Error!</strong> The daily cronjob has failed.
+						</m-alert>
+														
+						<h4 class="block">Dismissable Alerts</h4>
+						<m-alert level="warning" dismissable>
+								<strong>Warning!</strong> Something went wrong. Please check.
+						</m-alert>
+						<h4 class="block">Links in alerts</h4>
+						<m-alert level="success" dismissable>
+								<strong>WOW!</strong> Well done and everything looks OK.
+								<a href="" class="alert-link"> Please check this one as well </a>
+						</m-alert>                
+					</m-portlet-block>
         </m-portlet>
         <!-- END PORTLET-->
         <!-- BEGIN PORTLET-->
-        <m-portlet type="light" title="Inline Notifications" icon="icon-share" 
-            iconColor="dark" captionColor="dark" bordered captionBold captionUppercased>
+        <m-portlet
+					type="light"
+					title="Inline Notifications"
+					icon="icon-share"
+          iconColor="dark"
+					captionColor="dark"
+					bordered
+					captionBold
+					captionUppercased
+				>
 					<template slot="actions">
 						<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
 							<m-icon name="icon-cloud-upload"></m-icon>
@@ -58,199 +73,184 @@
 							<m-icon name="icon-trash"></m-icon>
 						</a>
 					</template>
-            
-            <m-portlet-block>
-								<m-alert heading="Error!" level="danger" closeButton fadeIn>
-                    <p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
-                    <p>
-                        <a class="btn red" href="javascript:;"> Do this </a>
-                        <a class="btn blue" href="javascript:;"> Cancel </a>
-                    </p>
-                </m-alert>
-                <m-alert heading="Success!" level="success" closeButton fadeIn>
-                    <p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
-                    <p>
-                        <a class="btn green" href="javascript:;"> Do this </a>
-                        <a class="btn btn-link" href="javascript:;"> Cancel </a>
-                    </p>
-                </m-alert>
-                <m-alert heading="Info!" level="info" closeButton fadeIn>
-                    <p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
-                    <p>
-                        <a class="btn purple" href="javascript:;"> Do this </a>
-                        <a class="btn dark" href="javascript:;"> Cancel </a>
-                    </p>
-                </m-alert>
-                <m-alert heading="Warning!" level="warning" closeButton fadeIn>
-                    <p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
-                    <p>
-                        <a class="btn red" href="javascript:;"> Do this </a>
-                        <a class="btn blue" href="javascript:;"> Cancel </a>
-                    </p>
-                </m-alert>
-            </m-portlet-block>
+					<m-portlet-block>
+						<m-alert heading="Error!" level="danger" closeButton fadeIn>
+							<p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
+							<p>
+								<a class="btn red" href="javascript:;"> Do this </a>
+								<a class="btn blue" href="javascript:;"> Cancel </a>
+							</p>
+						</m-alert>
+						<m-alert heading="Success!" level="success" closeButton fadeIn>
+								<p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
+								<p>
+										<a class="btn green" href="javascript:;"> Do this </a>
+										<a class="btn btn-link" href="javascript:;"> Cancel </a>
+								</p>
+						</m-alert>
+						<m-alert heading="Info!" level="info" closeButton fadeIn>
+							<p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
+							<p>
+								<a class="btn purple" href="javascript:;"> Do this </a>
+								<a class="btn dark" href="javascript:;"> Cancel </a>
+							</p>
+						</m-alert>
+						<m-alert heading="Warning!" level="warning" closeButton fadeIn>
+							<p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. </p>
+							<p>
+								<a class="btn red" href="javascript:;"> Do this </a>
+								<a class="btn blue" href="javascript:;"> Cancel </a>
+							</p>
+						</m-alert>
+					</m-portlet-block>
         </m-portlet>
         <!-- END PORTLET-->
         <!-- BEGIN PORTLET-->
-        <m-portlet type="light" title="Pulsate" icon="icon-share" 
-            iconColor="dark" captionColor="dark" bordered captionBold captionUppercased>
-        
-                <template slot="actions">
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <m-icon name="icon-cloud-upload"></m-icon>
-                    </a>
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <m-icon name="icon-wrench"></m-icon>
-                    </a>
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <m-icon name="icon-trash"></m-icon>
-                    </a>
-                </template>
-            
-            <m-portlet-block>
-                <h4>Pulsate any page elements.</h4>
-                <div class="margin-top-10 margin-bottom-10 clearfix">
-                    <table class="table table-bordered table-striped">
-                        <tr>
-                            <td> Repeating Pulsate </td>
-                            <td>
-                                <div id="pulsate-regular" style="padding:5px;"> Repeating Pulsate </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button class="btn green" id="pulsate-once">Pulsate Once</button>
-                            </td>
-                            <td>
-                                <div id="pulsate-once-target" style="padding:5px;"> Pulsate me </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button class="btn red" id="pulsate-crazy">Crazy Pulsate :)</button>
-                            </td>
-                            <td>
-                                <div id="pulsate-crazy-target" style="padding:5px;"> Pulsate me </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <span class="label label-danger"> NOTE! </span>
-                <span> Pulsate is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 9 and Internet Explorer 10 only. </span>
-            </m-portlet-block>
+        <m-portlet
+					type="light"
+					title="Pulsate"
+					icon="icon-share" 
+          iconColor="dark"
+					captionColor="dark"
+					bordered
+					captionBold
+					captionUppercased
+				>
+					<template slot="actions">
+						<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+							<m-icon name="icon-cloud-upload"></m-icon>
+						</a>
+						<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+							<m-icon name="icon-wrench"></m-icon>
+						</a>
+						<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+							<m-icon name="icon-trash"></m-icon>
+						</a>
+					</template>
+					<m-portlet-block>
+						<h4>Pulsate any page elements.</h4>
+						<div class="margin-top-10 margin-bottom-10 clearfix">
+							<table class="table table-bordered table-striped">
+								<tr>
+									<td> Repeating Pulsate </td>
+									<td>
+										<div id="pulsate-regular" style="padding:5px;"> Repeating Pulsate </div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<button class="btn green" id="pulsate-once">Pulsate Once</button>
+									</td>
+									<td>
+										<div id="pulsate-once-target" style="padding:5px;"> Pulsate me </div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<button class="btn red" id="pulsate-crazy">Crazy Pulsate :)</button>
+									</td>
+									<td>
+										<div id="pulsate-crazy-target" style="padding:5px;"> Pulsate me </div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<span class="label label-danger"> NOTE! </span>
+						<span> Pulsate is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 9 and Internet Explorer 10 only. </span>
+					</m-portlet-block>
         </m-portlet>
         <!-- END PORTLET-->
         <!-- BEGIN PORTLET-->
-        <div class="portlet light bordered">
-            <div class="portlet-title">
-                <div class="caption">
-                    <span class="caption-subject font-dark bold uppercase">Modal Dialogs</span>
-                </div>
-                <div class="actions">
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <m-icon name="icon-cloud-upload"></m-icon>
-                    </a>
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <m-icon name="icon-wrench"></m-icon>
-                    </a>
-                    <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                        <m-icon name="icon-trash"></m-icon>
-                    </a>
-                </div>
-            </div>
-            <div class="portlet-body">
-                <h4>Click on below buttons to check it out.</h4>
-                <!-- Button to trigger modal -->
-
-                <m-link-button title="Modal Dialog" href="#myModal1" type="button" color="blue" data-toggle="modal"/>
-                <m-link-button title="Alert" href="#myModal2" type="button" color="red" data-toggle="modal"/>
-                <m-link-button title="Confirm" href="#myModal3" type="button" color="yellow" data-toggle="modal"/>
-                <m-link-button title="Modal 4" href="#myModal4" type="button" color="green" data-toggle="modal"/>
-                <m-button @click="buttonClicked">Plain button</m-button>
-
-                <a href="#myModal1" role="button" class="btn blue" data-toggle="modal"> Modal Dialog </a>
-                <a href="#myModal2" role="button" class="btn red" data-toggle="modal"> Alert US </a>
-                <a href="#myModal3" role="button" class="btn yellow" data-toggle="modal"> Confirm </a>
-                <!-- Modal -->
-
-                <m-modal-dialog id="myModal4" title="Modal for lucy" ref="myModal4">
-									<template slot="body">
-										<p> Body goes here... </p>
-									</template>
-									<template slot="footer">
-										<p><m-button title="xxxx"></m-button></p>
-									</template>
-                </m-modal-dialog>
-								<m-modal-dialog id="myModal5" title="Modal 2 for lucy" ref="myModal5">
-									<template slot="body">
-										<p> Body goes here... </p>
-									</template>
-									<template slot="footer">
-										<p><m-button title="xxxx" dismiss="modal"></m-button></p>
-									</template>
-                </m-modal-dialog>
-								<m-modal-dialog id="myModal6" title="Modal 3 for lucy" ref="myModal6">
-									<template slot="body">
-										<p> Body goes here... </p>
-									</template>
-									<template slot="footer">
-										<p><m-button title="xxxx"></m-button></p>
-									</template>
-                </m-modal-dialog>
-
-                <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                <h4 class="modal-title">Modal title for us</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p> Body goes here... </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
-                                <button class="btn yellow">Save</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                <h4 class="modal-title">Alert Header</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p> Body goes here... </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button data-dismiss="modal" class="btn green">OK</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="myModal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                <h4 class="modal-title">Confirm Header</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p> Body goes here... </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
-                                <button data-dismiss="modal" class="btn blue">Confirm</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+				<m-portlet
+					type="ligth"
+					bordered
+					title="Modal Dialogs"
+					caption-color="dark"
+					caption-bold
+					caption-uppercased
+				>
+					<template slot="actions">
+						<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+							<m-icon name="icon-cloud-upload"></m-icon>
+						</a>
+						<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+							<m-icon name="icon-wrench"></m-icon>
+						</a>
+						<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+							<m-icon name="icon-trash"></m-icon>
+						</a>
+					</template>
+					<m-portlet-block>
+						<h4>Click on below buttons to check it out.</h4>
+						<!-- Button to trigger modal -->
+						<m-link-button title="Modal Dialog" href="#myModal1" type="button" color="blue" data-toggle="modal"/>
+						<m-link-button title="Alert" href="#myModal2" type="button" color="red" data-toggle="modal"/>
+						<m-link-button title="Confirm" href="#myModal3" type="button" color="yellow" data-toggle="modal"/>
+						<m-modal-dialog
+							id="myModal1"
+							title="Modal title for us"
+							labelled-by="myModalLabel1"
+							ref="myModal1"
+						>
+							<template slot="body">
+								<p> Body goes here... </p>
+							</template>
+							<template slot="footer">
+								<m-button
+									dismiss="modal"
+									aria-hidden="true"
+								>
+									Close
+								</m-button>
+								<m-button color="yellow">
+									Save
+								</m-button>
+							</template>
+						</m-modal-dialog>
+						<m-modal-dialog
+							id="myModal2"
+							labelled-by="myModalLabel2"
+							title="Alert Header"
+							ref="myModal2"
+						>
+							<template slot="body">
+								<p> Body goes here... </p>
+							</template>
+							<tempalte slot="footer">
+								<m-button
+									dismiss="modal"
+									color="green"
+								>
+									OK
+								</m-button>
+							</tempalte>
+						</m-modal-dialog>
+						<m-modal-dialog
+							id="myModal3"
+							title="Confirm Header"
+							labelled-by="myModalLabel3"
+							ref="myModal3"
+						>
+							<template slot="body">
+								<p> Body goes here... </p>
+							</template>
+							<template slot="footer">
+								<m-button
+									dismiss="modal"
+									aria-hidden="true"
+								>
+									Close
+								</m-button>
+								<m-button
+									dismiss="modal"
+									color="blue"
+								>
+									Confirm
+								</m-button>
+							</template>
+						</m-modal-dialog>
+					</m-portlet-block>
+				</m-portlet>
         <!-- END MODAL DIALOG PORTLET-->
         <!-- BEGIN TOOLTIPS PORTLET-->
         <div class="portlet light bordered">
@@ -639,84 +639,91 @@
             <div class="portlet-body">
                 <div class="note note-warning">
                     <h4 class="block">Cross-browser compatibility</h4>
-                    <p> Progress bars use CSS3 transitions and animations to achieve some of their effects. These features are not supported in Internet Explorer 9 and below or older versions of Firefox. Opera 12 does not support animations.
-                        </p>
+                    <p>
+											Progress bars use CSS3 transitions and animations to achieve some of their effects. These features are not supported in Internet Explorer 9 and below or older versions of Firefox. Opera 12 does not support animations.
+                  	</p>
                 </div>
                 <h3>Basic</h3>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                        <span class="sr-only"> 40% Complete (success) </span>
-                    </div>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                        <span class="sr-only"> 20% Complete </span>
-                    </div>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                        <span class="sr-only"> 60% Complete (warning) </span>
-                    </div>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                        <span class="sr-only"> 80% Complete </span>
-                    </div>
-                </div>
+								<m-progress
+									level="success"
+									:current-value="40"
+								></m-progress>
+								<m-progress
+									level="info"
+									:current-value="20"
+									:min-value="20"
+								></m-progress>
+								<m-progress
+									level="warning"
+									:current-value="60"
+								></m-progress>
+								<m-progress
+									level="danger"
+									:current-value="80"
+								></m-progress>
                 <h3>Striped</h3>
-                <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                        <span class="sr-only"> 40% Complete (success) </span>
-                    </div>
-                </div>
-                <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                        <span class="sr-only"> 20% Complete </span>
-                    </div>
-                </div>
-                <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                        <span class="sr-only"> 60% Complete (warning) </span>
-                    </div>
-                </div>
-                <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                        <span class="sr-only"> 80% Complete (danger) </span>
-                    </div>
-                </div>
+								<m-progress
+									level="success"
+									striped
+									:current-value="40"
+								></m-progress>
+								<m-progress
+									level="info"
+									striped
+									:current-value="20"
+								></m-progress>
+								<m-progress
+									level="warning"
+									striped
+									:current-value="60"
+								></m-progress>
+								<m-progress
+									level="danger"
+									striped
+									:current-value="80"
+								></m-progress>
                 <h3>Animated</h3>
-                <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                        <span class="sr-only"> 40% Complete (success) </span>
-                    </div>
-                </div>
-                <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                        <span class="sr-only"> 20% Complete </span>
-                    </div>
-                </div>
-                <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                        <span class="sr-only"> 60% Complete (warning) </span>
-                    </div>
-                </div>
-                <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                        <span class="sr-only"> 80% Complete (danger) </span>
-                    </div>
-                </div>
+								<m-progress
+									level="success"
+									striped
+									animated
+									:current-value="40"
+								></m-progress>
+								<m-progress
+									level="info"
+									striped
+									animated
+									:current-value="20"
+								></m-progress>
+								<m-progress
+									level="warning"
+									striped
+									animated
+									:current-value="60"
+								></m-progress>
+								<m-progress
+									level="danger"
+									striped
+									animated
+									:current-value="80"
+								></m-progress>
                 <h3>Stacked</h3>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" style="width: 35%">
-                        <span class="sr-only"> 35% Complete (success) </span>
-                    </div>
-                    <div class="progress-bar progress-bar-warning" style="width: 20%">
-                        <span class="sr-only"> 20% Complete (warning) </span>
-                    </div>
-                    <div class="progress-bar progress-bar-danger" style="width: 10%">
-                        <span class="sr-only"> 10% Complete (danger) </span>
-                    </div>
-                </div>
+								<m-progress>
+									<template slot="progressBars">
+										<m-progress-bar
+											level="success"
+											:current-value="35"
+										></m-progress-bar>
+										<m-progress-bar
+											level="warning"
+											:current-value="20"
+										></m-progress-bar>
+										<m-progress-bar
+											level="danger"
+											:current-value="10"
+										></m-progress-bar>
+									</template>
+								</m-progress>
             </div>
         </div>
         <!-- END PROGRESS BARS PORTLET-->
@@ -1184,8 +1191,6 @@
             </div>
         </div>
         <!-- END WELL PORTLET-->
-        
-        
     </m-column>
 </m-row>
 </template>
@@ -1209,24 +1214,19 @@ import mLinkButton from "../../components/metronic/ui/m-linkbutton.vue"
 
 export default {
 	components: {
-        mRow,
-        mColumn,
-        mPortlet,
-        mPortletBlock,
-        mAlert,
-        mNote,
-        mModalDialog,
-				mIcon,
-				mProgress,
-				mProgressBar,
-        mButton,
-        mLinkButton
-    },
-    methods: {
-        buttonClicked: function () {
-            this.$refs.myModal4.open()
-        }
-    }
+		mRow,
+		mColumn,
+		mPortlet,
+		mPortletBlock,
+		mAlert,
+		mNote,
+		mModalDialog,
+		mIcon,
+		mProgress,
+		mProgressBar,
+		mButton,
+		mLinkButton
+	}
 }
 </script>
 

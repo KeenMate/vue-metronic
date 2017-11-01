@@ -1,6 +1,6 @@
 <template>
 <m-row>
-	<m-column :size=6>
+	<m-column :size="6">
 		<m-portlet title="Buttons" caption="Not sure if this works..">
 			<m-portlet-block>
 				<h4 class="block">Default Bootstrap Buttons(Customized to Match Theme Style)</h4>
@@ -160,7 +160,7 @@
 			</m-portlet-block>
 		</m-portlet>
 	</m-column>
-	<m-column :size=6>
+	<m-column :size="6">
 		<m-portlet title="Button groups">
 			<m-portlet-block>
 				<h4>Basic Example</h4>

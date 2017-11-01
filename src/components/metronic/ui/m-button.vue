@@ -1,5 +1,11 @@
 <template>
-	<button :class="btnStyle" @click="onClick" :disabled="isDisabled" :data-dismiss="dismiss">
+	<button
+		:class="btnStyle"
+		@click="onClick"
+		:disabled="isDisabled"
+		:data-dismiss="dismiss"
+		:aria-hidden="ariaHidden"
+	>
 		<i v-if="preIcon?preIcon.length>0:false" :class="preIcon"></i>
 		<i v-if="preIcon?preIcon.length>0:false" :class="icon"></i>
 		<slot></slot>
@@ -32,6 +38,11 @@ export default {
 		dismiss: {
 			type: String,
 			default: null
+		},
+		ariaHidden: {
+			type: String,
+			default: null,
+			options: ["true", "false"]
 		}
 	},
 	computed: {

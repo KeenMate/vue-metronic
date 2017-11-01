@@ -1,5 +1,5 @@
 <template>
-	<i v-if="name.length > 0" :class="iconStyle"></i>
+	<i v-if="name" :class="iconStyle"></i>
 </template>
 
 <script>
@@ -7,7 +7,7 @@ export default {
 	props: {
 		name: {
 			type: String,
-			default: ""
+			default: null
 		},
 		color: {
 			type: String,
@@ -17,12 +17,9 @@ export default {
 	computed: {
 		iconStyle: function () {
 			var style = {}
-
 			style[this.name] = true
-			
 			if (this.color.length > 0) 
 				style["font-" + this.color] = true
-
 			return style
 		}
 	}
