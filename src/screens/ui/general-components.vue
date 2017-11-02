@@ -162,7 +162,7 @@
         <!-- END PORTLET-->
         <!-- BEGIN PORTLET-->
 				<m-portlet
-					type="ligth"
+					type="light"
 					bordered
 					title="Modal Dialogs"
 					caption-color="dark"
