@@ -1,30 +1,30 @@
 <template>
-		<div :class="portletStyle">
-				<div class="portlet-title">
-						<div :class="captionStyle">
-								<i v-if="icon!=''" :class="iconStyle"></i>
-								<span :class="subjectStyle">{{title}}</span>
-								<span v-if="caption!=''" class="caption-helper">{{caption}}</span>
-						</div>
-						<div class="actions" v-if="$slots.actions">
-							<slot name="actions"></slot>
-						</div>
-						<div class="tools" v-else-if="$slots.tools">
-							<slot name="tools"></slot>
-						</div>
-						<div class="inputs" v-else-if="$slots.inputs">
-							<div class="portlet-input input-inline input-small">
-								<slot name="inputs"></slot>
-							</div>
-						</div>
-						<div class="pagination" v-else-if="$slots.pagination">
-							<slot name="pagination"></slot>
-						</div>
+	<div :class="portletStyle">
+		<div class="portlet-title">
+			<div :class="captionStyle">
+				<i v-if="icon!=''" :class="iconStyle"></i>
+				<span :class="subjectStyle">{{title}}</span>
+				<span v-if="caption!=''" class="caption-helper">{{caption}}</span>
+			</div>
+			<div class="actions" v-if="$slots.actions">
+				<slot name="actions"></slot>
+			</div>
+			<div class="tools" v-else-if="$slots.tools">
+				<slot name="tools"></slot>
+			</div>
+			<div class="inputs" v-else-if="$slots.inputs">
+				<div class="portlet-input input-inline input-small">
+					<slot name="inputs"></slot>
 				</div>
-				<div class="portlet-body util-btn-margin-bottom-5">
-						<slot></slot>
-				</div>
+			</div>
+			<div class="pagination" v-else-if="$slots.pagination">
+				<slot name="pagination"></slot>
+			</div>
 		</div>
+		<div class="portlet-body util-btn-margin-bottom-5">
+			<slot></slot>
+		</div>
+	</div>
 </template>
 
 
@@ -46,11 +46,11 @@ export default {
 			type: String,
 			default: ""
 		},
-		captionBold: {
+		titleBold: {
 			type: Boolean,
 			default: false
 		},
-		captionUppercased: {
+		titleUppercased: {
 			type: Boolean,
 			default: false
 		},
@@ -58,7 +58,7 @@ export default {
 			type: Boolean,
 			default: false
 		},
-		captionColor: {
+		titleColor: {
 			type: String,
 			default: ""
 		},
@@ -102,14 +102,14 @@ export default {
 				"caption-subject": true
 			}
 
-			if (this.captionBold)
+			if (this.titleBold)
 				style["bold"] = true
 
-			if (this.captionUppercased)
+			if (this.titleUppercased)
 				style["uppercase"] = true
 
-			if (this.captionColor && this.captionColor !== "") {
-				style["font-" + this.captionColor] = true
+			if (this.titleColor && this.titleColor !== "") {
+				style["font-" + this.titleColor] = true
 			}
 
 			return style

@@ -26,7 +26,7 @@ export default {
 		color: {
 			type: String,
 			default: ""
-			},
+		},
 		preIcon: {
 			type: String,
 			default: ""
@@ -54,10 +54,6 @@ export default {
 		dismiss: {
 			type: String,
 			default: null
-		},
-		customCss: {
-			type: Array,
-			default: () => []
 		}
 	},
 	computed: {
