@@ -1224,7 +1224,7 @@ export default {
     },
     methods: {
         buttonClicked: function () {
-            this.$refs.myModal4.open()
+            this.$refs.myModal4.show()
         }
     }
 }

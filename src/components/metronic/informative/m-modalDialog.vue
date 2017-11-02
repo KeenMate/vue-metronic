@@ -44,9 +44,12 @@ export default {
 		}
 	},
 	methods: {
-		open: function () {
+		show: function () {
 			$(this.$refs[this.id]).modal()
-		}
+		},
+		hide: function () {
+			$(this.$refs[this.id]).modal("hide")
+		} 
 	}
 }
 </script>

@@ -29,12 +29,12 @@ export default {
 	},
 	computed: {
 		role: function () {
-			return this.type == "button" ? "button" : null
+			return this.type === "button" ? "button" : null
 		},
 		linkStyle: function () {
 			var style = {}
 
-			if (this.type == "button")
+			if (this.type === "button")
 				style["btn"] = true
 				
 			if (this.color.length > 0)
