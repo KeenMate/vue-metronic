@@ -6,7 +6,7 @@
 		:aria-valuemax="maxValue"
 		:style="'width: ' + currentValue + '%'"
 	>
-		<span class="sr-only"> {{currentValue}} % </span>
+		<span class="sr-only"> {{currentValue}} % ({{level}}) </span>
 	</div>
 </template>
 

@@ -120,13 +120,7 @@
 		</m-portlet>
 	</m-column>
 	<m-column :size="6">
-		<m-portlet title="Button groups"
-			icon="icon-settings"
-			icon-color="red-mint"
-			caption-color="red-mint"
-			captionBold 
-			captionUppercased>
-			
+		<m-portlet title="Button groups">
 			<m-portlet-block>
 				<h4>Basic Example</h4>
 				<m-button-group>
