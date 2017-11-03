@@ -1,7 +1,11 @@
-import MetronicComponent from "./metronic-component"
+import MetronicComponentMixin from "./metronic-component"
+import TooltipMixin from "./tooltip"
 
 export default {
-	mixins: [MetronicComponent],
+	mixins: [
+		MetronicComponentMixin,
+		TooltipMixin
+	],
 	props: {
 		buttonStyle: {
 			type: String,
@@ -61,7 +65,6 @@ export default {
 			var style = {
 				btn: true
 			}
-			
 			if (this.size.toLowerCase() !== "default") {
 				switch (this.size.toLowerCase()) {
 				case "large": {
@@ -83,6 +86,11 @@ export default {
 				}
 			}
 
+			if (this.popover)
+				style["popovers"] = true
+			else if (this.tooltip)
+				style["tooltips"] = true
+
 			if (this.color !== "") {
 				style[this.color] = true
 			}
@@ -99,19 +107,19 @@ export default {
 			}
 
 			if (this.block) {
-					style["btn-block"] = true
+				style["btn-block"] = true
 			}
-			
+
 			if (this.disabled) {
-					style["disabled"] = true
+				style["disabled"] = true
 			}
 
 			if (this.bold) {
-					style["sbold"] = true
+				style["sbold"] = true
 			}
 
 			if (this.uppercased) {
-					style["uppercase"] = true
+				style["uppercase"] = true
 			}
 
 			this.combineCss(style)
@@ -128,7 +136,7 @@ export default {
 			return cssData
 		},
 		onClick (event) {
-				this.$emit("click", event)
+			this.$emit("click", event)
 		}
 	}
 }

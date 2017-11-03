@@ -281,10 +281,32 @@
 						class="tooltips" data-original-title="Another tooltip"> have a </a> terry richardson vinyl chambray.
 					<a href="javascript:;" class="tooltips" title="12" data-original-title="The last tip!"> twitter handle </a> freegan cred raw denim single-origin coffee viral.
 				</p>
-				<button class="btn btn-default tooltips" data-container="body" data-placement="top" data-original-title="Tooltip in top">Top</button>
-				<button class="btn btn-default tooltips" data-container="body" data-placement="left" data-original-title="Tooltip in left">Left</button>
-				<button class="btn btn-default tooltips" data-container="body" data-placement="right" data-original-title="Tooltip in right">Right</button>
-				<button class="btn btn-default tooltips" data-container="body" data-placement="bottom" data-original-title="Tooltip in bottom">Bottom</button>
+				<m-button
+					tooltip="Tooltip in top"
+					tooltip-placement="top"
+					button-style="bootstrap"
+					level="default"
+				>Top</m-button>
+				<m-button
+					tooltip="Tooltip in Left"
+					tooltip-placement="left"
+					button-style="bootstrap"
+					level="default"
+				>Left</m-button>
+				<m-button
+					tooltip="Tooltip in right"
+					tooltip-placement="right"
+					button-style="bootstrap"
+					level="default"
+				>Right</m-button>
+				<m-button
+					tooltip="Tooltip in bottom"
+					tooltip-placement="bottom"
+					button-style="bootstrap"
+					level="default"
+				>
+					Bottom
+				</m-button>
 			</m-portlet-block>
 		</m-portlet>
 		<!-- END TOOLTIPS PORTLET-->
@@ -314,49 +336,48 @@
 				<p>
 					Tight pants next level keffiyeh
 					<a href="javascript:;" class="popovers" data-container="body" data-content="Popover body goes here! Popover body goes here!" data-original-title="Default Popover"> trigger me on click </a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel
-					<a href="javascript:;"
-						class="popovers" data-container="body" data-trigger="hover" data-content="Popover body goes here! Popover body goes here!" data-original-title="Another Popover"> trigger me on hover </a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa.
-					</p>
-				<button class="btn btn-default popovers"
-					data-container="body"
-					data-trigger="hover"
-					data-placement="top"
-					data-content="Popover body goes here! Popover body goes here!"
-					data-original-title="Popover in top"
-				>
-					Top
-				</button>
-				<button
-					class="btn btn-default popovers"
-					data-container="body"
-					onclick=" "
-					data-trigger="hover"
-					data-placement="left"
-					data-content="Popover body goes here! Popover body goes here!"
-					data-original-title="Popover in left"
-				>
-					Left
-				</button>
-				<button
-					class="btn btn-default popovers"
-					data-container="body"
-					data-trigger="hover"
-					data-placement="right"
-					data-content="Popover body goes here! Popover body goes here!"
-					data-original-title="Popover in right"
-				>
-					Right
-				</button>
-				<button
-					class="btn btn-default popovers"
-					data-container="body"
-					data-trigger="hover"
-					data-placement="bottom"
-					data-content="Popover body goes here! Popover body goes here!"
-					data-original-title="Popover in bottom"
-				>
-					Bottom
-				</button>
+					<a href="javascript:;" class="popovers" data-container="body" data-trigger="hover" data-content="Popover body goes here! Popover body goes here!" data-original-title="Another Popover"> trigger me on hover </a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa.
+				</p>
+				<m-button
+					popover="Popover in top"
+					popover-content="Popover body goes here! Popover body goes here!"
+					tooltip-placement="top"
+					popover-trigger="hover"
+					button-style="bootstrap"
+					level="default"
+				>Top</m-button>
+				<m-button
+					popover="Popover in top"
+					popover-content="Popover body goes here! Popover body goes here!"
+					tooltip-placement="top"
+					popover-trigger="hover"
+					button-style="bootstrap"
+					level="default"
+				>Top</m-button>
+				<m-button
+					popover="Popover in left"
+					popover-content="Popover body goes here! Popover body goes here!"
+					tooltip-placement="left"
+					popover-trigger="hover"
+					button-style="bootstrap"
+					level="default"
+				>Left</m-button>
+				<m-button
+					popover="Popover in right"
+					popover-content="Popover body goes here! Popover body goes here!"
+					tooltip-placement="right"
+					popover-trigger="hover"
+					button-style="bootstrap"
+					level="default"
+				>Right</m-button>
+				<m-button
+					popover="Popover in bottom"
+					popover-content="Popover body goes here! Popover body goes here!"
+					tooltip-placement="bottom"
+					popover-trigger="hover"
+					button-style="bootstrap"
+					level="default"
+				>Bottom</m-button>
 			</m-portlet-block>
 		</m-portlet>
 		<!-- END POPOVERS PORTLET-->
@@ -400,19 +421,20 @@
 				<h4 class="block">Badges</h4>
 				<ul class="list-group">
 					<li class="list-group-item"> Cras justo odio
-						<span class="badge badge-default"> 3 </span>
+						<m-badge level="default" text="3" roundless="false"/>
 					</li>
 					<li class="list-group-item"> Dapibus ac facilisis in
-						<span class="badge badge-success"> 11 </span>
+						<m-badge level="success" text="11" roundless="false"/>
 					</li>
 					<li class="list-group-item"> Morbi leo risus
-						<span class="badge badge-danger"> new </span>
+						<m-badge level="danger" text="new" roundless="false"/>
 					</li>
 					<li class="list-group-item"> Porta ac consectetur ac
-						<span class="badge badge-warning"> 4 </span>
+						<m-badge level="warning" text="4" roundless="false"/>
 					</li>
 					<li class="list-group-item"> Vestibulum at eros
 						<span class="badge badge-info"> 3 </span>
+						<m-badge level="info" text="3" roundless="false"/>
 					</li>
 				</ul>
 				<h4 class="block">Contextual States</h4>
@@ -420,10 +442,11 @@
 					<li class="list-group-item"> Default </li>
 					<li class="list-group-item list-group-item-success"> Success </li>
 					<li class="list-group-item list-group-item-info"> Info
-						<span class="badge badge-warning"> 3 </span>
+						<m-badge level="warning" text="3" roundless="false"/>
 					</li>
 					<li class="list-group-item list-group-item-warning"> Warning
 						<span class="badge badge-default"> 3 </span>
+						<m-badge text="3" roundless="false"/>
 					</li>
 					<li class="list-group-item list-group-item-danger"> Danger </li>
 				</ul>
@@ -436,6 +459,7 @@
 					</li>
 					<li class="list-group-item disabled"> Item 4
 						<span class="badge badge-default"> 3 </span>
+						<m-badge text="3" :roundless="false"/>
 					</li>
 				</ul>
 				<h4 class="block">Linked Contextual Items</h4>
@@ -444,9 +468,11 @@
 					<a href="javascript:;" class="list-group-item list-group-item-success"> Success </a>
 					<a href="javascript:;" class="list-group-item list-group-item-info"> Info
 						<span class="badge badge-warning"> 3 </span>
+						<m-badge level="warning" text="3" :roundless="false"/>
 					</a>
 					<a href="javascript:;" class="list-group-item list-group-item-warning"> Warning
 						<span class="badge badge-default"> 3 </span>
+						<m-badge text="3" roundless="false"/>
 					</a>
 					<a href="javascript:;" class="list-group-item list-group-item-danger"> Danger </a>
 				</div>
@@ -811,7 +837,7 @@
 				</a>
 			</template>
 			<m-portlet-block>
-				<h4 class="block">Labels & Badges Styles</h4>
+				<h4 class="block">Labels &amp; Badges Styles</h4>
 				<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
@@ -826,18 +852,19 @@
 							<td> Default </td>
 							<td>
 								<span class="label label-default"> Default </span>
+								<m-label level="default" text="Default" />
 							</td>
 							<td>
-								<span class="badge badge-default"> 5 </span>
+								<m-badge level="default" text="5" />
 							</td>
 							<td>
-								<span class="badge badge-default badge-roundless"> 3 </span>
+								<m-badge level="default" text="3" :roundless="true" />
 							</td>
 						</tr>
 						<tr>
 							<td> Primary </td>
 							<td>
-								<span class="label label-primary"> Primary </span>
+								<m-label level="primary" text="Primary" />
 							</td>
 							<td>
 								<span class="badge badge-primary"> 4 </span>
@@ -1278,6 +1305,8 @@ import mPortletBlock from "../../components/metronic/structure/m-portlet-block.v
 
 import mProgress from "../../components/metronic/informative/m-progress.vue"
 import mProgressBar from "../../components/metronic/informative/m-progress-bar.vue"
+import mBadge from "../../components/metronic/informative/m-badge.vue"
+import mLabel from "../../components/metronic/informative/m-label.vue"
 
 import mAlert from "../../components/metronic/informative/m-alert.vue"
 import mNote from "../../components/metronic/informative/m-note.vue"
@@ -1299,13 +1328,10 @@ export default {
 		mIcon,
 		mProgress,
 		mProgressBar,
+		mBadge,
+		mLabel,
 		mButton,
 		mLinkButton
-	},
-	methods: {
-		buttonClicked: function () {
-			this.$refs.myModal4.show()
-		}
 	}
 }
 </script>
