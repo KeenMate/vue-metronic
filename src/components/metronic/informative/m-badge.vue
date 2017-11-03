@@ -3,7 +3,12 @@
 </template>
 
 <script>
+import MetronicMixin from "../mixins/metronic-component"
+
 export default {
+	mixins: [
+		MetronicMixin
+	],
 	props: {
 		text: {
 			type: String,
@@ -14,9 +19,13 @@ export default {
 			default: "default",
 			options: ["success", "danger", "warning", "primary", "info", "default"]
 		},
-		roundless: {
+		rounded: {
 			type: Boolean,
-			default: true
+			default: false
+		},
+		pullRight: {
+			type: Boolean,
+			default: false
 		}
 	},
 	computed: {
@@ -27,8 +36,13 @@ export default {
 			if (this.level)
 				style["badge" + this.level] = true
 
-			if (this.roundless)
+			if (!this.rounded)
 				style["badge-roundless"] = true
+
+			if (this.pullRight)
+				style["pull-right"] = true
+
+			return this.combineCss(style)
 		}
 	}
 }

@@ -1,9 +1,14 @@
 <template>
-	<span class="label label-success"> {{text}} </span>
+	<span :class="componentStyle"> {{text}} </span>
 </template>
 
 <script>
+import MetronicMixin from "../mixins/metronic-component"
+
 export default {
+	mixins: [
+		MetronicMixin
+	],
 	props: {
 		text: {
 			type: String,
@@ -22,13 +27,12 @@ export default {
 	computed: {
 		componentStyle: function () {
 			var style = {
-				"badge": true
+				"label": true
 			}
 			if (this.level)
-				style["badge" + this.level] = true
+				style["label-" + this.level] = true
 
-			if (this.roundless)
-				style["badge-roundless"] = true
+			return this.combineCss(style)
 		}
 	}
 }
