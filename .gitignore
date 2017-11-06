@@ -20,3 +20,4 @@ selenium-debug.log
 # Metronic
 static/metronic/global
 static/metronic/layout
+static/metronic/pages
