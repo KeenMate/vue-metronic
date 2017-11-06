@@ -281,10 +281,32 @@
 						class="tooltips" data-original-title="Another tooltip"> have a </a> terry richardson vinyl chambray.
 					<a href="javascript:;" class="tooltips" title="12" data-original-title="The last tip!"> twitter handle </a> freegan cred raw denim single-origin coffee viral.
 				</p>
-				<button class="btn btn-default tooltips" data-container="body" data-placement="top" data-original-title="Tooltip in top">Top</button>
-				<button class="btn btn-default tooltips" data-container="body" data-placement="left" data-original-title="Tooltip in left">Left</button>
-				<button class="btn btn-default tooltips" data-container="body" data-placement="right" data-original-title="Tooltip in right">Right</button>
-				<button class="btn btn-default tooltips" data-container="body" data-placement="bottom" data-original-title="Tooltip in bottom">Bottom</button>
+				<m-button
+					tooltip="Tooltip in top"
+					tooltip-placement="top"
+					button-style="bootstrap"
+					level="default"
+				>Top</m-button>
+				<m-button
+					tooltip="Tooltip in Left"
+					tooltip-placement="left"
+					button-style="bootstrap"
+					level="default"
+				>Left</m-button>
+				<m-button
+					tooltip="Tooltip in right"
+					tooltip-placement="right"
+					button-style="bootstrap"
+					level="default"
+				>Right</m-button>
+				<m-button
+					tooltip="Tooltip in bottom"
+					tooltip-placement="bottom"
+					button-style="bootstrap"
+					level="default"
+				>
+					Bottom
+				</m-button>
 			</m-portlet-block>
 		</m-portlet>
 		<!-- END TOOLTIPS PORTLET-->
@@ -314,49 +336,48 @@
 				<p>
 					Tight pants next level keffiyeh
 					<a href="javascript:;" class="popovers" data-container="body" data-content="Popover body goes here! Popover body goes here!" data-original-title="Default Popover"> trigger me on click </a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel
-					<a href="javascript:;"
-						class="popovers" data-container="body" data-trigger="hover" data-content="Popover body goes here! Popover body goes here!" data-original-title="Another Popover"> trigger me on hover </a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa.
-					</p>
-				<button class="btn btn-default popovers"
-					data-container="body"
-					data-trigger="hover"
-					data-placement="top"
-					data-content="Popover body goes here! Popover body goes here!"
-					data-original-title="Popover in top"
-				>
-					Top
-				</button>
-				<button
-					class="btn btn-default popovers"
-					data-container="body"
-					onclick=" "
-					data-trigger="hover"
-					data-placement="left"
-					data-content="Popover body goes here! Popover body goes here!"
-					data-original-title="Popover in left"
-				>
-					Left
-				</button>
-				<button
-					class="btn btn-default popovers"
-					data-container="body"
-					data-trigger="hover"
-					data-placement="right"
-					data-content="Popover body goes here! Popover body goes here!"
-					data-original-title="Popover in right"
-				>
-					Right
-				</button>
-				<button
-					class="btn btn-default popovers"
-					data-container="body"
-					data-trigger="hover"
-					data-placement="bottom"
-					data-content="Popover body goes here! Popover body goes here!"
-					data-original-title="Popover in bottom"
-				>
-					Bottom
-				</button>
+					<a href="javascript:;" class="popovers" data-container="body" data-trigger="hover" data-content="Popover body goes here! Popover body goes here!" data-original-title="Another Popover"> trigger me on hover </a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa.
+				</p>
+				<m-button
+					popover="Popover in top"
+					popover-content="Popover body goes here! Popover body goes here!"
+					tooltip-placement="top"
+					popover-trigger="hover"
+					button-style="bootstrap"
+					level="default"
+				>Top</m-button>
+				<m-button
+					popover="Popover in top"
+					popover-content="Popover body goes here! Popover body goes here!"
+					tooltip-placement="top"
+					popover-trigger="hover"
+					button-style="bootstrap"
+					level="default"
+				>Top</m-button>
+				<m-button
+					popover="Popover in left"
+					popover-content="Popover body goes here! Popover body goes here!"
+					tooltip-placement="left"
+					popover-trigger="hover"
+					button-style="bootstrap"
+					level="default"
+				>Left</m-button>
+				<m-button
+					popover="Popover in right"
+					popover-content="Popover body goes here! Popover body goes here!"
+					tooltip-placement="right"
+					popover-trigger="hover"
+					button-style="bootstrap"
+					level="default"
+				>Right</m-button>
+				<m-button
+					popover="Popover in bottom"
+					popover-content="Popover body goes here! Popover body goes here!"
+					tooltip-placement="bottom"
+					popover-trigger="hover"
+					button-style="bootstrap"
+					level="default"
+				>Bottom</m-button>
 			</m-portlet-block>
 		</m-portlet>
 		<!-- END POPOVERS PORTLET-->
@@ -400,19 +421,19 @@
 				<h4 class="block">Badges</h4>
 				<ul class="list-group">
 					<li class="list-group-item"> Cras justo odio
-						<span class="badge badge-default"> 3 </span>
+						<m-badge level="default" text="3" rounded />
 					</li>
 					<li class="list-group-item"> Dapibus ac facilisis in
-						<span class="badge badge-success"> 11 </span>
+						<m-badge level="success" text="11" rounded />
 					</li>
 					<li class="list-group-item"> Morbi leo risus
-						<span class="badge badge-danger"> new </span>
+						<m-badge level="danger" text="new" rounded />
 					</li>
 					<li class="list-group-item"> Porta ac consectetur ac
-						<span class="badge badge-warning"> 4 </span>
+						<m-badge level="warning" text="4" rounded />
 					</li>
 					<li class="list-group-item"> Vestibulum at eros
-						<span class="badge badge-info"> 3 </span>
+						<m-badge level="info" text="3" rounded />
 					</li>
 				</ul>
 				<h4 class="block">Contextual States</h4>
@@ -420,10 +441,10 @@
 					<li class="list-group-item"> Default </li>
 					<li class="list-group-item list-group-item-success"> Success </li>
 					<li class="list-group-item list-group-item-info"> Info
-						<span class="badge badge-warning"> 3 </span>
+						<m-badge level="warning" text="3" rounded />
 					</li>
 					<li class="list-group-item list-group-item-warning"> Warning
-						<span class="badge badge-default"> 3 </span>
+						<m-badge text="3" rounded />
 					</li>
 					<li class="list-group-item list-group-item-danger"> Danger </li>
 				</ul>
@@ -432,10 +453,10 @@
 					<li class="list-group-item disabled"> Item 1 </li>
 					<li class="list-group-item disabled"> Item 2 </li>
 					<li class="list-group-item disabled"> Item 3
-						<span class="badge badge-warning"> 3 </span>
+						<m-badge level="warning" text="3" rounded />
 					</li>
 					<li class="list-group-item disabled"> Item 4
-						<span class="badge badge-default"> 3 </span>
+						<m-badge text="3" rounded />
 					</li>
 				</ul>
 				<h4 class="block">Linked Contextual Items</h4>
@@ -443,10 +464,10 @@
 					<a href="javascript:;" class="list-group-item"> Default </a>
 					<a href="javascript:;" class="list-group-item list-group-item-success"> Success </a>
 					<a href="javascript:;" class="list-group-item list-group-item-info"> Info
-						<span class="badge badge-warning"> 3 </span>
+						<m-badge level="warning" text="3" rounded />
 					</a>
 					<a href="javascript:;" class="list-group-item list-group-item-warning"> Warning
-						<span class="badge badge-default"> 3 </span>
+						<m-badge text="3" rounded />
 					</a>
 					<a href="javascript:;" class="list-group-item list-group-item-danger"> Danger </a>
 				</div>
@@ -599,19 +620,19 @@
 						</div>
 						<ul class="list-group">
 							<li class="list-group-item"> Cras justo odio
-								<span class="badge badge-default"> 3 </span>
+								<m-badge level="default" text="3" rounded />
 							</li>
 							<li class="list-group-item"> Dapibus ac facilisis in
-								<span class="badge badge-success"> 11 </span>
+								<m-badge level="success" text="11" rounded />
 							</li>
 							<li class="list-group-item"> Morbi leo risus
-								<span class="badge badge-danger"> new </span>
+								<m-badge level="danger" text="new" rounded />
 							</li>
 							<li class="list-group-item"> Porta ac consectetur ac
-								<span class="badge badge-warning"> 4 </span>
+								<m-badge level="warning" text="4" rounded />
 							</li>
 							<li class="list-group-item"> Vestibulum at eros
-								<span class="badge badge-info"> 3 </span>
+								<m-badge level="info" text="3" rounded />
 							</li>
 							<li class="list-group-item"> Vestibulum at eros </li>
 						</ul>
@@ -811,7 +832,7 @@
 				</a>
 			</template>
 			<m-portlet-block>
-				<h4 class="block">Labels & Badges Styles</h4>
+				<h4 class="block">Labels &amp; Badges Styles</h4>
 				<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
@@ -825,73 +846,73 @@
 						<tr>
 							<td> Default </td>
 							<td>
-								<span class="label label-default"> Default </span>
+								<m-label level="default" text="Default" />
 							</td>
 							<td>
-								<span class="badge badge-default"> 5 </span>
+								<m-badge level="default" text="5" rounded />
 							</td>
 							<td>
-								<span class="badge badge-default badge-roundless"> 3 </span>
+								<m-badge level="default" text="3" />
 							</td>
 						</tr>
 						<tr>
 							<td> Primary </td>
 							<td>
-								<span class="label label-primary"> Primary </span>
+								<m-label level="primary" text="Primary" />
 							</td>
 							<td>
-								<span class="badge badge-primary"> 4 </span>
+								<m-badge level="primary" text="4" rounded />
 							</td>
 							<td>
-								<span class="badge badge-primary badge-roundless"> Hot </span>
+								<m-badge level="primary" text="Hot" />
 							</td>
 						</tr>
 						<tr>
 							<td> Info </td>
 							<td>
-								<span class="label label-info"> Info </span>
+								<m-label level="info" text="Info" />
 							</td>
 							<td>
-								<span class="badge badge-info"> 6 </span>
+								<m-badge level="info" text="6" rounded/>
 							</td>
 							<td>
-								<span class="badge badge-info badge-roundless"> New </span>
+								<m-badge level="info" text="New" />
 							</td>
 						</tr>
 						<tr>
 							<td> Success </td>
 							<td>
-								<span class="label label-success"> Success </span>
+								<m-label level="success" text="Success" />
 							</t>
 							<td>
-								<span class="badge badge-success"> 1 </span>
+								<m-badge level="success" text="1" rounded />
 							</td>
 							<td>
-								<span class="badge badge-success badge-roundless"> 2 </span>
+								<m-badge level="success" text="2" />
 							</td>
 						</tr>
 						<tr>
 							<td> Danger </td>
 							<td>
-								<span class="label label-danger"> Danger </span>
+								<m-label level="danger" text="Danger" />
 							</td>
 							<td>
-								<span class="badge badge-danger"> 3 </span>
+								<m-badge level="danger" text="3" rounded />
 							</td>
 							<td>
-								<span class="badge badge-danger badge-roundless"> 5 </span>
+								<m-badge level="danger" text="5" />
 							</td>
 						</tr>
 						<tr>
 							<td> Warning </td>
 							<td>
-								<span class="label label-warning"> Warning </span>
+								<m-label level="warning" text="warning" />
 							</td>
 							<td>
-								<span class="badge badge-warning"> 12 </span>
+								<m-badge level="warning" text="12" rounded />
 							</td>
 							<td>
-								<span class="badge badge-warning badge-roundless"> 3 </span>
+								<m-badge level="warning" text="3" />
 							</td>
 						</tr>
 					</tbody>
@@ -899,22 +920,22 @@
 				<h4 class="block">Labels In Headings</h4>
 				<div class="well">
 					<h1>Example heading
-						<span class="label label-default"> default </span>
+						<m-label text="default" />
 					</h1>
 					<h2>Example heading
-						<span class="label label-success"> success </span>
+						<m-label level="success" text="success" />
 					</h2>
 					<h3>Example heading
-						<span class="label label-danger"> danger </span>
+						<m-label level="danger" text="danger" />
 					</h3>
 					<h4 class="block">Example heading
-						<span class="label label-info"> info </span>
+						<m-label level="info" text="info" />
 					</h4>
 					<h4>Example heading
-						<span class="label label-warning"> warning </span>
+						<m-label level="warning" text="warning" />
 					</h4>
 					<h6>Example heading
-						<span class="label label-primary"> primary </span>
+						<m-label level="primary" text="primary" />
 					</h6>
 				</div>
 				<div class="clearfix">
@@ -930,7 +951,7 @@
 						</li>
 						<li>
 							<a href="javascript:;"> Messages
-								<span class="badge badge-danger"> 3 </span>
+								<m-badge level="danger" text="3" rounded />
 							</a>
 						</li>
 					</ul>
@@ -938,14 +959,14 @@
 					<ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
 						<li class="active">
 							<a href="javascript:;">
-									<span class="badge badge-warning pull-right"> 42 </span> Home </a>
+								<m-badge level="warning" text="42" rounded pull-right /> Home </a>
 						</li>
 						<li>
 							<a href="javascript:;"> Profile </a>
 						</li>
 						<li>
 							<a href="javascript:;">
-									<span class="badge badge-success pull-right"> 3 </span> Messages </a>
+									<m-badge level="success" text="3" rounded pull-right /> Messages </a>
 						</li>
 					</ul>
 				</div>
@@ -955,23 +976,23 @@
 							<ul class="dropdown-menu" role="menu">
 									<li role="presentation">
 											<a role="menuitem" tabindex="-1" href="javascript:;"> Action
-													<span class="badge badge-success"> 2 </span>
+													<m-badge level="success" text="2" rounded />
 											</a>
 									</li>
 									<li role="presentation">
 											<a role="menuitem" tabindex="-1" href="javascript:;"> Another action
-													<span class="badge badge-warning"> 5 </span>
+													<m-badge level="warning" text="5" rounded />
 											</a>
 									</li>
 									<li role="presentation">
 											<a role="menuitem" tabindex="-1" href="javascript:;"> Something here
-													<span class="badge badge-danger"> 7 </span>
+													<m-badge level="danger" text="7" rounded />
 											</a>
 									</li>
 									<li role="presentation" class="divider"> </li>
 									<li role="presentation">
 											<a role="menuitem" tabindex="-1" href="javascript:;"> Separated link
-													<span class="badge badge-info"> 12 </span>
+													<m-badge level="info" text="12" rounded />
 											</a>
 									</li>
 							</ul>
@@ -985,23 +1006,23 @@
 						<ul class="dropdown-menu" role="menu">
 							<li role="presentation">
 								<a role="menuitem" tabindex="-1" href="javascript:;"> Action
-									<span class="badge badge-success"> 2 </span>
+									<m-badge level="success" text="2" rounded />
 								</a>
 							</li>
 							<li role="presentation">
 								<a role="menuitem" tabindex="-1" href="javascript:;"> Another action
-									<span class="badge badge-warning"> 5 </span>
+									<m-badge level="warning" text="5" rounded />
 								</a>
 							</li>
 							<li role="presentation">
 								<a role="menuitem" tabindex="-1" href="javascript:;"> Something here
-									<span class="badge badge-danger"> 7 </span>
+									<m-badge level="danger" text="7" rounded />
 								</a>
 							</li>
 							<li role="presentation" class="divider"> </li>
 							<li role="presentation">
 								<a role="menuitem" tabindex="-1" href="javascript:;"> Separated link
-									<span class="badge badge-info"> 12 </span>
+									<m-badge level="info" text="12" rounded />
 								</a>
 							</li>
 						</ul>
@@ -1175,7 +1196,7 @@
 						<a href="javascript:;"> Newer &rarr; </a>
 					</li>
 				</ul>
-				<h4 class="block">With Styled Buttons & Icons</h4>
+				<h4 class="block">With Styled Buttons &amp; Icons</h4>
 				<div class="well"> Tight pants next level keffiyeh trigger me on click haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. </div>
 				<ul class="pager">
 					<li class="previous">
@@ -1278,6 +1299,8 @@ import mPortletBlock from "../../components/metronic/structure/m-portlet-block.v
 
 import mProgress from "../../components/metronic/informative/m-progress.vue"
 import mProgressBar from "../../components/metronic/informative/m-progress-bar.vue"
+import mBadge from "../../components/metronic/informative/m-badge.vue"
+import mLabel from "../../components/metronic/informative/m-label.vue"
 
 import mAlert from "../../components/metronic/informative/m-alert.vue"
 import mNote from "../../components/metronic/informative/m-note.vue"
@@ -1299,13 +1322,10 @@ export default {
 		mIcon,
 		mProgress,
 		mProgressBar,
+		mBadge,
+		mLabel,
 		mButton,
 		mLinkButton
-	},
-	methods: {
-		buttonClicked: function () {
-			this.$refs.myModal4.show()
-		}
 	}
 }
 </script>
