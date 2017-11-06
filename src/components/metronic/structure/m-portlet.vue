@@ -21,13 +21,11 @@
 				<slot name="pagination"></slot>
 			</div>
 		</div>
-		<div class="portlet-body util-btn-margin-bottom-5">
+		<div class="portlet-body">
 			<slot></slot>
 		</div>
 	</div>
 </template>
-
-
 
 <script>
 export default {
@@ -122,9 +120,9 @@ export default {
 
 			if (this.iconColor && this.iconColor !== "") {
 				style["font-" + this.iconColor] = true
-
-			return style
 			}
+			
+			return style
 		}
 	}
 }

@@ -1,18 +1,14 @@
 <template>
-	<div class="btn-toolbar margin-bottom-10">
+	<div :class="toolbarStyle">
 			<slot></slot>
 	</div>
 </template>
 
 <script>
 import MetronicComponent from "../mixins/metronic-component"
-import mButtonGroup from './m-button-group.vue'
 
 export default {
 	mixins: [MetronicComponent],
-	components: {
-		mButtonGroup
-	},
 	computed: {
 		toolbarStyle: function () {
 			var style = {
