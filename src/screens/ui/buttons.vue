@@ -1,11 +1,7 @@
 <template>
 <m-row>
 	<m-column :size="6">
-		<m-portlet title="Buttons" type="light" bordered
-			caption="tasks summary.."
-			title-color="green-haze"
-			title-bold
-			title-uppercased>
+		<m-portlet title="Buttons" caption="Not sure if this works..">
 			<m-portlet-block>
 				<h4 class="block">Default Bootstrap Buttons(Customized to Match Theme Style)</h4>
 				<!-- Standard gray button with gradient -->
@@ -18,6 +14,21 @@
 				<m-button level="warning" buttonStyle="bootstrap">Warning</m-button>
 				<m-button level="danger" buttonStyle="bootstrap">Danger</m-button>
 				<m-button level="link" buttonStyle="bootstrap">Link</m-button>
+			</m-portlet-block>
+			<m-portlet-block>
+				<button type="button" class="btn btn-default">Default</button>
+				<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+				<button type="button" class="btn btn-primary">Primary</button>
+				<!-- Indicates a successful or positive action -->
+				<button type="button" class="btn btn-success">Success</button>
+				<!-- Contextual button for informational alert messages -->
+				<button type="button" class="btn btn-info">Info</button>
+				<!-- Indicates caution should be taken with this action -->
+				<button type="button" class="btn btn-warning">Warning</button>
+				<!-- Indicates a dangerous or potentially negative action -->
+				<button type="button" class="btn btn-danger">Danger</button>
+				<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+				<button type="button" class="btn btn-link">Link</button>
 			</m-portlet-block>
 			<m-portlet-block>
 				<m-portlet-block>
@@ -60,23 +71,23 @@
 				<m-portlet-block>
 					<h4 class="block">More Button Colors(go to
 						<a href="ui_colors.html"> ui_colors.html </a> for more colors) </h4>
-						<m-button color="blue-hoki">Blue Hoki</m-button>
-						<m-button color="blue-madison">Blue Madison</m-button>
-						<m-button color="green-meadow">Green Meadow</m-button>
-						<m-button color="red-sunglo">Red Sunglo</m-button>
-						<m-button color="yellow-crusta">Yellow Crusta</m-button>
-						<m-button color="purple-plum">Purple Plum</m-button>
-						<m-button color="grey-cascade">Grey Cascade</m-button>
+						<button type="button" class="btn blue-hoki">Blue Hoki</button>
+						<button type="button" class="btn blue-madison">Blue Madison</button>
+						<button type="button" class="btn green-meadow">Green Meadow</button>
+						<button type="button" class="btn red-sunglo">Red Sunglo</button>
+						<button type="button" class="btn yellow-crusta">Yellow Crusta</button>
+						<button type="button" class="btn purple-plum">Purple Plum</button>
+						<button type="button" class="btn grey-cascade">Grey Cascade</button>
 				</m-portlet-block>
 				<m-portlet-block>
 					<h4 class="block">Disabled</h4>
-					<a href="javascript:" class="btn default disabled"> Default </a>
-					<a href="javascript:" class="btn red disabled"> Red </a>
-					<a href="javascript:" class="btn blue disabled"> Blue </a>
-					<a href="javascript:" class="btn green disabled"> Green </a>
-					<a href="javascript:" class="btn yellow disabled"> Yellow </a>
-					<a href="javascript:" class="btn purple disabled"> Purple </a>
-					<a href="javascript:" class="btn dark disabled"> Dark </a>
+					<a href="javascript:;" class="btn default disabled"> Default </a>
+					<a href="javascript:;" class="btn red disabled"> Red </a>
+					<a href="javascript:;" class="btn blue disabled"> Blue </a>
+					<a href="javascript:;" class="btn green disabled"> Green </a>
+					<a href="javascript:;" class="btn yellow disabled"> Yellow </a>
+					<a href="javascript:;" class="btn purple disabled"> Purple </a>
+					<a href="javascript:;" class="btn dark disabled"> Dark </a>
 				</m-portlet-block>
 				<m-portlet-block>
 					<h4 class="block">Button Sizes</h4>
@@ -87,14 +98,14 @@
 				</m-portlet-block>
 				<m-portlet-block>
 					<h4 class="block">Button Tags</h4>
-					<a href="javascript:" class="btn default"> Link </a>
+					<a href="javascript:;" class="btn default"> Link </a>
 					<m-button button-style="bootstrap">Button</m-button>
 					<input type="button" class="btn default" value="Input">
 					<input type="submit" class="btn default" value="Submit"> 
 				</m-portlet-block>
 				<m-portlet-block>
 					<h4 class="block">Block Buttons</h4>
-					<a href="javascript:" class="btn default btn-block"> Link </a>
+					<a href="javascript:;" class="btn default btn-block"> Link </a>
 					<m-button button-style="bootstrap" color="blue btn-block">Button</m-button>
 					<input type="button" class="btn red btn-block" value="Input">
 					<input type="submit" class="btn purple btn-block" value="Submit">
@@ -109,13 +120,7 @@
 		</m-portlet>
 	</m-column>
 	<m-column :size="6">
-		<m-portlet title="Button groups" type="light" 
-			bordered icon-color="red-mint" 
-			icon="icon-settings" 
-			title-color="red-mint" 
-			title-bold 
-			title-uppercased>
-
+		<m-portlet title="Button groups">
 			<m-portlet-block>
 				<h4>Basic Example</h4>
 				<m-button-group>
@@ -131,76 +136,79 @@
 			</m-portlet-block>
 
 			<m-portlet-block>
-				<h4 class="block">Button Toolbar</h4>
-				<m-button-toolbar :custom-css="['margin-bottom-10']">
-					<m-button-group>
-						<m-button button-style="bootstrap">1</m-button>
-						<m-button button-style="bootstrap">2</m-button>
-						<m-button button-style="bootstrap">3</m-button>
-						<m-button button-style="bootstrap">4</m-button>
-					</m-button-group>
-					<m-button-group>
-						<m-button button-style="bootstrap">5</m-button>
-						<m-button button-style="bootstrap">6</m-button>
-						<m-button button-style="bootstrap">7</m-button>
-					</m-button-group>
-					<m-button-group>
-						<m-button button-style="bootstrap">8</m-button>
-					</m-button-group>
-				</m-button-toolbar>
-				<m-button-toolbar>
-					<m-button-group solid>
-							<m-button button-style="bootstrap" color="red" >1</m-button>
-							<m-button button-style="bootstrap" color="green" >2</m-button>
-							<m-button button-style="bootstrap" color="blue" >3</m-button>
-							<m-button button-style="bootstrap" color="yellow" >4</m-button>
-					</m-button-group>
-					<m-button-group solid>
-							<m-button button-style="bootstrap" color="purple" >5</m-button>
-							<m-button button-style="bootstrap" color="dark" >6</m-button>
-							<m-button button-style="bootstrap" color="default" >7</m-button>
-					</m-button-group>
-					<m-button-group solid>
-							<m-button button-style="bootstrap" color="red" >8</m-button>
-					</m-button-group>
-				</m-button-toolbar>
-			</m-portlet-block>
+			<h4 class="block">Button Toolbar</h4>
+			<m-button-toolbar custom-css='["margin-bottom-10"]'>
+				<m-button-group>
+					<m-button button-style="bootstrap">1</m-button>
+					<m-button button-style="bootstrap">2</m-button>
+					<m-button button-style="bootstrap">3</m-button>
+					<m-button button-style="bootstrap">4</m-button>
+				</m-button-group>
+				<m-button-group>
+					<m-button button-style="bootstrap">5</m-button>
+					<m-button button-style="bootstrap">6</m-button>
+					<m-button button-style="bootstrap">7</m-button>
+				</m-button-group>
+				<m-button-group>
+					<m-button button-style="bootstrap">8</m-button>
+				</m-button-group>
+			</m-button-toolbar>
+			<m-button-toolbar>
+				<m-button-group solid>
+						<m-button button-style="bootstrap" color="red" type="button">1</m-button>
+						<m-button button-style="bootstrap" color="green" type="button">2</m-button>
+						<m-button button-style="bootstrap" color="blue" type="button">3</m-button>
+						<m-button button-style="bootstrap" color="yellow" type="button">4</m-button>
+				</m-button-group>
+				<m-button-group solid>
+						<m-button button-style="bootstrap" color="purple" type="button">5</m-button>
+						<m-button button-style="bootstrap" color="dark" type="button">6</m-button>
+						<m-button button-style="bootstrap" color="default" type="button">7</m-button>
+				</m-button-group>
+				<m-button-group solid>
+						<m-button button-style="bootstrap" color="red" type="button">8</m-button>
+				</m-button-group>
+			</m-button-toolbar>
+		</m-portlet-block>
 
-			<m-portlet-block>
+		<m-portlet-block>
 				<h4 class="block">Button Group Sizing</h4>
 				<m-button-toolbar>
-						<m-button-group solid size="large" :custom-css="['margin-bottom-10']">
-							<m-button color="red">Left</m-button>
-							<m-button color="green">Middle</m-button>
-							<m-button color="blue">Right</m-button>
-						</m-button-group>
+						<div class="btn-group btn-group-lg btn-group-solid margin-bottom-10">
+								<button class="btn red" type="button">Left</button>
+								<button class="btn green" type="button">Middle</button>
+								<button class="btn blue" type="button">Right</button>
+						</div>
 				</m-button-toolbar>
-				<m-button-toolbar :custom-css="['margin-bottom-10']">
-						<m-button-group solid>
-								<m-button color="red">Left</m-button>
-								<m-button color="green">Middle</m-button>
-								<m-button color="blue">Right</m-button>
-						</m-button-group>
+				<m-button-toolbar custom-css='["margin-bottom-10"]'>
+						<div class="btn-group btn-group-solid">
+								<button class="btn red" type="button">Left</button>
+								<button class="btn green" type="button">Middle</button>
+								<button class="btn blue" type="button">Right</button>
+						</div>
 				</m-button-toolbar>
-				<m-button-toolbar :custom-css="['margin-bottom-10']">
-						<m-button-group solid size="small">
-								<m-button color="red">Left</m-button>
-								<m-button color="green">Middle</m-button>
-								<m-button color="blue">Right</m-button>
-						</m-button-group>
+				<m-button-toolbar custom-css='["margin-bottom-10"]'>
+						<div class="btn-group btn-group-sm btn-group-solid">
+								<button class="btn red" type="button">Left</button>
+								<button class="btn green" type="button">Middle</button>
+								<button class="btn blue" type="button">Right</button>
+						</div>
 				</m-button-toolbar>
-				<m-button-toolbar :custom-css="['margin-bottom-10']">
-						<m-button-group solid size="extra-small">
-								<m-button color="red">Left</m-button>
-								<m-button color="green">Middle</m-button>
-								<m-button color="blue">Right</m-button>
-						</m-button-group>
+				<m-button-toolbar custom-css='["margin-bottom-10"]'>
+						<div class="btn-group btn-group-xs btn-group-solid">
+								<button class="btn red" type="button">Left</button>
+								<button class="btn green" type="button">Middle</button>
+								<button class="btn blue" type="button">Right</button>
+						</div>
 				</m-button-toolbar>
-			</m-portlet-block>
+		</m-portlet-block>
+
+
 		</m-portlet>
 	</m-column>
 </m-row>
 </template>
+
 
 <script>
 import mButton from "../../components/metronic/ui/m-button.vue"
@@ -210,9 +218,6 @@ import mPortlet from "../../components/metronic/structure/m-portlet.vue"
 import mPortletBlock from "../../components/metronic/structure/m-portlet-block.vue"
 import mColumn from "../../components/metronic/structure/m-column.vue"
 import mRow from "../../components/metronic/structure/m-row.vue"
-
-import Ladda from "ladda"
-import $ from "jquery"
 
 export default {
 	name: "ButtonsScreen",
@@ -224,36 +229,6 @@ export default {
 		mButton,
 		mButtonGroup,
 		mButtonToolbar	
-	},
-	mounted: function () {
-		this.initPage()
-	},
-	methods: {
-		initPage: function () {
-			$(".demo-loading-btn").click(function () {
-            var btn = $(this)
-            btn.button("loading")
-            setTimeout(function () {
-                btn.button("reset")
-            }, 3000)
-        })
-
-        Ladda.bind(".mt-ladda-btn", { timeout: 2000 })
-        Ladda.bind(".mt-ladda-btn.mt-progress-demo ", {
-                callback: function(instance) {
-                    var progress = 0
-                    var interval = setInterval(function() {
-                        progress = Math.min(progress + Math.random() * 0.1, 1)
-                        instance.setProgress(progress)
-
-                        if (progress === 1) {
-                            instance.stop()
-                            clearInterval(interval)
-                        }
-                    }, 200)
-                }
-            })
-		}
 	}
 }
 </script>

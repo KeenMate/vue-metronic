@@ -4,6 +4,5 @@
 @import url("./global/plugins/bootstrap/css/bootstrap.min.css");
 @import url("./global/plugins/bootstrap-switch/css/bootstrap-switch.min.css");
 @import url("./global/css/components-md.min.css");
-@import url("./global/css/plugins-md.min.css");
+@import url("./global/css/plugins.min.css");
 @import url("./layout/css/layout.min.css");
-@import url("./layout/css/custom.min.css");

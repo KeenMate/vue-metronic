@@ -4,22 +4,13 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-const VENDOR_LIBS = ['jquery', 'vue', 'vue-router', './static/metronic/metronic.css', './static/metronic/metronic.js']
-const LADDA = ['ladda']
-
-
 module.exports = {
   entry: {
-    app: './src/main.js',
-    vendor: VENDOR_LIBS,
-    // metronic: './static/metronic/metronic.js',
-    ladda: LADDA
+    app: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -83,6 +74,5 @@ module.exports = {
         }
       }
     ]
-  },
-  plugins: [new BundleAnalyzerPlugin()]
+  }
 }
