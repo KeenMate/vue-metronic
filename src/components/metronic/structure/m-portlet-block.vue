@@ -1,6 +1,6 @@
 <template>
   <div class="clearfix">
-      <slot></slot>
+    <slot></slot>
   </div>
 </template>
 

@@ -44,6 +44,16 @@ const menu = [
 		]
 	},
 	{
+		"Title": "Form Stuff",
+		"LinkIcon": "icon-settings",
+		"SubMenu": [
+			{
+				"Title": "Bootstrap Form Controls",
+				"RouteName": "forms-bootstrap"
+			}
+		]
+	},
+	{
 		"Title": "Routing examples",
 		"SubMenu": [
 			{

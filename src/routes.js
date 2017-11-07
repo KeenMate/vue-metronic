@@ -10,6 +10,8 @@ import UnderDevelopment from "./screens/under-development.vue"
 import PortletsLight from "./screens/portlets/light.vue"
 import PortletsBoxed from "./screens/portlets/boxed.vue"
 
+import FormsBootstrap from "./screens/forms/bootstrap-forms.vue"
+
 export const routes = [{
 	path: "/",
 	redirect: {
@@ -69,6 +71,40 @@ export const routes = [{
 			component: PortletsLight,
 			meta: {
 				title: "Light Portlets"
+			}
+		},
+		{
+			path: "boxed",
+			name: "portlets-boxed",
+			component: PortletsBoxed,
+			meta: {
+				title: "Boxed Portlets"
+			}
+		},
+		{
+			path: "solid",
+			name: "portlets-solid",
+			component: UnderDevelopment,
+			meta: {
+				title: "Solid Portlets"
+			}
+		}
+	],
+	meta: {
+		title: "Portlets"
+	}
+},
+{
+	name: "forms",
+	path: "/forms/",
+	component: EmptyScreen,
+	children: [
+		{
+			path: "bootstrap",
+			name: "forms-bootstrap",
+			component: FormsBootstrap,
+			meta: {
+				title: "Bootstrap Form Controls"
 			}
 		},
 		{

@@ -127,37 +127,38 @@
 					<m-icon name="icon-trash"></m-icon>
 				</a>
 			</template>
-			<m-portlet-block>
 				<h4>Pulsate any page elements.</h4>
 				<div class="margin-top-10 margin-bottom-10 clearfix">
 					<table class="table table-bordered table-striped">
-						<tr>
-							<td> Repeating Pulsate </td>
-							<td>
-								<div id="pulsate-regular" style="padding:5px;"> Repeating Pulsate </div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button class="btn green" id="pulsate-once">Pulsate Once</button>
-							</td>
-							<td>
-								<div id="pulsate-once-target" style="padding:5px;"> Pulsate me </div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<button class="btn red" id="pulsate-crazy">Crazy Pulsate :)</button>
-							</td>
-							<td>
-								<div id="pulsate-crazy-target" style="padding:5px;"> Pulsate me </div>
-							</td>
-						</tr>
+						<tbody>
+							<tr>
+								<td> Repeating Pulsate </td>
+								<td>
+									<div id="pulsate-regular" style="padding:5px;"> Repeating Pulsate </div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<button class="btn green" id="pulsate-once">Pulsate Once</button>
+								</td>
+								<td>
+									<div id="pulsate-once-target" style="padding:5px;"> Pulsate me </div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<button class="btn red" id="pulsate-crazy">Crazy Pulsate :)</button>
+								</td>
+								<td>
+									<div id="pulsate-crazy-target" style="padding:5px;"> Pulsate me </div>
+								</td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 				<span class="label label-danger"> NOTE! </span>
 				<span> Pulsate is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 9 and Internet Explorer 10 only. </span>
-			</m-portlet-block>
+		
 		</m-portlet>
 		<!-- END PORTLET-->
 		<!-- BEGIN PORTLET-->

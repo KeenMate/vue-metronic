@@ -10,7 +10,7 @@ function resolve (dir) {
   return path.join(__dirname, "..", dir)
 }
 
-const VENDOR_LIBS = ['jquery', 'vue', 'vue-router', './static/metronic/metronic.css', './static/metronic/metronic.js']
+const VENDOR_LIBS = ['jquery', 'vue', 'vue-router']
 const LADDA = ['ladda']
 
 
@@ -18,7 +18,7 @@ module.exports = {
   entry: {
     app: './src/main.js',
     vendor: VENDOR_LIBS,
-    // metronic: './static/metronic/metronic.js',
+    metronic: ['./static/metronic/metronic.js', './static/metronic/metronic.css'],
     ladda: LADDA
   },
   output: {
