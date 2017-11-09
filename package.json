@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "jquery": "^3.2.1",
-    "ladda": "^1.0.5",
     "spin.js": "^2.3.2",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0"
@@ -64,6 +63,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.31",
     "karma-webpack": "^2.0.2",
+    "ladda": "^1.0.5",
     "mocha": "^3.2.0",
     "nightwatch": "^0.9.12",
     "opn": "^5.1.0",

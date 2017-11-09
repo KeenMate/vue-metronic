@@ -34,7 +34,7 @@ export default {
 				"badge": true
 			}
 			if (this.level)
-				style["badge" + this.level] = true
+				style["badge-" + this.level] = true
 
 			if (!this.rounded)
 				style["badge-roundless"] = true

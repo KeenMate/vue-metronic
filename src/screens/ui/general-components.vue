@@ -139,7 +139,7 @@
 							</tr>
 							<tr>
 								<td>
-									<button class="btn green" id="pulsate-once">Pulsate Once</button>
+									<m-button id="pulsate-once" type="bootstrap" @click="pulsateOnce()" color="green">Pulsate Once</m-button>
 								</td>
 								<td>
 									<div id="pulsate-once-target" style="padding:5px;"> Pulsate me </div>
@@ -147,7 +147,7 @@
 							</tr>
 							<tr>
 								<td>
-									<button class="btn red" id="pulsate-crazy">Crazy Pulsate :)</button>
+									<m-button type="bootstrap" id="pulsate-crazy" @click="pulsateCrazy()" color="red"></m-button>
 								</td>
 								<td>
 									<div id="pulsate-crazy-target" style="padding:5px;"> Pulsate me </div>
@@ -156,7 +156,7 @@
 						</tbody>
 					</table>
 				</div>
-				<span class="label label-danger"> NOTE! </span>
+				<m-label level="danger" :roundless="false"> NOTE! </m-label>
 				<span> Pulsate is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 9 and Internet Explorer 10 only. </span>
 		
 		</m-portlet>
@@ -1001,9 +1001,9 @@
 					<div class="clearfix"> </div>
 					<h4 class="block">Badges in Button Dropdowns</h4>
 					<div class="btn-group ">
-						<button class="btn blue dropdown-toggle" data-toggle="dropdown">Open Me!
+						<m-button type="bootstrap" color="blue" :custom-css="['dropdown-toggle']" data-toggle="dropdown">Open Me!
 							<m-icon name="fa fa-angle-down"></m-icon>
-						</button>
+						</m-button>
 						<ul class="dropdown-menu" role="menu">
 							<li role="presentation">
 								<a role="menuitem" tabindex="-1" href="javascript:;"> Action
@@ -1056,100 +1056,11 @@
 			</template>
 			<m-portlet-block>
 				<div>
-					<ul class="pagination pagination-lg">
-						<li>
-							<a href="javascript:;">
-								<m-icon name="fa fa-angle-left"></m-icon>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;"> 1 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 2 </a>
-						</li>
-						<li class="active">
-							<a href="javascript:;"> 3 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 4 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 5 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 6 </a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<m-icon name="fa fa-angle-right"></m-icon>
-							</a>
-						</li>
-					</ul>
+					<m-pagination :max-page="6" size="large" />
+					<m-pagination :max-page="6" v-model="currentPage3" />
 				</div>
 				<div>
-					<ul class="pagination">
-						<li>
-							<a href="javascript:;">
-								<m-icon name="fa fa-angle-left"></m-icon>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;"> 1 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 2 </a>
-						</li>
-						<li class="active">
-							<a href="javascript:;"> 3 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 4 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 5 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 6 </a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<m-icon name="fa fa-angle-right"></m-icon>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<ul class="pagination pagination-sm">
-						<li>
-							<a href="javascript:;">
-								<m-icon name="fa fa-angle-left"></m-icon>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;"> 1 </a>
-						</li>
-						<li class="active">
-							<a href="javascript:;"> 2 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 3 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 4 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 5 </a>
-						</li>
-						<li>
-							<a href="javascript:;"> 6 </a>
-						</li>
-						<li>
-							<a href="javascript:;">
-								<m-icon name="fa fa-angle-right"></m-icon>
-							</a>
-						</li>
-					</ul>
+					<m-pagination :max-page="6" size="small" />
 				</div>
 			</m-portlet-block>
 		</m-portlet>
@@ -1238,14 +1149,18 @@
 			<m-portlet-block>
 				<div>
 					<h4 class="block">Basic Pagination</h4>
-					<p id="dynamic_pager_content1" class="well"> Page 1 content here </p>
-					<p id="dynamic_pager_demo1"> </p>
+					<p id="dynamic_pager_content1" class="well"> Page {{currentPage1}} content here </p>
+					<p id="dynamic_pager_demo1">
+						<m-pagination :max-page="6" v-model="currentPage1" />
+					</p>
 				</div>
 				<hr>
 				<div>
 					<h4 class="block">Advance Pagination</h4>
-					<p id="dynamic_pager_content2" class="well"> Page 1 content here </p>
-					<p id="dynamic_pager_demo2"> </p>
+					<p id="dynamic_pager_content2" class="well"> Page {{currentPage2}} content here </p>
+					<p id="dynamic_pager_demo2">
+						<m-pagination :max-page="6" v-model="currentPage2" />
+					</p>
 				</div>
 			</m-portlet-block>
 		</m-portlet>
@@ -1302,14 +1217,18 @@ import mProgress from "../../components/metronic/informative/m-progress.vue"
 import mProgressBar from "../../components/metronic/informative/m-progress-bar.vue"
 import mBadge from "../../components/metronic/informative/m-badge.vue"
 import mLabel from "../../components/metronic/informative/m-label.vue"
-
 import mAlert from "../../components/metronic/informative/m-alert.vue"
 import mNote from "../../components/metronic/informative/m-note.vue"
 import mModalDialog from "../../components/metronic/informative/m-modalDialog.vue"
 
 import mIcon from "../../components/metronic/graphic/m-icon.vue"
+
 import mButton from "../../components/metronic/ui/m-button.vue"
 import mLinkButton from "../../components/metronic/ui/m-linkbutton.vue"
+
+import mPagination from "../../components/metronic/navigation/m-pagination.vue"
+
+import $ from "jquery"
 
 export default {
 	components: {
@@ -1326,7 +1245,32 @@ export default {
 		mBadge,
 		mLabel,
 		mButton,
-		mLinkButton
+		mLinkButton,
+		mPagination
+	},
+	data () {
+		return {
+			currentPage1: Number,
+			currentPage2: Number,
+			currentPage3: Number
+		}
+	},
+	methods: {
+		pulsateOnce: function () {
+			$("#pulsate-once-target").pulsate({
+				color: "#399bc3",
+				repeat: !1
+			})
+		},
+		pulsateCrazy: function () {
+			$("#pulsate-crazy-target").pulsate({
+				color: "#fdbe41",
+				reach: 50,
+				repeat: 10,
+				speed: 100,
+				glow: !0
+			})
+		}
 	}
 }
 </script>

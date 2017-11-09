@@ -1,4 +1,3 @@
-import $ from "jquery"
 import Vue from "vue"
 import VueRouter from "vue-router"
 
