@@ -37,7 +37,7 @@ export default {
 			type: Number
 		},
 		value: {
-			default: this.minPage
+			default: 1
 		},
 		circled: {
 			type: Boolean,

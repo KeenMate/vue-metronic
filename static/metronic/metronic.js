@@ -1,5 +1,3 @@
-import "./global/plugins/jquery.min"
-import "./global/plugins/bootstrap/js/bootstrap.min"
 import "./global/plugins/js.cookie.min"
 import "./global/plugins/jquery-slimscroll/jquery.slimscroll.min"
 import "./global/plugins/jquery.blockui.min"

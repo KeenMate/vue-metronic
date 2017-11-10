@@ -12,12 +12,10 @@ const menu = [
 		"LinkIcon": "icon-settings",
 		"SubMenu": [{
 			"Title": "Buttons",
-			"LinkIcon": "icon-puzzle",
 			"RouteName": "ui-buttons"
 		},
 		{
 			"Title": "Metronic Grid System",
-			"LinkIcon": "icon-puzzle",
 			"RouteName": "ui-grid-system"
 		},
 		{

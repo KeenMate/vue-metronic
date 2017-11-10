@@ -147,7 +147,7 @@
 							</tr>
 							<tr>
 								<td>
-									<m-button type="bootstrap" id="pulsate-crazy" @click="pulsateCrazy()" color="red"></m-button>
+									<m-button type="bootstrap" id="pulsate-crazy" @click="pulsateCrazy()" color="red">Crazy Pulsate</m-button>
 								</td>
 								<td>
 									<div id="pulsate-crazy-target" style="padding:5px;"> Pulsate me </div>
@@ -156,7 +156,7 @@
 						</tbody>
 					</table>
 				</div>
-				<m-label level="danger" :roundless="false"> NOTE! </m-label>
+				<m-label level="danger" :roundless="false" text="NOTE!" />
 				<span> Pulsate is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 9 and Internet Explorer 10 only. </span>
 		
 		</m-portlet>
@@ -216,14 +216,14 @@
 					<template slot="body">
 						<p> Body goes here... </p>
 					</template>
-					<tempalte slot="footer">
+					<template slot="footer">
 						<m-button
 							dismiss="modal"
 							color="green"
 						>
 							OK
 						</m-button>
-					</tempalte>
+					</template>
 				</m-modal-dialog>
 				<m-modal-dialog
 					id="myModal3"
@@ -348,14 +348,6 @@
 					level="default"
 				>Top</m-button>
 				<m-button
-					popover="Popover in top"
-					popover-content="Popover body goes here! Popover body goes here!"
-					tooltip-placement="top"
-					popover-trigger="hover"
-					button-style="bootstrap"
-					level="default"
-				>Top</m-button>
-				<m-button
 					popover="Popover in left"
 					popover-content="Popover body goes here! Popover body goes here!"
 					tooltip-placement="left"
@@ -404,89 +396,96 @@
 			</template>
 			<m-portlet-block>
 				<h4 class="block">Basic</h4>
-				<ul class="list-group">
-					<li class="list-group-item"> Cras justo odio </li>
-					<li class="list-group-item"> Dapibus ac facilisis in </li>
-					<li class="list-group-item"> Morbi leo risus </li>
-					<li class="list-group-item"> Porta ac consectetur ac </li>
-					<li class="list-group-item"> Vestibulum at eros </li>
-				</ul>
+				<m-list-group>
+					<m-list-group-item> Cras justo odio </m-list-group-item>
+					<m-list-group-item> Dapibus ac facilisis in </m-list-group-item>
+					<m-list-group-item> Morbi leo risus </m-list-group-item>
+					<m-list-group-item> Porta ac consectetur ac </m-list-group-item>
+					<m-list-group-item> Vestibulum at eros </m-list-group-item>
+				</m-list-group>
 				<h4 class="block">Custom Colors(refer to ui_colors.html for more colors)</h4>
-				<ul class="list-group">
-					<li class="list-group-item bg-blue bg-font-blue"> Cras justo odio </li>
-					<li class="list-group-item bg-red bg-font-red"> Dapibus ac facilisis in </li>
-					<li class="list-group-item bg-green bg-font-green"> Morbi leo risus </li>
-					<li class="list-group-item bg-purple bg-font-purple"> Porta ac consectetur ac </li>
-					<li class="list-group-item bg-yellow bg-font-yellow"> Vestibulum at eros </li>
-				</ul>
+				<m-list-group>
+					<m-list-group-item bg-color="blue" font-color="blue"> Cras justo odio </m-list-group-item>
+					<m-list-group-item bg-color="red" font-color="red"> Dapibus ac facilisis in </m-list-group-item>
+					<m-list-group-item bg-color="green" font-color="red"> Morbi leo risus </m-list-group-item>
+					<m-list-group-item bg-color="purple" font-color="purple"> Porta ac consectetur ac </m-list-group-item>
+					<m-list-group-item bg-color="yellow" font-color="yellow"> Vestibulum at eros </m-list-group-item>
+				</m-list-group>
 				<h4 class="block">Badges</h4>
-				<ul class="list-group">
-					<li class="list-group-item"> Cras justo odio
+				<m-list-group>
+					<m-list-group-item bg-color="blue" font-color="blue"> Cras justo odio </m-list-group-item>
+					<m-list-group-item bg-color="red" font-color="red"> Dapibus ac facilisis in </m-list-group-item>
+					<m-list-group-item bg-color="green" font-color="red"> Morbi leo risus </m-list-group-item>
+					<m-list-group-item bg-color="purple" font-color="purple"> Porta ac consectetur ac </m-list-group-item>
+					<m-list-group-item bg-color="yellow" font-color="yellow"> Vestibulum at eros </m-list-group-item>
+				</m-list-group>
+				<m-list-group>
+					<m-list-group-item> Cras justo odio
 						<m-badge level="default" text="3" rounded />
-					</li>
-					<li class="list-group-item"> Dapibus ac facilisis in
+					</m-list-group-item>
+					<m-list-group-item> Dapibus ac facilisis in
 						<m-badge level="success" text="11" rounded />
-					</li>
-					<li class="list-group-item"> Morbi leo risus
+					</m-list-group-item>
+					<m-list-group-item> Morbi leo risus
 						<m-badge level="danger" text="new" rounded />
-					</li>
-					<li class="list-group-item"> Porta ac consectetur ac
+					</m-list-group-item>
+					<m-list-group-item> Porta ac consectetur ac
 						<m-badge level="warning" text="4" rounded />
-					</li>
-					<li class="list-group-item"> Vestibulum at eros
+					</m-list-group-item>
+					<m-list-group-item> Vestibulum at eros
 						<m-badge level="info" text="3" rounded />
-					</li>
-				</ul>
+					</m-list-group-item>
+				</m-list-group>
 				<h4 class="block">Contextual States</h4>
-				<ul class="list-group">
-					<li class="list-group-item"> Default </li>
-					<li class="list-group-item list-group-item-success"> Success </li>
-					<li class="list-group-item list-group-item-info"> Info
+				<m-list-group>
+					<m-list-group-item> Default </m-list-group-item>
+					<m-list-group-item level="success"> Success </m-list-group-item>
+					<m-list-group-item level="info"> Info
 						<m-badge level="warning" text="3" rounded />
-					</li>
-					<li class="list-group-item list-group-item-warning"> Warning
+					</m-list-group-item>
+					<m-list-group-item level="warning"> Warning
 						<m-badge text="3" rounded />
-					</li>
-					<li class="list-group-item list-group-item-danger"> Danger </li>
-				</ul>
+					</m-list-group-item>
+					<m-list-group-item level="danger"> Danger </m-list-group-item>
+				</m-list-group>
 				<h4 class="block">Disabled States</h4>
-				<ul class="list-group">
-					<li class="list-group-item disabled"> Item 1 </li>
-					<li class="list-group-item disabled"> Item 2 </li>
-					<li class="list-group-item disabled"> Item 3
+				<m-list-group>
+					<m-list-group-item disabled> Item 1 </m-list-group-item>
+					<m-list-group-item disabled> Item 2 </m-list-group-item>
+					<m-list-group-item disabled> Item 3
 						<m-badge level="warning" text="3" rounded />
-					</li>
-					<li class="list-group-item disabled"> Item 4
+					</m-list-group-item>
+					<m-list-group-item disabled> Item 4
 						<m-badge text="3" rounded />
-					</li>
-				</ul>
+					</m-list-group-item>
+				</m-list-group>
 				<h4 class="block">Linked Contextual Items</h4>
-				<div class="list-group">
-					<a href="javascript:;" class="list-group-item"> Default </a>
-					<a href="javascript:;" class="list-group-item list-group-item-success"> Success </a>
-					<a href="javascript:;" class="list-group-item list-group-item-info"> Info
+				<m-list-group not-ul>
+					<m-list-group-item link="javascript:;"> Default </m-list-group-item>
+					<m-list-group-item level="success" link="javascript:;"> Success </m-list-group-item>
+					<m-list-group-item level="info" link="javascript:;"> Info
 						<m-badge level="warning" text="3" rounded />
-					</a>
-					<a href="javascript:;" class="list-group-item list-group-item-warning"> Warning
+					</m-list-group-item>
+					<m-list-group-item level="warning" link="javascript:;"> Warning
 						<m-badge text="3" rounded />
-					</a>
-					<a href="javascript:;" class="list-group-item list-group-item-danger"> Danger </a>
-				</div>
+					</m-list-group-item>
+					<m-list-group-item level="danger" link="javascript:;"> Danger </m-list-group-item>
+				</m-list-group>
 				<h4 class="block">Custom Content</h4>
-				<div class="list-group">
-					<a href="javascript:;" class="list-group-item active">
+				<m-list-group not-ul>
+					<m-list-group-item link="javascript:;" active>
 						<h4 class="list-group-item-heading">List group item heading</h4>
 						<p class="list-group-item-text"> Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. </p>
-					</a>
-					<a href="javascript:;" class="list-group-item">
+					</m-list-group-item>
+					<m-list-group-item link="javascript:;">
 						<h4 class="list-group-item-heading">List group item heading</h4>
 						<p class="list-group-item-text"> Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. </p>
-					</a>
-					<a href="javascript:;" class="list-group-item">
+					</m-list-group-item>
+					<m-list-group-item link="javascript:;">
 						<h4 class="list-group-item-heading">List group item heading</h4>
 						<p class="list-group-item-text"> Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit. </p>
-					</a>
-				</div>
+					</m-list-group-item>
+				</m-list-group>
 			</m-portlet-block>
 		</m-portlet>
 		<!-- END LIST PORTLET-->
@@ -619,24 +618,24 @@
 							<p> Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies
 									vehicula ut id elit. </p>
 						</div>
-						<ul class="list-group">
-							<li class="list-group-item"> Cras justo odio
+						<m-list-group not-ul>
+							<m-list-group-item> Cras justo odio
 								<m-badge level="default" text="3" rounded />
-							</li>
-							<li class="list-group-item"> Dapibus ac facilisis in
+							</m-list-group-item>
+							<m-list-group-item> Dapibus ac facilisis in
 								<m-badge level="success" text="11" rounded />
-							</li>
-							<li class="list-group-item"> Morbi leo risus
+							</m-list-group-item>
+							<m-list-group-item> Morbi leo risus
 								<m-badge level="danger" text="new" rounded />
-							</li>
-							<li class="list-group-item"> Porta ac consectetur ac
+							</m-list-group-item>
+							<m-list-group-item> Porta ac consectetur ac
 								<m-badge level="warning" text="4" rounded />
-							</li>
-							<li class="list-group-item"> Vestibulum at eros
+							</m-list-group-item>
+							<m-list-group-item> Vestibulum at eros
 								<m-badge level="info" text="3" rounded />
-							</li>
-							<li class="list-group-item"> Vestibulum at eros </li>
-						</ul>
+							</m-list-group-item>
+							<m-list-group-item> Vestibulum at eros </m-list-group-item>
+						</m-list-group>
 					</div>
 				</div>
 			</m-portlet-block>
@@ -1228,6 +1227,9 @@ import mLinkButton from "../../components/metronic/ui/m-linkbutton.vue"
 
 import mPagination from "../../components/metronic/navigation/m-pagination.vue"
 
+import mListGroup from "../../components/metronic/lists/m-list-group.vue"
+import mListGroupItem from "../../components/metronic/lists/m-list-group-item.vue"
+
 import $ from "jquery"
 
 export default {
@@ -1246,13 +1248,15 @@ export default {
 		mLabel,
 		mButton,
 		mLinkButton,
-		mPagination
+		mPagination,
+		mListGroup,
+		mListGroupItem
 	},
 	data () {
 		return {
-			currentPage1: Number,
-			currentPage2: Number,
-			currentPage3: Number
+			currentPage1: 1,
+			currentPage2: 1,
+			currentPage3: 1
 		}
 	},
 	methods: {
@@ -1271,6 +1275,9 @@ export default {
 				glow: !0
 			})
 		}
+	},
+	mounted: function () {
+		$(".tooltips").tooltip()
 	}
 }
 </script>

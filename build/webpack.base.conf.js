@@ -10,7 +10,7 @@ function resolve (dir) {
   return path.join(__dirname, "..", dir)
 }
 
-const VENDOR_LIBS = ['jquery', 'vue', 'vue-router']
+const VENDOR_LIBS = ['jquery', 'vue', 'vue-router', './static/metronic/global/plugins/bootstrap/js/bootstrap.min.js']
 const LADDA = ['ladda']
 
 
