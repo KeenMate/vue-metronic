@@ -1,24 +1,57 @@
 <template>
 	<div class="form-group">
-		<label>{{title}}</label>
-			<div class="input-group">
-				<span v-if="this.icon.length>0 && !this.iconOnRight" 
-					:class="this.iconStyle === 'icon'? 'input-icon':'input-group-addon'">
-					<i :class="iconStyle"></i>
-				</span>
-				<input type="text" class="form-control" :placeholder="placeholder">
-				<span v-if="this.icon.length>0 && this.iconOnRight" 
-					:class="this.iconStyle === 'icon'? 'input-icon':'input-group-addon'">
-					<i :class="iconStyle"></i>
-				</span>
-			</div>
+		<label :for="elemId">{{label}}</label>
+		<div class="input-group" v-if="leftIcon && leftIconType === 'addon'">
+			<span :class="{ 'input-group-addon': true, 'input-circle-left': rounded }">
+				<m-icon :color="leftIconColor" :name="leftIcon + leftIconSpinnable ? ' fa-spin' : ''" />
+			</span>
+			<input
+				:type="type"
+				:class="{ 'form-control': true, 'input-circle-right': rounded, 'input-sm': inputSize === 'small', 'input-lg': inpuntSize === 'large' }"
+				:id="elemId"
+				:placeholder="placeholder">
+		</div>
+		<div class="input-group" v-if="rightIcon && iconType === 'addon'">
+			<input
+				:type="type"
+				:class="{'form-control': true, 'input-circle-left': rounded, 'input-sm': inputSize === 'small', 'input-lg': inpuntSize === 'large' }"
+				:id="elemId"
+				:placeholder="placeholder">
+			<span :class="{ 'input-group-addon': true, 'input-circle-right': rounded }">
+				<m-icon :color="rightIconColor" :name="rightIcon + rightIconSpinnable ? ' fa-spin' : ''" />
+			</span>
+		</div>
+		<div class="input-icon" v-else-if="leftIcon && leftIconType === 'icon'">
+			<m-icon :color="leftIconColor" :name="leftIcon + leftIconSpinnable ? ' fa-spin' : ''" />
+			<input
+				:type="type"
+				:class="{ 'form-control': true, 'input-circle': rounded, 'input-sm': inputSize === 'small', 'input-lg': inpuntSize === 'large' }"
+				:placeholder="placeholder">
+		</div>
+		<div class="input-icon right" v-else-if="rightIcon && rightIconType === 'icon'">
+			<m-icon :color="rightIconColor" :name="rightIcon + rightIconSpinnable ? ' fa-spin' : ''" />
+			<input
+				:type="type"
+				:class="{ 'form-control': true, 'input-circle': rounded, 'input-sm': inputSize === 'small', 'input-lg': inpuntSize === 'large' }"
+				:placeholder="placeholder">
+		</div>
 	</div>
 </template>
 
 <script>
+import mIcon from "../graphic/m-icon.vue"
+
 export default {
+	components: {
+		mIcon
+	},
 	props: {
-		title: {
+		inputType: {
+			type: String,
+			default: "text",
+			options: ["text", "email", "number", "password", "date", "file", "And other Input types"]
+		},
+		inputId: {
 			type: String,
 			default: ""
 		},
@@ -26,36 +59,59 @@ export default {
 			type: String,
 			default: ""
 		},
-		icon: {
+		label: {
 			type: String,
 			default: ""
 		},
-		iconStyle: {
-			type: String,
-			default: "icon",
-			options: ["icon", "addon"]
+		rounded: {
+			type: Boolean,
+			default: false
 		},
-		iconSize: {
+		inputSize: {
+			type: String,
+			default: ""
+		},
+		leftIcon: {
+			type: String,
+			default: ""
+		},
+		leftIconType: {
 			type: String,
 			default: "",
-			options: ["small", "large"]
+			options: ["icon", "addon"]
 		},
-		iconOnRight: {
+		leftIconColor: {
+			type: String,
+			default: ""
+		},
+		leftIconSpinnable: {
+			type: Boolean,
+			default: false
+		},
+		rightIcon: {
+			type: String,
+			default: ""
+		},
+		rightIconType: {
+			type: String,
+			default: "",
+			options: ["icon", "addon"]
+		},
+		rightIconColor: {
+			type: String,
+			default: ""
+		},
+		rightIconSpinnable: {
 			type: Boolean,
 			default: false
 		}
 	},
 	computed: {
-		iconStyle: function () {
-			var style = {
-				fa: true
-			}
-			
-			if (this.icon.length > 0) {
-				style[this.icon] = true
-			}
-
-			return style
+		elemId: function () {
+			if (this.inputId)
+				return this.inputId
+			else
+				return "input-id-" + Number(new Date())
 		}
 	}
 }

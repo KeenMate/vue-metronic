@@ -47,7 +47,7 @@ const menu = [
 		"SubMenu": [
 			{
 				"Title": "Bootstrap Form Controls",
-				"RouteName": "forms-bootstrap"
+				"RouteName": "bootstrap-forms"
 			}
 		]
 	},

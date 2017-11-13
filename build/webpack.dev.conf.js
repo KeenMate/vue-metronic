@@ -31,10 +31,10 @@ module.exports = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true
     }),
-    new FriendlyErrorsPlugin(),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'disabled',
-      openAnalyzer: true
-    })
+    new FriendlyErrorsPlugin()
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'disabled',
+    //   openAnalyzer: true
+    // })
   ]
 })

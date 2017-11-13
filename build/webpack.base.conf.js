@@ -4,7 +4,7 @@ const utils = require("./utils")
 const config = require("../config")
 const vueLoaderConfig = require("./vue-loader.conf")
 
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function resolve (dir) {
   return path.join(__dirname, "..", dir)

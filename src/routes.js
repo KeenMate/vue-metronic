@@ -10,7 +10,7 @@ import UnderDevelopment from "./screens/under-development.vue"
 import PortletsLight from "./screens/portlets/light.vue"
 import PortletsBoxed from "./screens/portlets/boxed.vue"
 
-import FormsBootstrap from "./screens/forms/bootstrap-forms.vue"
+import BootstrapForms from "./screens/forms/bootstrap-form-controls.vue"
 
 export const routes = [{
 	path: "/",
@@ -101,8 +101,8 @@ export const routes = [{
 	children: [
 		{
 			path: "bootstrap",
-			name: "forms-bootstrap",
-			component: FormsBootstrap,
+			name: "bootstrap-forms",
+			component: BootstrapForms,
 			meta: {
 				title: "Bootstrap Form Controls"
 			}

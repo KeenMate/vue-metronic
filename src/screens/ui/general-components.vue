@@ -59,8 +59,8 @@
 			icon-color="dark"
 			title-color="dark"
 			bordered
-			captionBold
-			captionUppercased
+			title-bold
+			title-uppercased
 		>
 			<template slot="actions">
 				<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
@@ -113,8 +113,8 @@
 			icon-color="dark"
 			title-color="dark"
 			bordered
-			captionBold
-			captionUppercased
+			title-bold
+			title-uppercased
 		>
 			<template slot="actions">
 				<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
@@ -513,130 +513,136 @@
 			</template>
 			<m-portlet-block>
 				<h4 class="block">Basic Panels</h4>
-				<div class="panel panel-default">
-					<div class="panel-heading"> Panel heading without title </div>
-					<div class="panel-body"> Panel content </div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading">
-							<h3 class="panel-title">Panel title</h3>
-					</div>
-					<div class="panel-body"> Panel content </div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-body"> Panel content </div>
-					<div class="panel-footer"> Panel footer </div>
-				</div>
+				<m-panel>
+					<template slot="heading">
+						Panel heading without title
+					</template>
+					Panel content
+				</m-panel>
+				<m-panel>
+					<template slot="heading">
+						<h3 class="panel-title">Panel title</h3>
+					</template>
+					Panel content
+				</m-panel>
+				<m-panel>
+					Panel content
+					<template slot="footer"> Panel footer </template>
+				</m-panel>
 				<div class="clearfix">
 					<h4 class="block">Contextual Panels</h4>
-					<div class="panel panel-default">
-						<div class="panel-heading">
+					<m-panel>
+						<template slot="heading">
 							<h3 class="panel-title">Primary Panel</h3>
-						</div>
-						<div class="panel-body"> Panel content </div>
-					</div>
-					<div class="panel panel-primary">
-						<div class="panel-heading">
+						</template>
+						Panel content
+					</m-panel>
+					<m-panel level="primary">
+						<template slot="heading">
 							<h3 class="panel-title">Primary Panel</h3>
-						</div>
-						<div class="panel-body"> Panel content </div>
-					</div>
-					<div class="panel panel-success">
-						<div class="panel-heading">
+						</template>
+						Panel content
+					</m-panel>
+					<m-panel level="success">
+						<template slot="heading">
 							<h3 class="panel-title">Success Panel</h3>
-						</div>
-						<div class="panel-body"> Panel content </div>
-					</div>
-					<div class="panel panel-info">
-						<div class="panel-heading">
+						</template>
+						Panel content
+					</m-panel>
+					<m-panel level="info">
+						<template slot="heading">
 							<h3 class="panel-title">Info Panel</h3>
-						</div>
-						<div class="panel-body"> Panel content </div>
-					</div>
-					<div class="panel panel-warning">
-						<div class="panel-heading">
+						</template>
+						Panel content
+					</m-panel>
+					<m-panel level="warning">
+						<template slot="heading">
 							<h3 class="panel-title">Warning Panel</h3>
-						</div>
-						<div class="panel-body"> Panel content </div>
-					</div>
-					<div class="panel panel-danger">
-						<div class="panel-heading">
+						</template>
+						Panel content
+					</m-panel>
+					<m-panel level="danger">
+						<template slot="heading">
 							<h3 class="panel-title">Danger Panel</h3>
-						</div>
-						<div class="panel-body"> Panel content </div>
-					</div>
+						</template>
+						Panel content
+					</m-panel>
 				</div>
 				<div class="clearfix">
 					<h4 class="block">With Tables</h4>
-					<div class="panel panel-success">
-						<div class="panel-heading">
+					<m-panel level="success">
+						<template slot="heading">
 							<h3 class="panel-title">Panel Title</h3>
-						</div>
-						<div class="panel-body">
-							<p> Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam
-									id dolor id nibh ultricies vehicula ut id elit. </p>
-						</div>
-						<table class="table">
-							<thead>
-								<tr>
-									<th> # </th>
-									<th> First Name </th>
-									<th> Last Name </th>
-									<th> Username </th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td> 1 </td>
-									<td> Mark </td>
-									<td> Otto </td>
-									<td> @mdo </td>
-								</tr>
-								<tr>
-									<td> 2 </td>
-									<td> Jacob </td>
-									<td> Thornton </td>
-									<td> @fat </td>
-								</tr>
-								<tr>
-									<td> 3 </td>
-									<td> Larry </td>
-									<td> the Bird </td>
-									<td> @twitter </td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+						</template>
+						<p>
+							Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam
+							id dolor id nibh ultricies vehicula ut id elit.
+						</p>
+						<template slot="table">
+							<table class="table">
+								<thead>
+									<tr>
+										<th> # </th>
+										<th> First Name </th>
+										<th> Last Name </th>
+										<th> Username </th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td> 1 </td>
+										<td> Mark </td>
+										<td> Otto </td>
+										<td> @mdo </td>
+									</tr>
+									<tr>
+										<td> 2 </td>
+										<td> Jacob </td>
+										<td> Thornton </td>
+										<td> @fat </td>
+									</tr>
+									<tr>
+										<td> 3 </td>
+										<td> Larry </td>
+										<td> the Bird </td>
+										<td> @twitter </td>
+									</tr>
+								</tbody>
+							</table>
+						</template>
+					</m-panel>
 				</div>
 				<div class="clearfix">
 					<h4 class="block">With List Groups</h4>
-					<div class="panel panel-warning">
-						<div class="panel-heading">
+					<m-panel level="warning">
+						<template slot="heading">
 							<h3 class="panel-title">Panel Title</h3>
-						</div>
-						<div class="panel-body">
-							<p> Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies
-									vehicula ut id elit. </p>
-						</div>
-						<m-list-group not-ul>
-							<m-list-group-item> Cras justo odio
-								<m-badge level="default" text="3" rounded />
-							</m-list-group-item>
-							<m-list-group-item> Dapibus ac facilisis in
-								<m-badge level="success" text="11" rounded />
-							</m-list-group-item>
-							<m-list-group-item> Morbi leo risus
-								<m-badge level="danger" text="new" rounded />
-							</m-list-group-item>
-							<m-list-group-item> Porta ac consectetur ac
-								<m-badge level="warning" text="4" rounded />
-							</m-list-group-item>
-							<m-list-group-item> Vestibulum at eros
-								<m-badge level="info" text="3" rounded />
-							</m-list-group-item>
-							<m-list-group-item> Vestibulum at eros </m-list-group-item>
-						</m-list-group>
-					</div>
+						</template>
+						<p>
+							Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies
+							vehicula ut id elit.
+						</p>
+						<template slot="list-group">
+							<m-list-group not-ul>
+								<m-list-group-item> Cras justo odio
+									<m-badge level="default" text="3" rounded />
+								</m-list-group-item>
+								<m-list-group-item> Dapibus ac facilisis in
+									<m-badge level="success" text="11" rounded />
+								</m-list-group-item>
+								<m-list-group-item> Morbi leo risus
+									<m-badge level="danger" text="new" rounded />
+								</m-list-group-item>
+								<m-list-group-item> Porta ac consectetur ac
+									<m-badge level="warning" text="4" rounded />
+								</m-list-group-item>
+								<m-list-group-item> Vestibulum at eros
+									<m-badge level="info" text="3" rounded />
+								</m-list-group-item>
+								<m-list-group-item> Vestibulum at eros </m-list-group-item>
+							</m-list-group>
+						</template>
+					</m-panel>
 				</div>
 			</m-portlet-block>
 		</m-portlet>
@@ -1211,6 +1217,7 @@ import mRow from "../../components/metronic/structure/m-row.vue"
 import mColumn from "../../components/metronic/structure/m-column.vue"
 import mPortlet from "../../components/metronic/structure/m-portlet.vue"
 import mPortletBlock from "../../components/metronic/structure/m-portlet-block.vue"
+import mPanel from "../../components/metronic/structure/m-panel.vue"
 
 import mProgress from "../../components/metronic/informative/m-progress.vue"
 import mProgressBar from "../../components/metronic/informative/m-progress-bar.vue"
@@ -1238,6 +1245,7 @@ export default {
 		mColumn,
 		mPortlet,
 		mPortletBlock,
+		mPanel,
 		mAlert,
 		mNote,
 		mModalDialog,
