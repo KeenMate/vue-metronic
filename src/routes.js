@@ -8,7 +8,6 @@ import GeneralComponentsScreen from "./screens/ui/general-components.vue"
 import UnderDevelopment from "./screens/under-development.vue"
 
 import PortletsLight from "./screens/portlets/light.vue"
-import PortletsBoxed from "./screens/portlets/boxed.vue"
 
 import BootstrapForms from "./screens/forms/bootstrap-form-controls.vue"
 
@@ -74,14 +73,6 @@ export const routes = [{
 			}
 		},
 		{
-			path: "boxed",
-			name: "portlets-boxed",
-			component: PortletsBoxed,
-			meta: {
-				title: "Boxed Portlets"
-			}
-		},
-		{
 			path: "solid",
 			name: "portlets-solid",
 			component: UnderDevelopment,
@@ -106,26 +97,10 @@ export const routes = [{
 			meta: {
 				title: "Bootstrap Form Controls"
 			}
-		},
-		{
-			path: "boxed",
-			name: "portlets-boxed",
-			component: PortletsBoxed,
-			meta: {
-				title: "Boxed Portlets"
-			}
-		},
-		{
-			path: "solid",
-			name: "portlets-solid",
-			component: UnderDevelopment,
-			meta: {
-				title: "Solid Portlets"
-			}
 		}
 	],
 	meta: {
-		title: "Portlets"
+		title: "Forms"
 	}
 },
 {

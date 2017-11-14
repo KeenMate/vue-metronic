@@ -1,44 +1,89 @@
 <template>
 	<div class="form-group">
 		<label :for="elemId">{{label}}</label>
-		<div class="input-group" v-if="leftIcon && leftIconType === 'addon'">
-			<span :class="{ 'input-group-addon': true, 'input-circle-left': rounded }">
-				<m-icon :color="leftIconColor" :name="leftIcon + leftIconSpinnable ? ' fa-spin' : ''" />
+		<div :class="inputDivStyle">
+			<span :class="leftIconSpanStyle" v-if="leftIcon && leftIconType === 'addon'">
+				<m-icon
+					:color="leftIconColor"
+					:name="leftIcon !== null ? leftIcon + (leftIconSpinnable ? ' fa-spin' : '') : null"
+				/>
 			</span>
+			<m-icon
+				:color="iconStyle.iconColor"
+				:name="iconStyle.iconName"
+				:tooltip="tooltipContent ? tooltipContent : null"
+				:tooltip-placement="tooltipPlacement ? tooltipPlacement : null"
+			/>
 			<input
-				:type="type"
-				:class="{ 'form-control': true, 'input-circle-right': rounded, 'input-sm': inputSize === 'small', 'input-lg': inpuntSize === 'large' }"
 				:id="elemId"
-				:placeholder="placeholder">
-		</div>
-		<div class="input-group" v-if="rightIcon && iconType === 'addon'">
-			<input
-				:type="type"
-				:class="{'form-control': true, 'input-circle-left': rounded, 'input-sm': inputSize === 'small', 'input-lg': inpuntSize === 'large' }"
-				:id="elemId"
-				:placeholder="placeholder">
-			<span :class="{ 'input-group-addon': true, 'input-circle-right': rounded }">
-				<m-icon :color="rightIconColor" :name="rightIcon + rightIconSpinnable ? ' fa-spin' : ''" />
+				:type="inputType"
+				:placeholder="placeholder"
+				:class="inputStyle"
+			>
+			<span :class="leftIconSpanStyle" v-if="rightIcon && rightIconType === 'addon'">
+				<m-icon
+					:color="rightIconColor"
+					:name="rightIcon ? rightIcon + (rightIconSpinnable ? ' fa-spin' : '') : null"
+				/>
 			</span>
-		</div>
-		<div class="input-icon" v-else-if="leftIcon && leftIconType === 'icon'">
-			<m-icon :color="leftIconColor" :name="leftIcon + leftIconSpinnable ? ' fa-spin' : ''" />
-			<input
-				:type="type"
-				:class="{ 'form-control': true, 'input-circle': rounded, 'input-sm': inputSize === 'small', 'input-lg': inpuntSize === 'large' }"
-				:placeholder="placeholder">
-		</div>
-		<div class="input-icon right" v-else-if="rightIcon && rightIconType === 'icon'">
-			<m-icon :color="rightIconColor" :name="rightIcon + rightIconSpinnable ? ' fa-spin' : ''" />
-			<input
-				:type="type"
-				:class="{ 'form-control': true, 'input-circle': rounded, 'input-sm': inputSize === 'small', 'input-lg': inpuntSize === 'large' }"
-				:placeholder="placeholder">
 		</div>
 	</div>
 </template>
 
 <script>
+/*
+ 
+ This is awful old and threshy spaghetti code, luckily if woke up and realized how a big smelly sort of junk it is :)
+
+<div class="input-group" v-if="leftIcon && leftIconType === 'addon'">
+			<span :class="{ 'input-group-addon': true, 'input-circle-left': rounded }">
+				<m-icon
+					:color="leftIconColor"
+					:name="leftIcon !== null ? leftIcon + (leftIconSpinnable ? ' fa-spin' : '') : null" />
+			</span>
+			<input
+				:type="inputType"
+				:class="{ 'form-control': true, 'input-circle-right': rounded, 'input-sm': inputSize === 'small', 'input-lg': inputSize === 'large' }"
+				:id="elemId"
+				:placeholder="placeholder">
+		</div>
+		<div class="input-group" v-if="rightIcon && rightIconType === 'addon'">
+			<input
+				:type="inputType"
+				:class="{'form-control': true, 'input-circle-left': rounded, 'input-sm': inputSize === 'small', 'input-lg': inputSize === 'large' }"
+				:id="elemId"
+				:placeholder="placeholder">
+			<span :class="{ 'input-group-addon': true, 'input-circle-right': rounded }">
+				<m-icon
+					:color="rightIconColor"
+					:name="rightIcon ? rightIcon + (rightIconSpinnable ? ' fa-spin' : '') : null" />
+			</span>
+		</div>
+		<div class="input-icon" v-else-if="leftIcon && leftIconType === 'icon'">
+			<m-icon
+				:color="leftIconColor"
+				:name="leftIcon ? leftIcon + (leftIconSpinnable ? ' fa-spin' : '') : null" 
+				:tooltip="tooltipContent ? tooltipContent : null"
+				:tooltip-placement="tooltipPlacement ? tooltipPlacement : null" />
+			<input
+				:type="inputType"
+				:class="{ 'form-control': true, 'input-circle': rounded, 'input-sm': inputSize === 'small', 'input-lg': inputSize === 'large' }"
+				:placeholder="placeholder">
+		</div>
+		<div class="input-icon right" v-else-if="rightIcon && rightIconType === 'icon'">
+			<m-icon
+				:color="rightIconColor"
+				:name="rightIcon ? rightIcon + (rightIconSpinnable ? ' fa-spin' : '') : null"
+				:tooltip="tooltipContent ? tooltipContent : null"
+				:tooltip-placement="tooltipPlacement ? tooltipPlacement : null" />
+			<input
+				:type="inputType"
+				:class="{ 'form-control': true, 'input-circle': rounded, 'input-sm': inputSize === 'small', 'input-lg': inputSize === 'large' }"
+				:placeholder="placeholder">
+		</div>
+
+*/
+
 import mIcon from "../graphic/m-icon.vue"
 
 export default {
@@ -73,16 +118,16 @@ export default {
 		},
 		leftIcon: {
 			type: String,
-			default: ""
+			default: null
 		},
 		leftIconType: {
 			type: String,
-			default: "",
+			default: null,
 			options: ["icon", "addon"]
 		},
 		leftIconColor: {
 			type: String,
-			default: ""
+			default: null
 		},
 		leftIconSpinnable: {
 			type: Boolean,
@@ -90,20 +135,29 @@ export default {
 		},
 		rightIcon: {
 			type: String,
-			default: ""
+			default: null
 		},
 		rightIconType: {
 			type: String,
-			default: "",
+			default: null,
 			options: ["icon", "addon"]
 		},
 		rightIconColor: {
 			type: String,
-			default: ""
+			default: null
 		},
 		rightIconSpinnable: {
 			type: Boolean,
 			default: false
+		},
+		tooltipContent: {
+			type: String,
+			default: ""
+		},
+		tooltipPlacement: {
+			type: String,
+			default: "",
+			options: ["top", "right", "bottom", "left"]
 		}
 	},
 	computed: {
@@ -112,6 +166,81 @@ export default {
 				return this.inputId
 			else
 				return "input-id-" + Number(new Date())
+		},
+		inputDivStyle: function () {
+			var style = {}
+
+			if (this.leftIconType === "icon" || this.rightIconType === "icon")
+				style["input-icon"] = true
+			if (this.leftIconType === "addon" || this.rightIconType === "addon")
+				style["input-group"] = true
+			if (this.rightIcon && this.rightIconType === "icon")
+				style["right"] = true
+
+			return style
+		},
+		inputStyle: function () {
+			var style = {
+				"form-control": true
+			}
+
+			switch (this.inputSize) {
+			case "small":
+				style["input-sm"] = true
+				break
+			case "large":
+				style["input-lg"] = true
+			}
+
+			if (this.rounded) {
+				if (this.leftIconType === "icon" || this.rightIconType === "icon")
+					style["input-circle"] = true
+				else if (this.leftIconType === "addon")
+					style["input-circle-right"] = true
+				else if (this.rightIconType === "addon")
+					style["input-circle-left"] = true
+			}
+
+			return style
+		},
+		leftIconSpanStyle: function () {
+			var style = {
+				"input-group-addon": true
+			}
+
+			if (this.rounded)
+				style["input-circle-left"] = true
+
+			return style
+		},
+		rightIconSpanStyle: function () {
+			var style = {
+				"input-group-addon": true
+			}
+
+			if (this.rounded)
+				style["input-circle-right"] = true
+
+			return style
+		},
+		iconStyle: function () {
+			var objectStyle = {
+				iconColor: null,
+				iconName: null
+			}
+
+			if (this.leftIconType === "icon" && this.leftIcon) {
+				objectStyle.iconName = this.leftIcon
+				objectStyle.iconColor = this.leftIconColor
+			} else if (this.rightIconType === "icon" && this.rightIcon) {
+				objectStyle.iconName = this.rightIcon
+				objectStyle.iconColor = this.rightIconColor
+			}
+
+			if (this.leftIconSpinnable || this.rightIconSpinnable)
+				objectStyle.iconName += " fa-spin"
+
+			return objectStyle
 		}
 	}
 }

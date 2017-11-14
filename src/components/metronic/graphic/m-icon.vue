@@ -1,5 +1,10 @@
 <template>
-	<i v-if="name" :class="iconStyle" :data-original-title="tooltip" :data-placement="tooltipPlacement"></i>
+	<i v-if="name"
+		:class="iconStyle"
+		:data-original-title="tooltip"
+		:data-placement="tooltipPlacement"
+		:data-container="tooltip ? 'body': null"
+	></i>
 </template>
 
 <script>
@@ -29,6 +34,9 @@ export default {
 				style["tooltips"] = true
 			return style
 		}
+	},
+	mounted () {
+		console.log("m-icon mounted with: " + this.name + " name prop.")
 	}
 }
 </script>

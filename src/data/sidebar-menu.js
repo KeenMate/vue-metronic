@@ -28,10 +28,6 @@ const menu = [
 		"LinkIcon": "icon-wallet",
 		"SubMenu": [
 			{
-				"Title": "Boxed Portlets",
-				"RouteName": "portlets-boxed"
-			},
-			{
 				"Title": "Light Portlets",
 				"RouteName": "portlets-light"
 			},

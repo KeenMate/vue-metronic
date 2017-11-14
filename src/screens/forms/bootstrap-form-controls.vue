@@ -44,13 +44,13 @@
 										<m-bootstrap-input
 											label="Email Address"
 											left-icon-type="addon"
-											left-icon="fa fa-envolve"
+											left-icon="fa fa-envelope"
 											placeholder="Email Address"
 										/>
 										<m-bootstrap-input
 											label="Circle Input"
 											left-icon-type="addon"
-											left-icon="fa fa-envolve"
+											left-icon="fa fa-envelope"
 											placeholder="Email Address"
 										/>
 										<m-bootstrap-input
@@ -115,7 +115,8 @@
 										/>
 										<m-bootstrap-input
 											label="Input with Icon"
-
+											tooltip-content="Invalid email"
+											tooltip-placement="top"
 										/>
 											<div class="form-group">
 													<label>Input with Icon</label>
