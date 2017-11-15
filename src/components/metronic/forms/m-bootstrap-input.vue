@@ -1,6 +1,6 @@
 <template>
 	<div class="form-group">
-		<label :for="elemId">{{label}}</label>
+		<label v-if="label" :for="elemId">{{label}}</label>
 		<div :class="inputDivStyle">
 			<span :class="leftIconSpanStyle" v-if="leftIcon && leftIconType === 'addon'">
 				<m-icon
@@ -15,11 +15,21 @@
 				:tooltip-placement="tooltipPlacement ? tooltipPlacement : null"
 			/>
 			<input
+				v-if="!staticType && !staticContent"
 				:id="elemId"
 				:type="inputType"
-				:placeholder="placeholder"
+				:placeholder="placeholder ? placeholder : null"
 				:class="inputStyle"
+				:disabled="disabled"
+				:readonly="readonly"
+				@focus="onFocusHandler(e)"
+				@click="onClickHandler(e)"
+				@blur="onBlurHandler(e)"
+				@change="onChangeHandler(e)"
+				@input="onInputHandler(e)"
 			>
+			<p v-else-if="staticType && staticContent" class="form-control-static">{{staticContent}}</p>
+			<p v-if="helpMsg" class="help-block">{{helpMsg}}</p>
 			<span :class="leftIconSpanStyle" v-if="rightIcon && rightIconType === 'addon'">
 				<m-icon
 					:color="rightIconColor"
@@ -158,6 +168,34 @@ export default {
 			type: String,
 			default: "",
 			options: ["top", "right", "bottom", "left"]
+		},
+		inputSpinner: {
+			type: Boolean,
+			default: false
+		},
+		staticType: {
+			type: Boolean,
+			default: false
+		},
+		staticContent: {
+			type: String,
+			default: ""
+		},
+		disabled: {
+			type: Boolean,
+			default: false
+		},
+		readonly: {
+			type: Boolean,
+			default: false
+		},
+		value: {
+			type: String,
+			default: ""
+		},
+		helpMsg: {
+			type: String,
+			default: ""
 		}
 	},
 	computed: {
@@ -191,6 +229,11 @@ export default {
 			case "large":
 				style["input-lg"] = true
 			}
+
+			style["spinner"] = this.inputSpinner
+
+			if (this.inputType === "file")
+				style["form-control"] = false
 
 			if (this.rounded) {
 				if (this.leftIconType === "icon" || this.rightIconType === "icon")
@@ -240,7 +283,25 @@ export default {
 			if (this.leftIconSpinnable || this.rightIconSpinnable)
 				objectStyle.iconName += " fa-spin"
 
+			console.log(objectStyle)
 			return objectStyle
+		}
+	},
+	methods: {
+		onInputHandler: function (e) {
+			this.$emit("input", e)
+		},
+		onChangeHandler: function (e) {
+			this.$emit("change", e)
+		},
+		onFocusHandler: function (e) {
+			this.$emit("focus", e)
+		},
+		onClickHandler: function (e) {
+			this.$emit("click", e)
+		},
+		onBlurHandler: function (e) {
+			this.$emit("blur", e)
 		}
 	}
 }

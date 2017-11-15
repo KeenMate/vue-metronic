@@ -41,19 +41,19 @@
 						<m-portlet-block>
 							<form role="form">
 									<div class="form-body">
-										<m-bootstrap-input
+										<m-bs-input
 											label="Email Address"
 											left-icon-type="addon"
 											left-icon="fa fa-envelope"
 											placeholder="Email Address"
 										/>
-										<m-bootstrap-input
+										<m-bs-input
 											label="Circle Input"
 											left-icon-type="addon"
 											left-icon="fa fa-envelope"
 											placeholder="Email Address"
 										/>
-										<m-bootstrap-input
+										<m-bs-input
 											label="Password"
 											input-id="exampleInputPassword1"
 											input-type="password"
@@ -62,28 +62,28 @@
 											right-icon-color="red"
 											placeholder="Password"
 										/>
-										<m-bootstrap-input
+										<m-bs-input
 											label="Left Icon"
 											left-icon-type="icon"
 											left-icon="fa fa-bell-o"
 											left-icon-color="green"
 											placeholder="Left icon"
 										/>
-										<m-bootstrap-input
+										<m-bs-input
 											label="Left Icon(.input-sm)"
 											left-icon-type="icon"
 											left-icon="fa fa-bell-o"
 											input-size="small"
 											placeholder="Left icon"
 										/>
-										<m-bootstrap-input
+										<m-bs-input
 											label="Left Icon(.input-lg)"
 											left-icon-type="icon"
 											left-icon="fa fa-bell-o"
 											input-size="large"
 											placeholder="Left icon"
 										/>
-										<m-bootstrap-input
+										<m-bs-input
 											label="Right Icon"
 											right-icon-type="icon"
 											right-icon="fa fa-microphone"
@@ -91,14 +91,14 @@
 											right-icon-spinnable
 											placeholder="Right icon"
 										/>
-										<m-bootstrap-input
+										<m-bs-input
 											label="Right Icon(.input-sm)"
 											right-icon-type="icon"
 											right-icon="fa fa-bell-o"
 											input-size="small"
 											placeholder="Left icon"
 										/>
-										<m-bootstrap-input
+										<m-bs-input
 											label="Right Icon(.input-lg)"
 											right-icon-type="icon"
 											right-icon="fa fa-bell-o"
@@ -106,171 +106,94 @@
 											input-size="large"
 											placeholder="Left icon"
 										/>
-										<m-bootstrap-input
+										<m-bs-input
 											label="Circle Input"
 											right-icon="fa fa-microphone"
 											right-icon-type="icon"
 											placeholder="Right icon"
 											rounded
 										/>
-										<m-bootstrap-input
+										<m-bs-input
 											label="Input with Icon"
 											tooltip-content="Invalid email"
 											tooltip-placement="top"
+											right-icon="fa fa-exclamation"
+											right-icon-type="icon"
+											left-icon-type="addon"
+											left-icon="fa fa-envelope"
+											left-icon-color="purple"
 										/>
-											<div class="form-group">
-													<label>Input with Icon</label>
-													<div class="input-group input-icon right">
-															<span class="input-group-addon">
-																	<i class="fa fa-envelope font-purple"></i>
-															</span>
-															<i class="fa fa-exclamation tooltips" data-original-title="Invalid email." data-container="body"></i>
-															<input id="email" class="input-error form-control" type="text" value=""> </div>
-											</div>
-											<div class="form-group">
-													<label>Input With Spinner</label>
-													<input class="form-control spinner" type="text" placeholder="Process something" /> </div>
-											<div class="form-group">
-													<label>Static Control</label>
-													<p class="form-control-static"> email@example.com </p>
-											</div>
-											<div class="form-group">
-													<label>Disabled</label>
-													<input type="text" class="form-control" placeholder="Disabled" disabled> </div>
-											<div class="form-group">
-													<label>Readonly</label>
-													<input type="text" class="form-control" placeholder="Readonly" readonly> </div>
-											<div class="form-group">
-													<label>Dropdown</label>
-													<select class="form-control">
-															<option>Option 1</option>
-															<option>Option 2</option>
-															<option>Option 3</option>
-															<option>Option 4</option>
-															<option>Option 5</option>
-													</select>
-											</div>
-											<div class="form-group">
-													<label>Multiple Select</label>
-													<select multiple class="form-control">
-															<option>Option 1</option>
-															<option>Option 2</option>
-															<option>Option 3</option>
-															<option>Option 4</option>
-															<option>Option 5</option>
-													</select>
-											</div>
-											<div class="form-group">
-													<label>Textarea</label>
-													<textarea class="form-control" rows="3"></textarea>
-											</div>
-											<div class="form-group">
-													<label for="exampleInputFile1">File input</label>
-													<input type="file" id="exampleInputFile1">
-													<p class="help-block"> some help text here. </p>
-											</div>
-											<div class="form-group">
-													<label>Checkboxes</label>
-													<div class="mt-checkbox-list">
-															<label class="mt-checkbox"> Checkbox 1
-																	<input type="checkbox" value="1" name="test" />
-																	<span></span>
-															</label>
-															<label class="mt-checkbox"> Checkbox 2
-																	<input type="checkbox" value="1" name="test" />
-																	<span></span>
-															</label>
-															<label class="mt-checkbox"> Checkbox 3
-																	<input type="checkbox" value="1" name="test" />
-																	<span></span>
-															</label>
-													</div>
-											</div>
-											<div class="form-group">
-													<label>Outline Checkboxes</label>
-													<div class="mt-checkbox-list">
-															<label class="mt-checkbox mt-checkbox-outline"> Checkbox 1
-																	<input type="checkbox" value="1" name="test" />
-																	<span></span>
-															</label>
-															<label class="mt-checkbox mt-checkbox-outline"> Checkbox 2
-																	<input type="checkbox" value="1" name="test" />
-																	<span></span>
-															</label>
-															<label class="mt-checkbox mt-checkbox-outline"> Checkbox 3
-																	<input type="checkbox" value="1" name="test" />
-																	<span></span>
-															</label>
-													</div>
-											</div>
-											<div class="form-group">
-													<label>Inline Checkboxes</label>
-													<div class="mt-checkbox-inline">
-															<label class="mt-checkbox">
-																	<input type="checkbox" id="inlineCheckbox1" value="option1"> Checkbox 1
-																	<span></span>
-															</label>
-															<label class="mt-checkbox">
-																	<input type="checkbox" id="inlineCheckbox2" value="option2"> Checkbox 2
-																	<span></span>
-															</label>
-															<label class="mt-checkbox mt-checkbox-disabled">
-																	<input type="checkbox" id="inlineCheckbox3" value="option3" disabled> Disabled
-																	<span></span>
-															</label>
-													</div>
-											</div>
-											<div class="form-group">
-													<label>Radios</label>
-													<div class="mt-radio-list">
-															<label class="mt-radio"> Radio 1
-																	<input type="radio" value="1" name="test" />
-																	<span></span>
-															</label>
-															<label class="mt-radio"> Radio 2
-																	<input type="radio" value="1" name="test" />
-																	<span></span>
-															</label>
-															<label class="mt-radio"> Radio 3
-																	<input type="radio" value="1" name="test" />
-																	<span></span>
-															</label>
-													</div>
-											</div>
-											<div class="form-group">
-													<label>Outline Radios</label>
-													<div class="mt-radio-list">
-															<label class="mt-radio mt-radio-outline"> Radio 1
-																	<input type="radio" value="1" name="test" />
-																	<span></span>
-															</label>
-															<label class="mt-radio mt-radio-outline"> Radio 2
-																	<input type="radio" value="1" name="test" />
-																	<span></span>
-															</label>
-															<label class="mt-radio mt-radio-outline"> Radio 3
-																	<input type="radio" value="1" name="test" />
-																	<span></span>
-															</label>
-													</div>
-											</div>
-											<div class="form-group">
-													<label>Inline Radio</label>
-													<div class="mt-radio-inline">
-															<label class="mt-radio">
-																	<input type="radio" name="optionsRadios" id="optionsRadios4" value="option1" checked> Option 1
-																	<span></span>
-															</label>
-															<label class="mt-radio">
-																	<input type="radio" name="optionsRadios" id="optionsRadios5" value="option2"> Option 2
-																	<span></span>
-															</label>
-															<label class="mt-radio mt-radio-disabled">
-																	<input type="radio" name="optionsRadios" id="optionsRadios6" value="option3" disabled> Disabled
-																	<span></span>
-															</label>
-													</div>
-											</div>
+										<m-bs-input
+											label="Input with spinner"
+											placeholder="Process something"
+										/>
+										<m-bs-input
+											label="Static Control"
+											static-content="email@example.com"
+											static-type
+										/>
+										<m-bs-input
+											label="Disabled"
+											placeholder="Disabled"
+											disabled
+										/>
+										<m-bs-input
+											label="Readonly"
+											placeholder="Readonly"
+											readonly
+										/>
+										<m-bs-select label="Dropdown">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+										</m-bs-select>
+										<m-bs-select label="Multiple Select" allow-multiple>
+											<option>Option 1</option>
+											<option>Option 2</option>
+											<option>Option 3</option>
+											<option>Option 4</option>
+											<option>Option 5</option>
+										</m-bs-select>
+										<m-bs-textarea label="Textarea" :rows="3" />
+										<m-bs-input
+											label="File input"
+											id="exampleInputFile1"
+											input-type="file"
+											help-msg="some help text here"
+										/>
+										<m-bs-checkbox-group label="Checkboxes">
+											<m-bs-checkbox name="test" value="1" label="Checkbox 1" />
+											<m-bs-checkbox name="test" value="2" label="Checkbox 2" />
+											<m-bs-checkbox name="test" value="3" label="Checkbox 3" />
+										</m-bs-checkbox-group>
+										<m-bs-checkbox-group label="Outline Checkboxes">
+											<m-bs-checkbox name="test" value="1" label="Checkbox 1" outlined />
+											<m-bs-checkbox name="test" value="2" label="Checkbox 2" outlined />
+											<m-bs-checkbox name="test" value="3" label="Checkbox 3" outlined />
+										</m-bs-checkbox-group>
+										<m-bs-checkbox-group label="Inline Checkboxes" inline>
+											<m-bs-checkbox name="test" value="1" label="Checkbox 1" />
+											<m-bs-checkbox name="test" value="2" label="Checkbox 2" />
+											<m-bs-checkbox name="test" value="3" label="Checkbox 3" disabled />
+										</m-bs-checkbox-group>
+										<m-bs-radio-group label="Radios">
+											<m-bs-radio label="Radio 1" value="1" name="test" />
+											<m-bs-radio label="Radio 2" value="1" name="test" />
+											<m-bs-radio label="Radio 3" value="1" name="test" />
+										</m-bs-radio-group>
+										<m-bs-radio-group label="Outline Radios">
+											<m-bs-radio label="Radio 1" value="1" name="test" outline />
+											<m-bs-radio label="Radio 2" value="1" name="test" outline />
+											<m-bs-radio label="Radio 3" value="1" name="test" outline />
+										</m-bs-radio-group>
+										<m-bs-radio-group label="Inline Radio" inline>
+											<m-bs-radio label="Option 1" value="option1" name="optionsRadios" checked />
+											<m-bs-radio label="Option 1" value="option1" name="optionsRadios" />
+											<m-bs-radio label="Option 1" value="option1" name="optionsRadios" disabled />
+										</m-bs-radio-group>
+										
 									</div>
 									<div class="form-actions">
 											<button type="submit" class="btn blue">Submit</button>
@@ -2030,6 +1953,12 @@ import mColumn from "../../components/metronic/structure/m-column.vue"
 import mButtonGroup from "../../components/metronic/ui/m-button-group.vue"
 
 import mBootstrapInput from "../../components/metronic/forms/m-bootstrap-input.vue"
+import mBootstrapSelect from "../../components/metronic/forms/m-bootstrap-select.vue"
+import mBootstrapTextarea from "../../components/metronic/forms/m-bootstrap-textarea.vue"
+import mBootstrapCheckboxGroup from "../../components/metronic/forms/m-bootstrap-checkbox-group.vue"
+import mBootstrapCheckbox from "../../components/metronic/forms/m-bootstrap-checkbox.vue"
+import mBootstrapRadioGroup from "../../components/metronic/forms/m-bootstrap-radio-group.vue"
+import mBootstrapRadio from "../../components/metronic/forms/m-bootstrap-radio.vue"
 
 export default {
 	components: {
@@ -2038,7 +1967,13 @@ export default {
 		mRow,
 		mColumn,
 		mButtonGroup,
-		mBootstrapInput
+		"m-bs-input": mBootstrapInput,
+		"m-bs-select": mBootstrapSelect,
+		"m-bs-textarea": mBootstrapTextarea,
+		"m-bs-checkbox-group": mBootstrapCheckboxGroup,
+		"m-bs-checkbox": mBootstrapCheckbox,
+		"m-bs-radio-group": mBootstrapRadioGroup,
+		"m-bs-radio": mBootstrapRadio
 	}
 }
 </script>
