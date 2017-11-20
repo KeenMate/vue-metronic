@@ -48,6 +48,10 @@ export default {
 			type: Boolean,
 			default: false
 		},
+		titleSbold: {
+			type: Boolean,
+			default: false
+		},
 		titleUppercased: {
 			type: Boolean,
 			default: false
@@ -79,7 +83,7 @@ export default {
 			}
 			style[this.type] = true
 
-			if (this.color && this.color !== "") {
+			if (this.color) {
 				style[this.color] = true
 			}
 
@@ -102,6 +106,9 @@ export default {
 
 			if (this.titleBold)
 				style["bold"] = true
+
+			if (this.titleSbold)
+				style["sbold"] = true
 
 			if (this.titleUppercased)
 				style["uppercase"] = true

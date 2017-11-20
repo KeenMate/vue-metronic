@@ -1,12 +1,14 @@
 <template>
 	<div class="form-group">
-		<label v-if="label" :for="elemId">{{label}}</label>
+		<label v-if="label" :for="elemId" :class="labelClass">{{label}}</label>
 		<div :class="inputDivStyle">
-			<span :class="leftIconSpanStyle" v-if="leftIcon && leftIconType === 'addon'">
+			<span :class="leftAddonSpanStyle" v-if="(leftIcon && leftIconType === 'addon') || leftAddonText">
 				<m-icon
 					:color="leftIconColor"
 					:name="leftIcon !== null ? leftIcon + (leftIconSpinnable ? ' fa-spin' : '') : null"
+					v-if="!leftAddonText"
 				/>
+				<template v-else>{{leftAddonText}}</template>
 			</span>
 			<m-icon
 				:color="iconStyle.iconColor"
@@ -29,70 +31,20 @@
 				@input="onInputHandler(e)"
 			>
 			<p v-else-if="staticType && staticContent" class="form-control-static">{{staticContent}}</p>
-			<p v-if="helpMsg" class="help-block">{{helpMsg}}</p>
-			<span :class="leftIconSpanStyle" v-if="rightIcon && rightIconType === 'addon'">
+			<span v-if="helpMsg" :class="helpMsgSpanClass">{{helpMsg}}</span>
+			<span :class="rightAddonSpanStyle" v-if="(rightIcon && rightIconType === 'addon') || rightAddonText">
 				<m-icon
 					:color="rightIconColor"
 					:name="rightIcon ? rightIcon + (rightIconSpinnable ? ' fa-spin' : '') : null"
+					v-if="rightAddonText"
 				/>
+				<template v-else>{{rightAddonText}}</template>
 			</span>
 		</div>
 	</div>
 </template>
 
 <script>
-/*
- 
- This is awful old and threshy spaghetti code, luckily if woke up and realized how a big smelly sort of junk it is :)
-
-<div class="input-group" v-if="leftIcon && leftIconType === 'addon'">
-			<span :class="{ 'input-group-addon': true, 'input-circle-left': rounded }">
-				<m-icon
-					:color="leftIconColor"
-					:name="leftIcon !== null ? leftIcon + (leftIconSpinnable ? ' fa-spin' : '') : null" />
-			</span>
-			<input
-				:type="inputType"
-				:class="{ 'form-control': true, 'input-circle-right': rounded, 'input-sm': inputSize === 'small', 'input-lg': inputSize === 'large' }"
-				:id="elemId"
-				:placeholder="placeholder">
-		</div>
-		<div class="input-group" v-if="rightIcon && rightIconType === 'addon'">
-			<input
-				:type="inputType"
-				:class="{'form-control': true, 'input-circle-left': rounded, 'input-sm': inputSize === 'small', 'input-lg': inputSize === 'large' }"
-				:id="elemId"
-				:placeholder="placeholder">
-			<span :class="{ 'input-group-addon': true, 'input-circle-right': rounded }">
-				<m-icon
-					:color="rightIconColor"
-					:name="rightIcon ? rightIcon + (rightIconSpinnable ? ' fa-spin' : '') : null" />
-			</span>
-		</div>
-		<div class="input-icon" v-else-if="leftIcon && leftIconType === 'icon'">
-			<m-icon
-				:color="leftIconColor"
-				:name="leftIcon ? leftIcon + (leftIconSpinnable ? ' fa-spin' : '') : null" 
-				:tooltip="tooltipContent ? tooltipContent : null"
-				:tooltip-placement="tooltipPlacement ? tooltipPlacement : null" />
-			<input
-				:type="inputType"
-				:class="{ 'form-control': true, 'input-circle': rounded, 'input-sm': inputSize === 'small', 'input-lg': inputSize === 'large' }"
-				:placeholder="placeholder">
-		</div>
-		<div class="input-icon right" v-else-if="rightIcon && rightIconType === 'icon'">
-			<m-icon
-				:color="rightIconColor"
-				:name="rightIcon ? rightIcon + (rightIconSpinnable ? ' fa-spin' : '') : null"
-				:tooltip="tooltipContent ? tooltipContent : null"
-				:tooltip-placement="tooltipPlacement ? tooltipPlacement : null" />
-			<input
-				:type="inputType"
-				:class="{ 'form-control': true, 'input-circle': rounded, 'input-sm': inputSize === 'small', 'input-lg': inputSize === 'large' }"
-				:placeholder="placeholder">
-		</div>
-
-*/
 
 import mIcon from "../graphic/m-icon.vue"
 
@@ -106,6 +58,25 @@ export default {
 			default: "text",
 			options: ["text", "email", "number", "password", "date", "file", "And other Input types"]
 		},
+		inputColumn: {
+			type: String,
+			default: "",
+			example: "col-md-3"
+		},
+		inputSize: {
+			type: String,
+			default: ""
+		},
+		inputDisplay: {
+			type: String,
+			default: "block",
+			options: ["block", "inline"]
+		},
+		inputWidthSize: {
+			type: String,
+			default: "",
+			options: ["small", "medium", "large"]
+		},
 		inputId: {
 			type: String,
 			default: ""
@@ -118,13 +89,19 @@ export default {
 			type: String,
 			default: ""
 		},
+		labelColumn: {
+			type: String,
+			default: "",
+			example: "col-md-3"
+		},
+		labelControl: {
+			type: Boolean,
+			default: false,
+			description: "if its set to `true`, label will have `label-control` class in addition"
+		},
 		rounded: {
 			type: Boolean,
 			default: false
-		},
-		inputSize: {
-			type: String,
-			default: ""
 		},
 		leftIcon: {
 			type: String,
@@ -143,6 +120,10 @@ export default {
 			type: Boolean,
 			default: false
 		},
+		leftAddonText: {
+			type: String,
+			default: ""
+		},
 		rightIcon: {
 			type: String,
 			default: null
@@ -159,6 +140,10 @@ export default {
 		rightIconSpinnable: {
 			type: Boolean,
 			default: false
+		},
+		rightAddonText: {
+			type: String,
+			default: ""
 		},
 		tooltipContent: {
 			type: String,
@@ -196,6 +181,11 @@ export default {
 		helpMsg: {
 			type: String,
 			default: ""
+		},
+		helpMsgDisplay: {
+			type: String,
+			default: "block",
+			options: ["block", "inline"]
 		}
 	},
 	computed: {
@@ -212,6 +202,12 @@ export default {
 				style["input-icon"] = true
 			if (this.leftIconType === "addon" || this.rightIconType === "addon")
 				style["input-group"] = true
+			if (this.inputSize === "small")
+				style["input-group-sm"] = true
+			else if (this.inputSize === "large")
+				style["input-group-lg"] = true
+			if (this.inputColumn)
+				style[this.inputColumn] = true
 			if (this.rightIcon && this.rightIconType === "icon")
 				style["right"] = true
 
@@ -230,6 +226,21 @@ export default {
 				style["input-lg"] = true
 			}
 
+			switch (this.inputWidthSize) {
+			case "small":
+				style["input-small"] = true
+				break
+			case "medium":
+				style["input-medium"] = true
+				break
+			case "large":
+				style["input-large"] = true
+				break
+			}
+
+			if (this.inputDisplay === "inline")
+				style["input-inline"] = true
+
 			style["spinner"] = this.inputSpinner
 
 			if (this.inputType === "file")
@@ -246,17 +257,18 @@ export default {
 
 			return style
 		},
-		leftIconSpanStyle: function () {
-			var style = {
-				"input-group-addon": true
-			}
+		leftAddonSpanStyle: function () {
+			var style = {}
+
+			if (this.leftIcon && this.leftIconType === "addon")
+				style["input-group-addon"] = true
 
 			if (this.rounded)
 				style["input-circle-left"] = true
 
 			return style
 		},
-		rightIconSpanStyle: function () {
+		rightAddonSpanStyle: function () {
 			var style = {
 				"input-group-addon": true
 			}
@@ -283,8 +295,25 @@ export default {
 			if (this.leftIconSpinnable || this.rightIconSpinnable)
 				objectStyle.iconName += " fa-spin"
 
-			console.log(objectStyle)
 			return objectStyle
+		},
+		labelClass: function () {
+			var style = {}
+
+			if (this.labelColumn)
+				style[this.labelColumn] = true
+
+			return style
+		},
+		helpMsgSpanClass: function () {
+			var style = {}
+
+			if (this.helpMsgDisplay === "inline")
+				style["help-inline"] = true
+			if (this.helpMsgDisplay === "block")
+				style["help-block"] = true
+
+			return style
 		}
 	},
 	methods: {
