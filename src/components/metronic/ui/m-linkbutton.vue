@@ -36,10 +36,10 @@ export default {
 
 			if (this.type === "button")
 				style["btn"] = true
-				
+
 			if (this.color.length > 0)
 				style[this.color] = true
-			
+
 			return style
 		}
 	}
