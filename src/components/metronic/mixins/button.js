@@ -95,15 +95,15 @@ export default {
 				style[this.color] = true
 			}
 			switch (this.buttonStyle.toLowerCase()) {
-				case "bootstrap": {
-					if (!this.level || this.level === "") style["btn-default"] = true
-					else style["btn-" + this.level.toLowerCase()] = true
-					break
-				}
-				case "metronic-outline": {
-					style["btn-outline"] = true
-					break
-				}
+			case "bootstrap": {
+				if (!this.level || this.level === "") style["btn-default"] = true
+				else style["btn-" + this.level.toLowerCase()] = true
+				break
+			}
+			case "metronic-outline": {
+				style["btn-outline"] = true
+				break
+			}
 			}
 
 			if (this.block) {

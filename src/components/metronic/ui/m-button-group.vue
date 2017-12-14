@@ -25,21 +25,21 @@ export default {
 			var style = {
 				"btn-group": true
 			}
-			
+
 			if (this.size.toLowerCase() !== "default") {
 				switch (this.size.toLowerCase()) {
-					case "large": {
-						style["btn-group-lg"] = true
-						break
-					}
-					case "small": {
-						style["btn-group-sm"] = true
-						break
-					}
-					case "extra-small": {
-						style["btn-group-xs"] = true
-						break
-					}
+				case "large": {
+					style["btn-group-lg"] = true
+					break
+				}
+				case "small": {
+					style["btn-group-sm"] = true
+					break
+				}
+				case "extra-small": {
+					style["btn-group-xs"] = true
+					break
+				}
 				}
 			}
 

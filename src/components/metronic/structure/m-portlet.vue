@@ -128,7 +128,7 @@ export default {
 			if (this.iconColor && this.iconColor !== "") {
 				style["font-" + this.iconColor] = true
 			}
-			
+
 			return style
 		}
 	}

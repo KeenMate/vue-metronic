@@ -32,7 +32,7 @@ export default {
 			}
 
 			style["note-" + this.level] = true
-			
+
 			if (this.bordered)
 				style["note-bordered"] = true
 

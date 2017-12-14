@@ -54,7 +54,7 @@ export default {
 		},
 		hide: function () {
 			$(this.$refs[this.id]).modal("hide")
-		} 
+		}
 	}
 }
 </script>
