@@ -7,6 +7,8 @@ import GridSystem from "./screens/ui/grid-system.vue"
 import GeneralComponentsScreen from "./screens/ui/general-components.vue"
 import UnderDevelopment from "./screens/under-development.vue"
 
+import TabsTest from "./screens/development/tab-test.vue"
+
 import PortletsLight from "./screens/portlets/light.vue"
 
 import BootstrapForms from "./screens/forms/bootstrap-form-controls.vue"
@@ -135,6 +137,24 @@ export const routes = [{
 	],
 	meta: {
 		title: "Routing Examples"
+	}
+},
+{
+	path: "/development",
+	name: "development",
+	component: EmptyScreen,
+	children: [
+		{
+			path: "tabs",
+			name: "tabs",
+			component: TabsTest,
+			meta: {
+				title: "Tabs"
+			}
+		}
+	],
+	meta: {
+		title: "Development"
 	}
 },
 {

@@ -63,6 +63,16 @@ const menu = [
 				"RouteName": "route3"
 			}
 		]
+	},
+	{
+		"Title": "Development testing",
+		"LinkIcon": "fa fa-code",
+		"SubMenu": [
+			{
+				"Title": "Tabs testing",
+				"RouteName": "tabs"
+			}
+		]
 	}
 ]
 

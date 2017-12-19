@@ -24,11 +24,12 @@
 				:class="inputStyle"
 				:disabled="disabled"
 				:readonly="readonly"
-				@focus="onFocusHandler(e)"
-				@click="onClickHandler(e)"
-				@blur="onBlurHandler(e)"
-				@change="onChangeHandler(e)"
-				@input="onInputHandler(e)"
+				:value="value"
+				@focus="onFocusHandler"
+				@click="onClickHandler"
+				@blur="onBlurHandler"
+				@change="onChangeHandler"
+				@input="onInputHandler"
 			>
 			<p v-else-if="staticType && staticContent" class="form-control-static">{{staticContent}}</p>
 			<span v-if="helpMsg" :class="helpMsgSpanClass">{{helpMsg}}</span>
@@ -318,7 +319,7 @@ export default {
 	},
 	methods: {
 		onInputHandler: function (e) {
-			this.$emit("input", e)
+			this.$emit("input", e.target.value)
 		},
 		onChangeHandler: function (e) {
 			this.$emit("change", e)
