@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<m-validated-input :required="true" :validation-func="myFunc"></m-validated-input>
 		<m-row>
 			<m-column :size="6">
 					<!-- BEGIN SAMPLE FORM PORTLET-->
@@ -1695,6 +1696,7 @@
 </template>
 
 <script>
+import $ from "jquery"
 import mPortlet from "../../components/metronic/structure/m-portlet.vue"
 import mPortletBlock from "../../components/metronic/structure/m-portlet-block.vue"
 
@@ -1712,6 +1714,7 @@ import mBootstrapCheckboxGroup from "../../components/metronic/forms/m-bootstrap
 import mBootstrapCheckbox from "../../components/metronic/forms/m-bootstrap-checkbox.vue"
 import mBootstrapRadioGroup from "../../components/metronic/forms/m-bootstrap-radio-group.vue"
 import mBootstrapRadio from "../../components/metronic/forms/m-bootstrap-radio.vue"
+import mValidated from "../../components/metronic/ui/m-input-validated.vue"
 
 import mIcon from "../../components/metronic/graphic/m-icon.vue"
 
@@ -1731,7 +1734,28 @@ export default {
 		"m-bs-checkbox": mBootstrapCheckbox,
 		"m-bs-radio-group": mBootstrapRadioGroup,
 		"m-bs-radio": mBootstrapRadio,
+		"m-validated-input": mValidated,
 		mIcon
+	},
+	methods: {
+		myFunc: function (x) {
+			var def = $.Deferred()
+			$.ajax({
+				url: "https://jsonplaceholder.typicode.com/users",
+				method: "GET"
+			}).done(function (data) {
+				if (data) {
+					data.forEach(function (el) {
+						if (el.username === x) {
+							def.resolve(false)
+							return def
+						}
+					})
+					def.resolve(true)
+				}
+			})
+			return def
+		}
 	}
 }
 </script>
