@@ -1,33 +1,11 @@
 <template>
 	<div>
 		<ul class="nav nav-tabs">
-			<m-tab :key="index" v-for="(item, index) in tabs" :class="{ 'active': index === 0 }" :title="item.title" :id="item.id" />
-			<!-- <li class="active">
-					<a href="#tab_1_1" data-toggle="tab" aria-expanded="true"> Home </a>
-				</li>
-				<li class="">
-					<a href="#tab_1_2" data-toggle="tab" aria-expanded="false"> Profile </a>
-				</li>
-				<li class="dropdown">
-					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Dropdown
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="dropdown-menu" role="menu">
-						<li class="">
-							<a href="#tab_1_3" tabindex="-1" data-toggle="tab" aria-expanded="false"> Option 1 </a>
-						</li>
-						<li class="">
-							<a href="#tab_1_4" tabindex="-1" data-toggle="tab" aria-expanded="false"> Option 2 </a>
-						</li>
-						<li class="">
-							<a href="#tab_1_3" tabindex="-1" data-toggle="tab" aria-expanded="false"> Option 3 </a>
-						</li>
-						<li class="">
-							<a href="#tab_1_4" tabindex="-1" data-toggle="tab" aria-expanded="false"> Option 4 </a>
-						</li>
+		<m-tab :key="index" v-for="(item, index) in tabs"
+				:class="{ 'active': index === 0 }"
+				:title="item.title" :id="item.id"
+				:visible="item.visible"></m-tab>
 					</ul>
-			</li> -->
-		</ul>
 		<div class="tab-content">
 			<slot></slot>
 		</div>

@@ -1,6 +1,6 @@
 <template>
-	<li>
-		<a :href="'#' + id" data-toggle="tab" aria-expanded="true"> {{ title }} </a>
+	<li v-if="visible">
+		<a :href="'#' + ((disabled) ? '' : id)" data-toggle="tab" aria-expanded="true"> {{ title }} </a>
 	</li>
 </template>
 
@@ -14,6 +14,14 @@ export default {
 		id: {
 			type: String,
 			default: ""
+
+		visible: {
+			type: Boolean,
+			default: true
+		},
+		disabled: {
+			type: Boolean,
+			
 		}
 	}
 }

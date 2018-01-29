@@ -14,20 +14,12 @@ export default {
 	name: "BreadCrumbComponent",
 	computed: {
 		breadcrumbs () {
-			var breads = this.$route.matched.map(function (item) {
+			return this.$route.matched.map(function (item) {
 				return {
 					Title: item.meta.title,
 					RouteName: item.name
 				}
 			})
-
-			if (this.$route.params.breadcrumb) {
-				breads.push({
-					title: this.$route.params.breadcrumb
-				})
-			}
-
-			return breads
 		}
 	}
 }

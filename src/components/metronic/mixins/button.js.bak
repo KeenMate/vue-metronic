@@ -60,11 +60,6 @@ export default {
 			default: null
 		}
 	},
-		type: {
-			type: String,
-			default: ""
-		}
-	},
 	computed: {
 		btnStyle: function () {
 			var style = {
