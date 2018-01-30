@@ -56,7 +56,7 @@ import metronicComponent from "../mixins/metronic-component"
 import mFormGroup from "./m-form-group"
 
 export default {
-mixins: [
+	mixins: [
 		formInputMixin,
 		metronicComponent
 	],
@@ -71,7 +71,7 @@ mixins: [
 		rows: {
 			type: Number,
 			default: null
-},
+		},
 		inputSize: {
 			type: String,
 			default: ""
@@ -114,12 +114,12 @@ mixins: [
 			type: Boolean,
 			default: false
 		}
-},
+	},
 	computed: {
 		inputStyle: function () {
 			var style = {
 				"form-control": true
-	}
+			}
 
 			switch (this.inputSize) {
 			case "small":
@@ -127,7 +127,8 @@ mixins: [
 				break
 			case "large":
 				style["input-lg"] = true
-}
+				break
+			}
 
 			switch (this.inputWidthSize) {
 			case "small":

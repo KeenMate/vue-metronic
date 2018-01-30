@@ -14,14 +14,14 @@ export default {
 		id: {
 			type: String,
 			default: ""
-
+		},
 		visible: {
 			type: Boolean,
 			default: true
 		},
 		disabled: {
 			type: Boolean,
-			
+			default: false
 		}
 	}
 }

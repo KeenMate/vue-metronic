@@ -1,43 +1,64 @@
 <template>
-			<input
-				v-if="!staticType && !staticContent"
-				:id="inputId"
-				:type="inputType"
-				:placeholder="placeholder ? placeholder : null"
-				:class="inputStyle"
-				:disabled="disabled"
-				:readonly="readonly"
-				:value="value"
-	:min="minDate && inputType === 'date' ? minDate : ''"
-	:max="maxDate && inputType === 'date' ? maxDate : ''"
-				@focus="onFocusHandler"
-				@click="onClickHandler"
-				@blur="onBlurHandler"
-				@change="onChangeHandler"
-				@input="onInputHandler"
-			>
-			<p v-else-if="staticType && staticContent" class="form-control-static">{{staticContent}}</p>
-			<span v-if="helpMsg" :class="helpMsgSpanClass">{{helpMsg}}</span>
-			<span :class="rightAddonSpanStyle" v-if="(rightIcon && rightIconType === 'addon') || rightAddonText">
-				<m-icon
-					:color="rightIconColor"
-					:name="rightIcon ? rightIcon + (rightIconSpinnable ? ' fa-spin' : '') : null"
-					v-if="rightAddonText"
-				/>
-				<template v-else>{{rightAddonText}}</template>
-			</span>
-		</div>
-	</div>
+	<m-wrapper
+	:help-msg="helpMsg"
+	:left-icon="leftIcon"
+	:left-icon-type="leftIconType"
+	:left-icon-color="leftIconColor"
+	:left-icon-spinnable="leftIconSpinnable"
+	:left-addon-text="leftAddonText"
+	:tooltip-content="tooltipContent"
+	:tooltip-placement="tooltipPlacement"
+	:right-icon="rightIcon"
+	:right-icon-type="rightIconType"
+	:right-icon-color="rightIconColor"
+	:right-icon-spinnable="rightIconSpinnable"
+	:right-addon-text="rightAddonText"
+	:horizontal="horizontal"
+	:input-size="inputSize"
+	:input-column="inputColumn"
+	:rounded="rounded"
+	:help-msg-display="helpMsgDisplay">
+		<input
+		:id="elemId"
+		:type="inputType"
+		:placeholder="placeholder ? placeholder : null"
+		:class="inputStyle"
+		:disabled="disabled"
+		:readonly="readonly"
+		:value="value"
+		:min="minDate && inputType === 'date' ? minDate : ''"
+		:max="maxDate && inputType === 'date' ? maxDate : ''"
+		@focus="onFocusHandler"
+		@click="onClickHandler"
+		@blur="onBlurHandler"
+		@change="onChangeHandler"
+		@input="onInputHandler">
+
+		<template slot="leftBtn">
+			<slot name="leftBtn"></slot>
+		</template>
+		<template slot="rightBtn">
+			<slot name="rightBtn"></slot>
+		</template>
+
+		<!-- <button slot="rightBtn" class="btn green">Clicky me</button> -->
+
+		<!-- Separate into new Component for static content -->
+		<!-- <p v-else-if="staticType && staticContent" class="form-control-static">{{staticContent}}</p> -->
+	</m-wrapper>
 </template>
 
 <script>
 import formInputMixin from "../mixins/form-input"
+
+import mFormControlWrapper from "./m-form-control-wrapper.vue"
 
 import mIcon from "../graphic/m-icon.vue"
 
 export default {
 	mixins: [formInputMixin],
 	components: {
+		"m-wrapper": mFormControlWrapper,
 		mIcon
 	},
 	props: {
@@ -62,14 +83,23 @@ export default {
 		},
 		maxLength: {
 			type: Number
-		}
-			options: ["small", "medium", "large"]
 		},
+		inputWidthSize: {
+			type: String,
+			default: undefined,
+			options: ["small", "medium", "large"]
+		}
+	},
 	computed: {
+		elemId: function () {
+			return this.inputId || ("input-id-" + Number(new Date()))
+		},
 		inputStyle: function () {
 			var style = {
 				"form-control": true
 			}
+
+			style["spinner"] = this.inputSpinner
 
 			switch (this.inputSize) {
 			case "small":
@@ -77,6 +107,7 @@ export default {
 				break
 			case "large":
 				style["input-lg"] = true
+				break
 			}
 
 			switch (this.inputWidthSize) {
@@ -94,8 +125,6 @@ export default {
 			if (this.inputDisplay === "inline")
 				style["input-inline"] = true
 
-			style["spinner"] = this.inputSpinner
-
 			if (this.inputType === "file")
 				style["form-control"] = false
 
@@ -110,8 +139,8 @@ export default {
 
 			return style
 		}
-		},
-methods: {
+	},
+	methods: {
 		onInputHandler: function (e) {
 			this.$emit("input", e.target.value)
 		},
@@ -127,8 +156,7 @@ methods: {
 		onBlurHandler: function (e) {
 			this.$emit("blur", e)
 		}
-			}
-}
+	}
 }
 </script>
 

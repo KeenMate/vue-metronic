@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<m-validated-input :required="true" :validation-func="myFunc"></m-validated-input>
+		<!-- <m-validated-input :required="true" :validation-func="myFunc"></m-validated-input> -->
 		<m-row>
 			<m-column :size="6">
 					<!-- BEGIN SAMPLE FORM PORTLET-->
@@ -42,107 +42,122 @@
 						<m-portlet-block>
 							<form role="form">
 									<div class="form-body">
-										<m-bs-input
-											label="Email Address"
+										<m-form-group
+										label="Email Address">
+											<m-bs-input
 											left-icon-type="addon"
 											left-icon="fa fa-envelope"
-											placeholder="Email Address"
-										/>
-										<m-bs-input
-											label="Circle Input"
+											placeholder="Email Address" />
+										</m-form-group>
+										<m-form-group
+										label="Circle Input">
+											<m-bs-input
 											left-icon-type="addon"
 											left-icon="fa fa-envelope"
-											placeholder="Email Address"
-										/>
-										<m-bs-input
-											label="Password"
+											placeholder="Email Address" />
+										</m-form-group>
+										<m-form-group
+											label="Password">
+											<m-bs-input
 											input-id="exampleInputPassword1"
 											input-type="password"
 											right-icon-type="addon"
 											right-icon="fa fa-user"
 											right-icon-color="red"
-											placeholder="Password"
-										/>
-										<m-bs-input
-											label="Left Icon"
+											placeholder="Password" />
+										</m-form-group>
+										<m-form-group
+										label="Left Icon">
+											<m-bs-input
 											left-icon-type="icon"
 											left-icon="fa fa-bell-o"
 											left-icon-color="green"
-											placeholder="Left icon"
-										/>
-										<m-bs-input
-											label="Left Icon(.input-sm)"
+											placeholder="Left icon" />
+										</m-form-group>
+										<m-form-group
+										label="Left Icon(.input-sm)">
+											<m-bs-input
 											left-icon-type="icon"
 											left-icon="fa fa-bell-o"
 											input-size="small"
-											placeholder="Left icon"
-										/>
-										<m-bs-input
-											label="Left Icon(.input-lg)"
+											placeholder="Left icon" />
+										</m-form-group>
+										<m-form-group
+										label="Left Icon(.input-lg)">
+											<m-bs-input
 											left-icon-type="icon"
 											left-icon="fa fa-bell-o"
 											input-size="large"
-											placeholder="Left icon"
-										/>
-										<m-bs-input
-											label="Right Icon"
+											placeholder="Left icon" />
+										</m-form-group>
+										<m-form-group
+										label="Right Icon">
+											<m-bs-input
 											right-icon-type="icon"
 											right-icon="fa fa-microphone"
 											right-icon-color="blue"
 											right-icon-spinnable
-											placeholder="Right icon"
-										/>
-										<m-bs-input
-											label="Right Icon(.input-sm)"
+											placeholder="Right icon" />
+										</m-form-group>
+										<m-form-group
+										label="Right Icon(.input-sm)">
+											<m-bs-input
 											right-icon-type="icon"
 											right-icon="fa fa-bell-o"
 											input-size="small"
-											placeholder="Left icon"
-										/>
-										<m-bs-input
-											label="Right Icon(.input-lg)"
+											placeholder="Left icon" />
+										</m-form-group>
+										<m-form-group
+										label="Right Icon(.input-lg)">
+											<m-bs-input
 											right-icon-type="icon"
 											right-icon="fa fa-bell-o"
 											right-icon-color="green"
 											input-size="large"
-											placeholder="Left icon"
-										/>
-										<m-bs-input
-											label="Circle Input"
+											placeholder="Left icon" />
+										</m-form-group>
+										<m-form-group
+										label="Circle Input">
+											<m-bs-input
 											right-icon="fa fa-microphone"
 											right-icon-type="icon"
 											placeholder="Right icon"
-											rounded
-										/>
-										<m-bs-input
-											label="Input with Icon"
+											rounded />
+										</m-form-group>
+										<m-form-group
+										label="Input with Icon">
+											<m-bs-input
 											tooltip-content="Invalid email"
 											tooltip-placement="top"
 											right-icon="fa fa-exclamation"
 											right-icon-type="icon"
 											left-icon-type="addon"
 											left-icon="fa fa-envelope"
-											left-icon-color="purple"
-										/>
-										<m-bs-input
-											label="Input with spinner"
-											placeholder="Process something"
-										/>
-										<m-bs-input
-											label="Static Control"
+											left-icon-color="purple" />
+										</m-form-group>
+										<m-form-group
+										label="Input with spinner">
+											<m-bs-input
+											placeholder="Process something" />
+										</m-form-group>
+										<m-form-group
+										label="Static Control">
+											<m-bs-input
 											static-content="email@example.com"
-											static-type
-										/>
-										<m-bs-input
-											label="Disabled"
+											static-type />
+										</m-form-group>
+										<m-form-group
+										label="Disabled">
+											<m-bs-input
 											placeholder="Disabled"
-											disabled
-										/>
-										<m-bs-input
-											label="Readonly"
+											disabled />
+										</m-form-group>
+										<m-form-group
+										label="Readonly">
+											<m-bs-input
 											placeholder="Readonly"
-											readonly
-										/>
+											readonly />
+										</m-form-group>
 										<m-bs-select label="Dropdown">
 											<m-bs-option title="1" />
 											<m-bs-option title="2" />
@@ -158,12 +173,13 @@
 											<m-bs-option title="Option 5" />
 										</m-bs-select>
 										<m-bs-textarea label="Textarea" :rows="3" />
-										<m-bs-input
+										<m-form-group>
+											<m-bs-input
 											label="File input"
 											id="exampleInputFile1"
 											input-type="file"
-											help-msg="some help text here"
-										/>
+											help-msg="some help text here" />
+										</m-form-group>
 										<m-bs-checkbox-group label="Checkboxes">
 											<m-bs-checkbox name="test" value="1" label="Checkbox 1" />
 											<m-bs-checkbox name="test" value="2" label="Checkbox 2" />
@@ -205,15 +221,14 @@
 					<!-- END SAMPLE FORM PORTLET-->
 					<!-- BEGIN SAMPLE FORM PORTLET-->
 					<m-portlet
-						type="light"
-						bordered
-						title="Input Height Sizing"
-						title-bold
-						title-uppercased
-						title-color="blue-sharp"
-						icon="icon-social-dribbble"
-						icon-color="blue-sharp"
-					>
+					type="light"
+					bordered
+					title="Input Height Sizing"
+					title-bold
+					title-uppercased
+					title-color="blue-sharp"
+					icon="icon-social-dribbble"
+					icon-color="blue-sharp">
 						<template slot="actions">
 							<a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
 								<m-icon name="icon-cloud-upload" />
@@ -228,67 +243,72 @@
 						<m-portlet-block>
 							<form role="form">
 									<div class="form-body">
-										<m-bs-input
+										<m-form-group
+										label="Large Input">
+											<m-bs-input
 											input-size="large"
-											placeholder="input-lg"
-											label="Large Input"
-										/>
-										<m-bs-input
+											placeholder="input-lg"/>
+										</m-form-group>
+										<m-form-group
+										label="Large Input Group">
+											<m-bs-input
 											left-addon-text="@"
+											left-icon-type="addon"
 											input-size="large"
+											placeholder="Username"/>
+										</m-form-group>
+										<m-form-group
+										label="Large Input Default Group 'Not implemented yet'">
+											<m-bs-input
+											input-size="large"
+											placeholder="Search for..."
+											right-icon-type="btn">
+												<button slot="rightBtn" class="btn green" type="button">Go!</button>
+											</m-bs-input>
+										</m-form-group>
+										<m-form-group
+										label="Default Input">
+											<m-bs-input
+											placeholder="" />
+										</m-form-group>
+										<m-form-group
+										label="Default Input Group">
+											<m-bs-input
 											placeholder="Username"
-											label="Large Input Group"
-										/>
-										<div class="form-group">
-												<label>Large Input Default Group 'Not implemented yet'</label>
-												<div class="input-group input-group-lg">
-														<input type="text" class="form-control" placeholder="Search for...">
-														<span class="input-group-btn">
-																<button class="btn green" type="button">Go!</button>
-														</span>
-												</div>
-												<!-- /input-group -->
-										</div>
-										<m-bs-input
-											label="Default Input"
-											placeholder=""
-										/>
-										<m-bs-input
-											label="Default Input Group"
-											placeholder="Username"
-											right-addon-text="@"
-										/>
-										<div class="form-group">
-												<label>Default Input Button Group 'Not implemented yet'</label>
-												<div class="input-group">
-														<input type="text" class="form-control" placeholder="Search for...">
-														<span class="input-group-btn">
-																<button class="btn red" type="button">Go!</button>
-														</span>
-												</div>
-												<!-- /input-group -->
-										</div>
-										<m-bs-input
+											right-icon-type="addon"
+											right-addon-text="@" />
+										</m-form-group>
+										<m-form-group
+										label="Default Input Button Group 'Not implemented yet'">
+											<m-bs-input
+											placeholder="Search for..."
+											right-icon-type="btn">
+												<button slot="rightBtn" class="btn red" type="button">Go!</button>
+											</m-bs-input>
+										</m-form-group>
+										<m-form-group>
+											<m-bs-input
 											label="Small Input"
 											input-size="small"
-											placeholder="input-sm"
-										/>
-										<m-bs-input
+											placeholder="input-sm" />
+										</m-form-group>
+										<m-form-group>
+											<m-bs-input
 											label="Small Input Group"
 											input-size="small"
 											left-addon-text="@"
-											placeholder="Username"
-										/>
-										<div class="form-group">
-												<label>Small Input Default Group 'Not implemented yet'</label>
-												<div class="input-group input-group-sm">
-														<input type="text" class="form-control" placeholder="Search for...">
-														<span class="input-group-btn">
-																<button class="btn green" type="button">Go!</button>
-														</span>
-												</div>
-												<!-- /input-group -->
-										</div>
+											left-icon-type="addon"
+											placeholder="Username" />
+										</m-form-group>
+										<m-form-group
+										label="Small Input Default Group 'Not implemented yet'">
+											<m-bs-input
+											placeholder="Search for..."
+											input-size="small"
+											right-icon-type="btn">
+												<button slot="rightBtn" class="btn green" type="button">Go!</button>
+											</m-bs-input>
+										</m-form-group>
 										<m-bs-select label="Large Select" select-size="large">
 											<m-bs-option title="Option 1" />
 											<m-bs-option title="Option 2" />
@@ -546,15 +566,17 @@
 						<m-portlet-block>
 							<form class="form-horizontal" role="form">
 								<div class="form-body">
-									<m-bs-input
+									<m-form-group>
+										<m-bs-input
 										label="Block Help"
 										label-column="col-md-3"
 										input-column="col-md-9"
 										placeholder="Enter text"
 										help-msg="A block of help text"
-										help-msg-display="block"
-									/>
-									<m-bs-input
+										help-msg-display="block" />
+									</m-form-group>
+									<m-form-group>
+										<m-bs-input
 										input-display="inline"
 										input-column="col-md-3"
 										input-width-size="medium"
@@ -563,251 +585,251 @@
 										label-column="col-md-3"
 										label-control
 										help-msg="Inline help."
-										help-msg-display="inline"
-									/>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Inline Help</label>
-												<div class="col-md-9">
-														<input type="text" class="form-control input-inline input-medium" placeholder="Enter text">
-														<span class="help-inline"> Inline help. </span>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Input Group</label>
-												<div class="col-md-9">
-														<div class="input-inline input-medium">
-																<div class="input-group">
-																		<span class="input-group-addon">
-																				<i class="fa fa-user"></i>
-																		</span>
-																		<input type="email" class="form-control" placeholder="Email Address"> </div>
-														</div>
-														<span class="help-inline"> Inline help. </span>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Email Address</label>
-												<div class="col-md-9">
-														<div class="input-group">
-																<span class="input-group-addon">
-																		<i class="fa fa-envelope"></i>
-																</span>
-																<input type="email" class="form-control" placeholder="Email Address"> </div>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Password</label>
-												<div class="col-md-9">
-														<div class="input-group">
-																<input type="password" class="form-control" placeholder="Password">
-																<span class="input-group-addon">
-																		<i class="fa fa-user"></i>
-																</span>
-														</div>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Left Icon</label>
-												<div class="col-md-9">
-														<div class="input-icon">
-																<i class="fa fa-bell-o"></i>
-																<input type="text" class="form-control" placeholder="Left icon"> </div>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Right Icon</label>
-												<div class="col-md-9">
-														<div class="input-icon right">
-																<i class="fa fa-microphone"></i>
-																<input type="text" class="form-control" placeholder="Right icon"> </div>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Icon Input in Group Input</label>
-												<div class="col-md-9">
-														<div class="input-group">
-																<div class="input-icon">
-																		<i class="fa fa-lock fa-fw"></i>
-																		<input id="newpassword" class="form-control" type="text" name="password" placeholder="password" /> </div>
-																<span class="input-group-btn">
-																		<button id="genpassword" class="btn btn-success" type="button">
-																				<i class="fa fa-arrow-left fa-fw" /></i> Random</button>
-																</span>
-														</div>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Input With Spinner</label>
-												<div class="col-md-9">
-														<input type="password" class="form-control spinner" placeholder="Password"> </div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Static Control</label>
-												<div class="col-md-9">
-														<p class="form-control-static"> email@example.com </p>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Disabled</label>
-												<div class="col-md-9">
-														<input type="password" class="form-control" placeholder="Disabled" disabled> </div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Readonly</label>
-												<div class="col-md-9">
-														<input type="password" class="form-control" placeholder="Readonly" readonly> </div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Dropdown</label>
-												<div class="col-md-9">
-														<select class="form-control">
-																<option>Option 1</option>
-																<option>Option 2</option>
-																<option>Option 3</option>
-																<option>Option 4</option>
-																<option>Option 5</option>
-														</select>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Multiple Select</label>
-												<div class="col-md-9">
-														<select multiple class="form-control">
-																<option>Option 1</option>
-																<option>Option 2</option>
-																<option>Option 3</option>
-																<option>Option 4</option>
-																<option>Option 5</option>
-														</select>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Textarea</label>
-												<div class="col-md-9">
-														<textarea class="form-control" rows="3"></textarea>
-												</div>
-										</div>
-										<div class="form-group">
-												<label for="exampleInputFile" class="col-md-3 control-label">File input</label>
-												<div class="col-md-9">
-														<input type="file" id="exampleInputFile">
-														<p class="help-block"> some help text here. </p>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Checkboxes</label>
-												<div class="col-md-9">
-														<div class="mt-checkbox-list">
-																<label class="mt-checkbox">
-																		<input type="checkbox"> Checkbox 1
-																		<span></span>
-																</label>
-																<label class="mt-checkbox">
-																		<input type="checkbox"> Checkbox 1
-																		<span></span>
-																</label>
-																<label class="mt-checkbox mt-checkbox-disabled">
-																		<input type="checkbox" disabled> Disabled
-																		<span></span>
-																</label>
-														</div>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Outline Checkboxes</label>
-												<div class="col-md-9">
-														<div class="mt-checkbox-list">
-																<label class="mt-checkbox mt-checkbox-outline">
-																		<input type="checkbox"> Checkbox 1
-																		<span></span>
-																</label>
-																<label class="mt-checkbox mt-checkbox-outline">
-																		<input type="checkbox"> Checkbox 1
-																		<span></span>
-																</label>
-																<label class="mt-checkbox mt-checkbox-outline mt-checkbox-disabled">
-																		<input type="checkbox" disabled> Disabled
-																		<span></span>
-																</label>
-														</div>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Inline Checkboxes</label>
-												<div class="col-md-9">
-														<div class="mt-checkbox-inline">
-																<label class="mt-checkbox">
-																		<input type="checkbox" id="inlineCheckbox21" value="option1"> Checkbox 1
-																		<span></span>
-																</label>
-																<label class="mt-checkbox">
-																		<input type="checkbox" id="inlineCheckbox22" value="option2"> Checkbox 2
-																		<span></span>
-																</label>
-																<label class="mt-checkbox mt-checkbox-disabled">
-																		<input type="checkbox" id="inlineCheckbox23" value="option3" disabled> Disabled
-																		<span></span>
-																</label>
-														</div>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Radios</label>
-												<div class="col-md-9">
-														<div class="mt-radio-list">
-																<label class="mt-radio">
-																		<input type="radio" name="optionsRadios" id="optionsRadios22" value="option1" checked> Option 1
-																		<span></span>
-																</label>
-																<label class="mt-radio">
-																		<input type="radio" name="optionsRadios" id="optionsRadios23" value="option2" checked> Option 2
-																		<span></span>
-																</label>
-																<label class="mt-radio mt-radio-disabled">
-																		<input type="radio" name="optionsRadios" id="optionsRadios24" value="option2" disabled> Disabled
-																		<span></span>
-																</label>
-														</div>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Outline Radios</label>
-												<div class="col-md-9">
-														<div class="mt-radio-list">
-																<label class="mt-radio mt-radio-outline">
-																		<input type="radio" name="optionsRadios" id="optionsRadios22" value="option1" checked> Option 1
-																		<span></span>
-																</label>
-																<label class="mt-radio mt-radio-outline">
-																		<input type="radio" name="optionsRadios" id="optionsRadios23" value="option2" checked> Option 2
-																		<span></span>
-																</label>
-																<label class="mt-radio mt-radio-outline mt-radio-disabled">
-																		<input type="radio" name="optionsRadios" id="optionsRadios24" value="option2" disabled> Disabled
-																		<span></span>
-																</label>
-														</div>
-												</div>
-										</div>
-										<div class="form-group">
-												<label class="col-md-3 control-label">Inline Radio</label>
-												<div class="col-md-9">
-														<div class="mt-radio-inline">
-																<label class="mt-radio">
-																		<input type="radio" name="optionsRadios" id="optionsRadios25" value="option1" checked> Option 1
-																		<span></span>
-																</label>
-																<label class="mt-radio">
-																		<input type="radio" name="optionsRadios" id="optionsRadios26" value="option2" checked> Option 2
-																		<span></span>
-																</label>
-																<label class="mt-radio mt-radio-disabled">
-																		<input type="radio" name="optionsRadios" id="optionsRadios27" value="option3" disabled> Disabled
-																		<span></span>
-																</label>
-														</div>
-												</div>
-										</div>
+										help-msg-display="inline" />
+									</m-form-group>
+									<m-form-group>
+											<label class="col-md-3 control-label">Inline Help</label>
+											<div class="col-md-9">
+													<input type="text" class="form-control input-inline input-medium" placeholder="Enter text">
+													<span class="help-inline"> Inline help. </span>
+											</div>
+									</m-form-group>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Input Group</label>
+											<div class="col-md-9">
+													<div class="input-inline input-medium">
+															<div class="input-group">
+																	<span class="input-group-addon">
+																			<i class="fa fa-user"></i>
+																	</span>
+																	<input type="email" class="form-control" placeholder="Email Address"> </div>
+													</div>
+													<span class="help-inline"> Inline help. </span>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Email Address</label>
+											<div class="col-md-9">
+													<div class="input-group">
+															<span class="input-group-addon">
+																	<i class="fa fa-envelope"></i>
+															</span>
+															<input type="email" class="form-control" placeholder="Email Address"> </div>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Password</label>
+											<div class="col-md-9">
+													<div class="input-group">
+															<input type="password" class="form-control" placeholder="Password">
+															<span class="input-group-addon">
+																	<i class="fa fa-user"></i>
+															</span>
+													</div>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Left Icon</label>
+											<div class="col-md-9">
+													<div class="input-icon">
+															<i class="fa fa-bell-o"></i>
+															<input type="text" class="form-control" placeholder="Left icon"> </div>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Right Icon</label>
+											<div class="col-md-9">
+													<div class="input-icon right">
+															<i class="fa fa-microphone"></i>
+															<input type="text" class="form-control" placeholder="Right icon"> </div>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Icon Input in Group Input</label>
+											<div class="col-md-9">
+													<div class="input-group">
+															<div class="input-icon">
+																	<i class="fa fa-lock fa-fw"></i>
+																	<input id="newpassword" class="form-control" type="text" name="password" placeholder="password" /> </div>
+															<span class="input-group-btn">
+																	<button id="genpassword" class="btn btn-success" type="button">
+																			<i class="fa fa-arrow-left fa-fw"></i> Random</button>
+															</span>
+													</div>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Input With Spinner</label>
+											<div class="col-md-9">
+													<input type="password" class="form-control spinner" placeholder="Password"> </div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Static Control</label>
+											<div class="col-md-9">
+													<p class="form-control-static"> email@example.com </p>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Disabled</label>
+											<div class="col-md-9">
+													<input type="password" class="form-control" placeholder="Disabled" disabled> </div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Readonly</label>
+											<div class="col-md-9">
+													<input type="password" class="form-control" placeholder="Readonly" readonly> </div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Dropdown</label>
+											<div class="col-md-9">
+													<select class="form-control">
+															<option>Option 1</option>
+															<option>Option 2</option>
+															<option>Option 3</option>
+															<option>Option 4</option>
+															<option>Option 5</option>
+													</select>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Multiple Select</label>
+											<div class="col-md-9">
+													<select multiple class="form-control">
+															<option>Option 1</option>
+															<option>Option 2</option>
+															<option>Option 3</option>
+															<option>Option 4</option>
+															<option>Option 5</option>
+													</select>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Textarea</label>
+											<div class="col-md-9">
+													<textarea class="form-control" rows="3"></textarea>
+											</div>
+									</div>
+									<div class="form-group">
+											<label for="exampleInputFile" class="col-md-3 control-label">File input</label>
+											<div class="col-md-9">
+													<input type="file" id="exampleInputFile">
+													<p class="help-block"> some help text here. </p>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Checkboxes</label>
+											<div class="col-md-9">
+													<div class="mt-checkbox-list">
+															<label class="mt-checkbox">
+																	<input type="checkbox"> Checkbox 1
+																	<span></span>
+															</label>
+															<label class="mt-checkbox">
+																	<input type="checkbox"> Checkbox 1
+																	<span></span>
+															</label>
+															<label class="mt-checkbox mt-checkbox-disabled">
+																	<input type="checkbox" disabled> Disabled
+																	<span></span>
+															</label>
+													</div>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Outline Checkboxes</label>
+											<div class="col-md-9">
+													<div class="mt-checkbox-list">
+															<label class="mt-checkbox mt-checkbox-outline">
+																	<input type="checkbox"> Checkbox 1
+																	<span></span>
+															</label>
+															<label class="mt-checkbox mt-checkbox-outline">
+																	<input type="checkbox"> Checkbox 1
+																	<span></span>
+															</label>
+															<label class="mt-checkbox mt-checkbox-outline mt-checkbox-disabled">
+																	<input type="checkbox" disabled> Disabled
+																	<span></span>
+															</label>
+													</div>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Inline Checkboxes</label>
+											<div class="col-md-9">
+													<div class="mt-checkbox-inline">
+															<label class="mt-checkbox">
+																	<input type="checkbox" id="inlineCheckbox21" value="option1"> Checkbox 1
+																	<span></span>
+															</label>
+															<label class="mt-checkbox">
+																	<input type="checkbox" id="inlineCheckbox22" value="option2"> Checkbox 2
+																	<span></span>
+															</label>
+															<label class="mt-checkbox mt-checkbox-disabled">
+																	<input type="checkbox" id="inlineCheckbox23" value="option3" disabled> Disabled
+																	<span></span>
+															</label>
+													</div>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Radios</label>
+											<div class="col-md-9">
+													<div class="mt-radio-list">
+															<label class="mt-radio">
+																	<input type="radio" name="optionsRadios" id="optionsRadios22" value="option1" checked> Option 1
+																	<span></span>
+															</label>
+															<label class="mt-radio">
+																	<input type="radio" name="optionsRadios" id="optionsRadios23" value="option2" checked> Option 2
+																	<span></span>
+															</label>
+															<label class="mt-radio mt-radio-disabled">
+																	<input type="radio" name="optionsRadios" id="optionsRadios24" value="option2" disabled> Disabled
+																	<span></span>
+															</label>
+													</div>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Outline Radios</label>
+											<div class="col-md-9">
+													<div class="mt-radio-list">
+															<label class="mt-radio mt-radio-outline">
+																	<input type="radio" name="optionsRadios" id="optionsRadios22" value="option1" checked> Option 1
+																	<span></span>
+															</label>
+															<label class="mt-radio mt-radio-outline">
+																	<input type="radio" name="optionsRadios" id="optionsRadios23" value="option2" checked> Option 2
+																	<span></span>
+															</label>
+															<label class="mt-radio mt-radio-outline mt-radio-disabled">
+																	<input type="radio" name="optionsRadios" id="optionsRadios24" value="option2" disabled> Disabled
+																	<span></span>
+															</label>
+													</div>
+											</div>
+									</div>
+									<div class="form-group">
+											<label class="col-md-3 control-label">Inline Radio</label>
+											<div class="col-md-9">
+													<div class="mt-radio-inline">
+															<label class="mt-radio">
+																	<input type="radio" name="optionsRadios" id="optionsRadios25" value="option1" checked> Option 1
+																	<span></span>
+															</label>
+															<label class="mt-radio">
+																	<input type="radio" name="optionsRadios" id="optionsRadios26" value="option2" checked> Option 2
+																	<span></span>
+															</label>
+															<label class="mt-radio mt-radio-disabled">
+																	<input type="radio" name="optionsRadios" id="optionsRadios27" value="option3" disabled> Disabled
+																	<span></span>
+															</label>
+													</div>
+											</div>
+									</div>
 								</div>
 								<div class="form-actions">
 									<div class="row">
@@ -1706,6 +1728,7 @@ import mColumn from "../../components/metronic/structure/m-column.vue"
 import mButton from "../../components/metronic/ui/m-button.vue"
 import mButtonGroup from "../../components/metronic/ui/m-button-group.vue"
 
+import mFormGroup from "../../components/metronic/forms/m-form-group.vue"
 import mBootstrapInput from "../../components/metronic/forms/m-bootstrap-input.vue"
 import mBootstrapSelect from "../../components/metronic/forms/m-bootstrap-select.vue"
 import mBootstrapSelectOption from "../../components/metronic/forms/m-bootstrap-select-option.vue"
@@ -1714,7 +1737,7 @@ import mBootstrapCheckboxGroup from "../../components/metronic/forms/m-bootstrap
 import mBootstrapCheckbox from "../../components/metronic/forms/m-bootstrap-checkbox.vue"
 import mBootstrapRadioGroup from "../../components/metronic/forms/m-bootstrap-radio-group.vue"
 import mBootstrapRadio from "../../components/metronic/forms/m-bootstrap-radio.vue"
-import mValidated from "../../components/metronic/ui/m-input-validated.vue"
+import mValidatedInput from "../../components/metronic/forms/m-input-validated.vue"
 
 import mIcon from "../../components/metronic/graphic/m-icon.vue"
 
@@ -1726,6 +1749,7 @@ export default {
 		mColumn,
 		mButton,
 		mButtonGroup,
+		mFormGroup,
 		"m-bs-input": mBootstrapInput,
 		"m-bs-select": mBootstrapSelect,
 		"m-bs-option": mBootstrapSelectOption,
@@ -1734,7 +1758,7 @@ export default {
 		"m-bs-checkbox": mBootstrapCheckbox,
 		"m-bs-radio-group": mBootstrapRadioGroup,
 		"m-bs-radio": mBootstrapRadio,
-		"m-validated-input": mValidated,
+		"m-validated-input": mValidatedInput,
 		mIcon
 	},
 	methods: {

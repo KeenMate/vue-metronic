@@ -23,6 +23,10 @@ export default {
 			default: "default",
 			options: ["large", "default", "small", "extra-small", "icon-only"]
 		},
+		type: {
+			type: String,
+			default: ""
+		},
 		icon: {
 			type: String,
 			default: ""
@@ -58,11 +62,6 @@ export default {
 		dismiss: {
 			type: String,
 			default: null
-		}
-	},
-		type: {
-			type: String,
-			default: ""
 		}
 	},
 	computed: {

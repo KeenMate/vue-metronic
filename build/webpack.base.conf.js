@@ -20,7 +20,8 @@ module.exports = {
     vendor: VENDOR_LIBS,
     metronic: ['./static/metronic/metronic.js', './static/metronic/metronic.css'],
     ladda: LADDA
-  },
+	},
+	externals: ["jQuery"],
   output: {
     path: config.build.assetsRoot,
     filename: "[name].js",

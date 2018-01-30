@@ -11,17 +11,9 @@
 </template>
 
 <script>
-import InputField from "./metronic/ui/m-input.vue"
-import SelectField from "./metronic/ui/m-select.vue"
-import MyButton from "./metronic/ui/m-button.vue"
 
 export default {
 	name: "HomeScreen",
-	components: {
-		InputField,
-		SelectField,
-		MyButton
-	},
 	data () {
 		return {
 			welcome: "Welcome to Main Page"
