@@ -33,7 +33,12 @@ export default {
 		},
 		inputSize: {
 			type: String,
-			default: ""
+			default: "",
+			options: ["small", "medium", "large"]
+		},
+		displayInline: {
+			type: Boolean,
+			default: false
 		},
 		rounded: {
 			type: Boolean,
@@ -129,7 +134,12 @@ export default {
 			type: String,
 			default: "block",
 			options: ["block", "inline"]
-		}// ,
+		},
+		helpMsgSize: {
+			type: String,
+			default: "medium",
+			options: ["small", "medium", "large"]
+		}
 		// formGroupColumn: {
 		// 	type: String,
 		// 	default: "",

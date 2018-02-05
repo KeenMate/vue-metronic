@@ -1,6 +1,8 @@
 <template>
 	<m-wrapper
 	:help-msg="helpMsg"
+	:help-msg-display="helpMsgDisplay"
+	:help-msg-size="helpMsgSize"
 	:left-icon="leftIcon"
 	:left-icon-type="leftIconType"
 	:left-icon-color="leftIconColor"
@@ -17,7 +19,8 @@
 	:input-size="inputSize"
 	:input-column="inputColumn"
 	:rounded="rounded"
-	:help-msg-display="helpMsgDisplay">
+	:input-width-size="inputWidthSize"
+	:custom-css="inputGroupCustomCss">
 		<input
 		:id="elemId"
 		:type="inputType"
@@ -33,6 +36,8 @@
 		@blur="onBlurHandler"
 		@change="onChangeHandler"
 		@input="onInputHandler">
+
+		<span v-if="helpMsg  && noAddons" :class="helpMsgSpanClass">{{helpMsg}}</span>
 
 		<template slot="leftBtn">
 			<slot name="leftBtn"></slot>
@@ -50,6 +55,7 @@
 
 <script>
 import formInputMixin from "../mixins/form-input"
+// import metronicMixin from "../mixins/metronic-component"
 
 import mFormControlWrapper from "./m-form-control-wrapper.vue"
 
@@ -87,12 +93,39 @@ export default {
 		inputWidthSize: {
 			type: String,
 			default: undefined,
-			options: ["small", "medium", "large"]
+			options: ["small", "medium", "large", "xlarge"]
+		},
+		inputCustomCss: {
+			type: Array,
+			default: () => [],
+			description: "Add your custom css classes for input"
+		},
+		inputGroupCustomCss: {
+			type: Array,
+			default: () => [],
+			description: "Add your custom css classes for input's parent div"
 		}
 	},
 	computed: {
 		elemId: function () {
 			return this.inputId || ("input-id-" + Number(new Date()))
+		},
+		noAddons: function () {
+			return (this.leftIconType !== "addon" && this.rightIconType !== "addon")
+		},
+		helpMsgSpanClass: function () {
+			var style = {}
+
+			switch (this.helpMsgDisplay) {
+			case "inline":
+				style["help-inline"] = true
+				break
+			case "block":
+				style["help-block"] = true
+				break
+			}
+
+			return style
 		},
 		inputStyle: function () {
 			var style = {
@@ -108,21 +141,12 @@ export default {
 			case "large":
 				style["input-lg"] = true
 				break
-			}
-
-			switch (this.inputWidthSize) {
-			case "small":
-				style["input-small"] = true
-				break
-			case "medium":
-				style["input-medium"] = true
-				break
-			case "large":
-				style["input-large"] = true
+			case "xlarge":
+				style["input-xlarge"] = true
 				break
 			}
 
-			if (this.inputDisplay === "inline")
+			if (this.displayInline)
 				style["input-inline"] = true
 
 			if (this.inputType === "file")
@@ -137,7 +161,7 @@ export default {
 					style["input-circle-left"] = true
 			}
 
-			return style
+			return Object.assign(style, this.inputCustomCss || [])
 		}
 	},
 	methods: {

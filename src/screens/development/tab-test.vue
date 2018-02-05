@@ -37,6 +37,15 @@ export default {
 				}
 			]
 		}
+	},
+	methods: {
+		// demo () {
+		// 	var a = [1, 2, 6, 5, 4, 3, 2], b, c, d
+
+		// 	a.sort((a, b) => a > b ? a : b)
+
+		// 	([b, c, ...d] = a)
+		// }
 	}
 }
 </script>

@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<!-- <m-validated-input :required="true" :validation-func="myFunc"></m-validated-input> -->
 		<m-row>
 			<m-column :size="6">
 					<!-- BEGIN SAMPLE FORM PORTLET-->
@@ -40,6 +39,11 @@
 							</m-button-group>
 						</template>
 						<m-portlet-block>
+							<m-validated-input :required="true" @isValid="valid => alert(valid)" :validation-func="myFunc"></m-validated-input>
+							<m-validated-input :validation-func="(x) => !isNaN(x) && x > 20 && x < 40" @isValid="valid => alert(valid)"></m-validated-input>
+							<m-validated-input :validation-func="(x) => x === 'hroch'" @isValid="valid => alert(valid)"></m-validated-input>
+							<button>Click me</button>
+
 							<form role="form">
 									<div class="form-body">
 										<m-form-group
@@ -54,6 +58,7 @@
 											<m-bs-input
 											left-icon-type="addon"
 											left-icon="fa fa-envelope"
+											rounded
 											placeholder="Email Address" />
 										</m-form-group>
 										<m-form-group
@@ -140,12 +145,12 @@
 											<m-bs-input
 											placeholder="Process something" />
 										</m-form-group>
-										<m-form-group
+										<!-- <m-form-group
 										label="Static Control">
 											<m-bs-input
 											static-content="email@example.com"
 											static-type />
-										</m-form-group>
+										</m-form-group> --> Convert to another component
 										<m-form-group
 										label="Disabled">
 											<m-bs-input
@@ -286,15 +291,15 @@
 												<button slot="rightBtn" class="btn red" type="button">Go!</button>
 											</m-bs-input>
 										</m-form-group>
-										<m-form-group>
+										<m-form-group
+										label="Small Input">
 											<m-bs-input
-											label="Small Input"
 											input-size="small"
 											placeholder="input-sm" />
 										</m-form-group>
-										<m-form-group>
+										<m-form-group
+										label="Small Input Group">
 											<m-bs-input
-											label="Small Input Group"
 											input-size="small"
 											left-addon-text="@"
 											left-icon-type="addon"
@@ -375,164 +380,215 @@
 						<m-portlet-block>
 							<form role="form">
 								<div class="form-body">
-									<div class="form-group">
-										<label>Fluid Input</label>
-										<input type="text" class="form-control" placeholder="fluid">
-										<div class="input-icon right margin-top-10">
-												<i class="fa fa-check"></i>
-												<input type="text" class="form-control" placeholder="fluid"> </div>
-										<div class="input-icon margin-top-10">
-												<i class="fa fa-user"></i>
-												<input type="text" class="form-control" placeholder="fluid"> </div>
-										<div class="input-group margin-top-10">
-												<span class="input-group-addon">
-														<i class="fa fa-envelope"></i>
-												</span>
-												<input type="email" class="form-control" placeholder=".input-xlarge"> </div>
-										<div class="input-group margin-top-10">
-												<input type="email" class="form-control" placeholder=".input-xlarge">
-												<span class="input-group-addon">
-														<i class="fa fa-envelope"></i>
-												</span>
-										</div>
-										<hr> </div>
-									<div class="form-group">
-											<label>Extra Large Input</label>
-											<input type="text" class="form-control input-xlarge" placeholder=".input-xlarge">
-											<div class="input-icon right input-xlarge margin-top-10">
-													<i class="fa fa-check"></i>
-													<input type="text" class="form-control" placeholder=".input-xlarge"> </div>
-											<div class="input-icon input-xlarge margin-top-10">
-													<i class="fa fa-user"></i>
-													<input type="text" class="form-control" placeholder=".input-xlarge"> </div>
-											<div class="input-group input-xlarge margin-top-10">
-													<span class="input-group-addon">
-															<i class="fa fa-envelope"></i>
-													</span>
-													<input type="email" class="form-control" placeholder=".input-xlarge"> </div>
-											<div class="input-group input-xlarge margin-top-10">
-													<input type="email" class="form-control" placeholder=".input-xlarge">
-													<span class="input-group-addon">
-															<i class="fa fa-envelope"></i>
-													</span>
-											</div>
-											<hr> </div>
-									<div class="form-group">
-											<label>Large Input</label>
-											<input type="text" class="form-control input-large" placeholder=".input-large">
-											<div class="input-icon right input-large margin-top-10">
-													<i class="fa fa-check"></i>
-													<input type="text" class="form-control" placeholder=".input-large"> </div>
-											<div class="input-icon input-large margin-top-10">
-													<i class="fa fa-user"></i>
-													<input type="text" class="form-control" placeholder=".input-large"> </div>
-											<div class="input-group input-large margin-top-10">
-													<span class="input-group-addon">
-															<i class="fa fa-envelope"></i>
-													</span>
-													<input type="email" class="form-control" placeholder=".input-large"> </div>
-											<div class="input-group input-large margin-top-10">
-													<input type="email" class="form-control" placeholder=".input-large">
-													<span class="input-group-addon">
-															<i class="fa fa-envelope"></i>
-													</span>
-											</div>
-											<hr> </div>
-									<div class="form-group">
-											<label>Medium Input</label>
-											<input type="text" class="form-control input-medium" placeholder=".input-medium">
-											<div class="input-icon right input-medium margin-top-10">
-													<i class="fa fa-check"></i>
-													<input type="text" class="form-control" placeholder=".input-medium"> </div>
-											<div class="input-icon input-medium margin-top-10">
-													<i class="fa fa-user"></i>
-													<input type="text" class="form-control" placeholder=".input-medium"> </div>
-											<div class="input-group input-medium margin-top-10">
-													<span class="input-group-addon">
-															<i class="fa fa-envelope"></i>
-													</span>
-													<input type="email" class="form-control" placeholder=".input-medium"> </div>
-											<div class="input-group input-medium margin-top-10">
-													<input type="email" class="form-control" placeholder=".input-medium">
-													<span class="input-group-addon">
-															<i class="fa fa-envelope"></i>
-													</span>
-											</div>
-											<hr> </div>
-									<div class="form-group">
-											<label>Small Input</label>
-											<input type="text" class="form-control input-small" placeholder=".input-small">
-											<div class="input-icon right input-small margin-top-10">
-													<i class="fa fa-check"></i>
-													<input type="text" class="form-control" placeholder=".input-small"> </div>
-											<div class="input-icon input-small margin-top-10">
-													<i class="fa fa-user"></i>
-													<input type="text" class="form-control" placeholder=".input-small"> </div>
-											<div class="input-group input-small margin-top-10">
-													<span class="input-group-addon">
-															<i class="fa fa-envelope"></i>
-													</span>
-													<input type="email" class="form-control" placeholder=".input-small"> </div>
-											<div class="input-group input-small margin-top-10">
-													<input type="email" class="form-control" placeholder=".input-small">
-													<span class="input-group-addon">
-															<i class="fa fa-envelope"></i>
-													</span>
-											</div>
-									</div>
-									<div class="form-group">
-											<label>Extra Small Input</label>
-											<input type="text" class="form-control input-xsmall" placeholder=".input-xsmall"> </div>
-									<div class="form-group">
-											<label>Extra Large Select</label>
-											<select class="form-control input-xlarge">
-													<option>Option 1</option>
-													<option>Option 2</option>
-													<option>Option 3</option>
-													<option>Option 4</option>
-													<option>Option 5</option>
-											</select>
-									</div>
-									<div class="form-group">
-											<label>Large Select</label>
-											<select class="form-control input-large">
-													<option>Option 1</option>
-													<option>Option 2</option>
-													<option>Option 3</option>
-													<option>Option 4</option>
-													<option>Option 5</option>
-											</select>
-									</div>
-									<div class="form-group">
-											<label>Medium Select</label>
-											<select class="form-control input-medium">
-													<option>Option 1</option>
-													<option>Option 2</option>
-													<option>Option 3</option>
-													<option>Option 4</option>
-													<option>Option 5</option>
-											</select>
-									</div>
-									<div class="form-group">
-											<label>Small Select</label>
-											<select class="form-control input-small">
-													<option>Option 1</option>
-													<option>Option 2</option>
-													<option>Option 3</option>
-													<option>Option 4</option>
-													<option>Option 5</option>
-											</select>
-									</div>
-									<div class="form-group">
-											<label>Extra Small Select</label>
-											<select class="form-control input-xsmall">
-													<option>Option 1</option>
-													<option>Option 2</option>
-													<option>Option 3</option>
-													<option>Option 4</option>
-													<option>Option 5</option>
-											</select>
-									</div>
+									<m-form-group
+									label="Fluid Input">
+										<m-bs-input
+										placeholder="fluid"></m-bs-input>
+										<m-bs-input
+										placeholder="fluid"
+										right-icon-type="icon"
+										right-icon="fa fa-check"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder="fluid"
+										left-icon-type="icon"
+										left-icon="fa fa-user"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-xlarge"
+										left-icon-type="addon"
+										left-icon="fa fa-envelope"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-xlarge"
+										input-type="email"
+										right-icon-type="addon"
+										right-icon="fa fa-envelope"
+										:input-group-custom-css="['margin-top-10']">
+										</m-bs-input>
+										<hr>
+									</m-form-group>
+									<m-form-group label="Extra large Input">
+										<m-bs-input
+										placeholder=".input-xlarge"
+										input-width-size="xlarge"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-xlarge"
+										input-width-size="xlarge"
+										right-icon-type="icon"
+										right-icon="fa fa-check"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-xlarge"
+										input-width-size="xlarge"
+										left-icon-type="icon"
+										left-icon="fa fa-user"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										input-type="email"
+										placeholder=".input-xlarge"
+										input-width-size="xlarge"
+										left-icon-type="addon"
+										left-icon="fa fa-envelope"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										input-type="email"
+										placeholder=".input-xlarge"
+										input-width-size="xlarge"
+										right-icon-type="addon"
+										right-icon="fa fa-envelope"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<hr>
+									</m-form-group>
+									<m-form-group
+									label="Large Input">
+										<m-bs-input
+										placeholder=".input-large"
+										input-width-size="large"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-large"
+										input-width-size="large"
+										right-icon-type="icon"
+										right-icon="fa fa-check"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-large"
+										input-width-size="large"
+										left-icon-type="icon"
+										left-icon="fa fa-user"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-large"
+										input-width-size="large"
+										left-icon-type="addon"
+										left-icon="fa fa-envelope"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										input-type="email"
+										placeholder=".input-large"
+										input-width-size="large"
+										right-icon-type="addon"
+										right-icon="fa fa-envelope"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<hr>
+									</m-form-group>
+									<m-form-group
+									label="Medium Input">
+										<m-bs-input
+										placeholder=".input-medium"
+										input-width-size="medium"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-medium"
+										input-width-size="medium"
+										right-icon-type="icon"
+										right-icon="fa fa-check"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-medium"
+										input-width-size="medium"
+										left-icon-type="icon"
+										left-icon="fa fa-user"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-medium"
+										input-width-size="medium"
+										left-icon-type="addon"
+										left-icon="fa fa-envelope"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-medium"
+										input-width-size="medium"
+										right-icon-type="addon"
+										right-icon="fa fa-envelope"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<hr>
+									</m-form-group>
+									<m-form-group
+									label="Small Input">
+										<m-bs-input
+										placeholder=".input-small"
+										input-width-size="small"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-small"
+										input-width-size="small"
+										right-icon-type="icon"
+										right-icon="fa fa-check"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-small"
+										input-width-size="small"
+										left-icon-type="icon"
+										left-icon="fa fa-user"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-small"
+										input-width-size="small"
+										left-icon-type="addon"
+										left-icon="fa fa-envelope"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<m-bs-input
+										placeholder=".input-small"
+										input-width-size="small"
+										right-icon-type="addon"
+										right-icon="fa fa-envelope"
+										:input-group-custom-css="['margin-top-10']"></m-bs-input>
+										<hr>
+									</m-form-group>
+									<m-form-group
+									label="Extra small Input">
+										<m-bs-input
+										placeholder=".input-xsmall"
+										input-width-size="xsmall"></m-bs-input>
+									</m-form-group>
+									<m-bs-select
+									label="Extra large Select"
+									select-width-size="xlarge"
+									select-size="large">
+										<m-bs-option title="Option 1"></m-bs-option>
+										<m-bs-option title="Option 2"></m-bs-option>
+										<m-bs-option title="Option 3"></m-bs-option>
+										<m-bs-option title="Option 4"></m-bs-option>
+										<m-bs-option title="Option 5"></m-bs-option>
+									</m-bs-select>
+									<m-bs-select
+									label="Large Select asdasdasd"
+									select-width-size="large">
+										<m-bs-option title="Option 1"></m-bs-option>
+										<m-bs-option title="Option 2"></m-bs-option>
+										<m-bs-option title="Option 3"></m-bs-option>
+										<m-bs-option title="Option 4"></m-bs-option>
+										<m-bs-option title="Option 5"></m-bs-option>
+									</m-bs-select>
+									<m-bs-select
+									label="Medium Select"
+									select-width-size="medium">
+										<m-bs-option title="Option 1"></m-bs-option>
+										<m-bs-option title="Option 2"></m-bs-option>
+										<m-bs-option title="Option 3"></m-bs-option>
+										<m-bs-option title="Option 4"></m-bs-option>
+										<m-bs-option title="Option 5"></m-bs-option>
+									</m-bs-select>
+									<m-bs-select
+									label="Small Select"
+									select-width-size="small">
+										<m-bs-option title="Option 1"></m-bs-option>
+										<m-bs-option title="Option 2"></m-bs-option>
+										<m-bs-option title="Option 3"></m-bs-option>
+										<m-bs-option title="Option 4"></m-bs-option>
+										<m-bs-option title="Option 5"></m-bs-option>
+									</m-bs-select>
+									<m-bs-select
+									label="Extra Small Select"
+									select-width-size="xsmall">
+										<m-bs-option title="Option 1"></m-bs-option>
+										<m-bs-option title="Option 2"></m-bs-option>
+										<m-bs-option title="Option 3"></m-bs-option>
+										<m-bs-option title="Option 4"></m-bs-option>
+										<m-bs-option title="Option 5"></m-bs-option>
+									</m-bs-select>
 								</div>
 								<div class="form-actions right">
 									<button type="button" class="btn default">Cancel</button>
@@ -552,7 +608,7 @@
 						title-sbold
 						title-uppercased
 						title-color="dark"
-						icon="settings"
+						icon="icon-settings"
 						icon-color="dark"
 					>
 						<template slot="actions">
@@ -566,48 +622,57 @@
 						<m-portlet-block>
 							<form class="form-horizontal" role="form">
 								<div class="form-body">
-									<m-form-group>
+									<m-form-group
+									label="Block Help"
+									label-column="col-md-3"
+									horizontal>
 										<m-bs-input
-										label="Block Help"
 										label-column="col-md-3"
 										input-column="col-md-9"
 										placeholder="Enter text"
 										help-msg="A block of help text"
 										help-msg-display="block" />
+										<!-- <m-help-msg display="block">A block of help text</m-help-msg> -->
 									</m-form-group>
-									<m-form-group>
+									<m-form-group
+									horizontal
+									label="Inline Help"
+									label-column="col-md-3">
 										<m-bs-input
-										input-display="inline"
-										input-column="col-md-3"
-										input-width-size="medium"
+										input-column="col-md-9"
+										display-inline
 										placeholder="Enter text"
-										label="Inline Help"
-										label-column="col-md-3"
-										label-control
 										help-msg="Inline help."
 										help-msg-display="inline" />
+										<!-- <m-help-msg display="inline">Inline help.</m-help-msg> -->
 									</m-form-group>
-									<m-form-group>
-											<label class="col-md-3 control-label">Inline Help</label>
-											<div class="col-md-9">
-													<input type="text" class="form-control input-inline input-medium" placeholder="Enter text">
-													<span class="help-inline"> Inline help. </span>
-											</div>
+									<m-form-group
+									label="Input Group"
+									label-column="col-md-3"
+									horizontal>
+										<m-column size="9">
+											<m-bs-input
+											placeholder="Email Address"
+											input-column="col-md-9"
+											help-msg=" Inline help. "
+											help-msg-display="inline"
+											left-icon-type="addon"
+											left-icon="fa fa-envelope"></m-bs-input>
+										</m-column>
 									</m-form-group>
-									<div class="form-group">
-											<label class="col-md-3 control-label">Input Group</label>
-											<div class="col-md-9">
-													<div class="input-inline input-medium">
-															<div class="input-group">
-																	<span class="input-group-addon">
-																			<i class="fa fa-user"></i>
-																	</span>
-																	<input type="email" class="form-control" placeholder="Email Address"> </div>
-													</div>
-													<span class="help-inline"> Inline help. </span>
-											</div>
-									</div>
-									<div class="form-group">
+									<m-form-group
+									label="Email Address"
+									label-column="col-md-3"
+									horizontal>
+										<m-column :size="9">
+											<m-bs-input
+											input-type="email"
+											placeholder="Email address"
+											left-icon-type="addon"
+											left-icon="fa fa-envelope"></m-bs-input>
+										</m-column>
+									</m-form-group>
+									<!-- <div class="form-group">
 											<label class="col-md-3 control-label">Email Address</label>
 											<div class="col-md-9">
 													<div class="input-group">
@@ -616,7 +681,7 @@
 															</span>
 															<input type="email" class="form-control" placeholder="Email Address"> </div>
 											</div>
-									</div>
+									</div> -->
 									<div class="form-group">
 											<label class="col-md-3 control-label">Password</label>
 											<div class="col-md-9">
@@ -1730,6 +1795,7 @@ import mButtonGroup from "../../components/metronic/ui/m-button-group.vue"
 
 import mFormGroup from "../../components/metronic/forms/m-form-group.vue"
 import mBootstrapInput from "../../components/metronic/forms/m-bootstrap-input.vue"
+import mHelpMsg from "../../components/metronic/forms/help-msg.vue"
 import mBootstrapSelect from "../../components/metronic/forms/m-bootstrap-select.vue"
 import mBootstrapSelectOption from "../../components/metronic/forms/m-bootstrap-select-option.vue"
 import mBootstrapTextarea from "../../components/metronic/forms/m-bootstrap-textarea.vue"
@@ -1751,6 +1817,7 @@ export default {
 		mButtonGroup,
 		mFormGroup,
 		"m-bs-input": mBootstrapInput,
+		mHelpMsg,
 		"m-bs-select": mBootstrapSelect,
 		"m-bs-option": mBootstrapSelectOption,
 		"m-bs-textarea": mBootstrapTextarea,

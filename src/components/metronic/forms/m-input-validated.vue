@@ -86,9 +86,10 @@
 			validateCustom: function () {
 				var self = this
 				self.isValidating = true
+				debugger
 				var res = self.validationFunc(self.value)
 				if (res.promise) {
-			// deferred
+					// deferred
 					res.done(function (data) {
 						if (!self.reqRexPass) {
 							self.setValidity(false)
@@ -104,6 +105,7 @@
 					})
 				} else {
 					self.setValidity(res)
+					this.isValidating = false
 				}
 			},
 			setValidity: function (valid) {
@@ -125,8 +127,7 @@
 </script>
 
 <style>
-	input:invalid
-	{
+	input:invalid {
 		background-color: red !important;
 	}
 </style>
