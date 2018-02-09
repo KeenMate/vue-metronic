@@ -20,7 +20,8 @@
 	:input-column="inputColumn"
 	:rounded="rounded"
 	:input-width-size="inputWidthSize"
-	:custom-css="inputGroupCustomCss">
+	:custom-css="inputGroupCustomCss"
+	:has-error="hasError">
 		<input
 		:id="elemId"
 		:type="inputType"
@@ -37,7 +38,7 @@
 		@change="onChangeHandler"
 		@input="onInputHandler">
 
-		<span v-if="helpMsg  && noAddons" :class="helpMsgSpanClass">{{helpMsg}}</span>
+		<span v-if="helpMsg  && noAddons && hasError" :class="helpMsgSpanClass">{{helpMsg}}</span>
 
 		<template slot="leftBtn">
 			<slot name="leftBtn"></slot>
@@ -180,6 +181,13 @@ export default {
 		onBlurHandler: function (e) {
 			this.$emit("blur", e)
 		}
+	},
+	mounted () {
+		console.warn(
+			`Help msg: ${this.helpMsg}
+			addons: ${this.noAddons}
+			trpaslikk`
+		)
 	}
 }
 </script>

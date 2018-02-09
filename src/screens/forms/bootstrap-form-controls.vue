@@ -39,10 +39,23 @@
 							</m-button-group>
 						</template>
 						<m-portlet-block>
-							<m-validated-input :required="true" @isValid="valid => alert(valid)" :validation-func="myFunc"></m-validated-input>
-							<m-validated-input :validation-func="(x) => !isNaN(x) && x > 20 && x < 40" @isValid="valid => alert(valid)"></m-validated-input>
-							<m-validated-input :validation-func="(x) => x === 'hroch'" @isValid="valid => alert(valid)"></m-validated-input>
-							<button>Click me</button>
+							<m-form-group label="Validation demo">
+								<m-validated-input
+								help-msg="Hele vole chyba"
+								placeholder="jmeno"
+								:required="true"
+								:condition-function="myFunc"></m-validated-input>
+								<m-validated-input
+								help-msg="Cislo musi byt (20, 40)"
+								:condition-function="(x) => { return (!isNaN(x) && x > 20 && x < 40) }"
+								:input-group-custom-css="['margin-top-10']"></m-validated-input>
+								<m-validated-input
+								help-msg="Vyraz nesplnuje regex"
+								left-icon-type="addon"
+								left-addon-text="(+420)"
+								:regex="/^(\s?\d\s?){9}$/"
+								:input-group-custom-css="['margin-top-10']"></m-validated-input>
+							</m-form-group>
 
 							<form role="form">
 									<div class="form-body">
@@ -1829,20 +1842,25 @@ export default {
 		mIcon
 	},
 	methods: {
-		myFunc: function (x) {
+		myFunc: function (x, oldValidationCycle) {
 			var def = $.Deferred()
 			$.ajax({
 				url: "https://jsonplaceholder.typicode.com/users",
 				method: "GET"
 			}).done(function (data) {
 				if (data) {
-					data.forEach(function (el) {
-						if (el.username === x) {
-							def.resolve(false)
-							return def
-						}
-					})
-					def.resolve(true)
+					try {
+						data.forEach(function (el) {
+							if (el.username === x) {
+								def.resolve(oldValidationCycle)
+								throw Error("loop")
+							}
+						})
+					} catch (ex) {
+						if (ex.message !== "loop") throw ex // If its not expected Exception pass it up
+						return
+					}
+					def.reject({ message: "Jmeno neexistuje", validationCycle: oldValidationCycle })
 				}
 			})
 			return def

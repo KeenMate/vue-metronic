@@ -26,7 +26,7 @@
 				</span>
 			</div>
 		</div>
-		<span v-if="helpMsg" :class="helpMsgSpanClass">{{helpMsg}}</span>
+		<!-- <span v-if="helpMsg" :class="helpMsgSpanClass">{{helpMsg}}</span> -->
 	</m-column>
 	<div v-else :class="inputDivStyle">
 		<span :class="leftAddonSpanStyle" v-if="(leftIcon && leftIconType === 'addon') || leftAddonText || leftIconType === 'btn'">
@@ -51,6 +51,7 @@
 			<template v-else-if="rightAddonText">{{rightAddonText}}</template>
 			<slot name="rightBtn" v-else></slot>
 		</span>
+		<!-- <span v-if="helpMsg" :class="helpMsgSpanClass">{{helpMsg}}</span> -->
 	</div>
 </template>
 
@@ -107,6 +108,9 @@ export default {
 				break
 			}
 
+			style["has-error"] = this.hasError || undefined
+			style["has-success"] = !this.hasError || undefined
+
 			return style
 		},
 		helpMsgSpanClass: function () {
@@ -139,10 +143,12 @@ export default {
 			if (this.rightIcon && this.rightIconType === "icon")
 				style["right"] = true
 
+			style["has-error"] = this.hasError || undefined
+
 			switch (this.inputWidthSize) {
 			case "xsmall":
 				style["input-xsmall"] = true
-			break
+				break
 			case "small":
 				style["input-small"] = true
 				break

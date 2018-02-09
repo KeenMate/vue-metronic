@@ -96,7 +96,7 @@ export default {
 			switch (this.selectWidthSize) {
 			case "xsmall":
 				style["input-xsmall"] = true
-			break
+				break
 			case "small":
 				style["input-small"] = true
 				break

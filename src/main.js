@@ -1,5 +1,6 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
+import baseMixin from "./components/metronic/mixins/base.js"
 
 import App from "./App.vue"
 
@@ -10,6 +11,8 @@ const router = new VueRouter({
 })
 
 Vue.use(VueRouter)
+
+Vue.mixin(baseMixin)
 
 new Vue({
 	el: "#app",

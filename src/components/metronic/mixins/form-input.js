@@ -139,6 +139,10 @@ export default {
 			type: String,
 			default: "medium",
 			options: ["small", "medium", "large"]
+		},
+		hasError: {
+			type: Boolean,
+			default: false
 		}
 		// formGroupColumn: {
 		// 	type: String,

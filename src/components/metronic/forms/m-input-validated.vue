@@ -1,17 +1,55 @@
 <template>
-	<div class="form-group form-md-line-input form-md-floating-label ">
+	<!-- <div :class="formGroupStyle">
 		<div class="input-icon">
-			<input :name="name" ref="inp" :class="{ 'form-control': true, 'edited': value}" :id="inputId" v-model="value" @input="validate">
-			<i :style="isValidating? null:'display:none'" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+			<input :name="name" ref="inp" class="form-control" :id="inputId" v-model="inputValue" @input="validate">
+			<i v-if="isValidating" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
 		</div>
-	</div>
+	</div> -->
+	<m-input
+	v-model="inputValue"
+	:has-error="modified && !isValid"
+	:help-msg="helpMsg"
+	:input-custom-css="inputCustomCss"
+	:placeholder="placeholder"
+	:input-group-custom-css="inputGroupCustomCss"
+	:help-msg-display="helpMsgDisplay"
+	:help-msg-size="helpMsgSize"
+	:left-icon="leftIcon"
+	:left-icon-type="leftIconType"
+	:left-icon-color="leftIconColor"
+	:left-icon-spinnable="leftIconSpinnable"
+	:left-addon-text="leftAddonText"
+	:tooltip-content="tooltipContent"
+	:tooltip-placement="tooltipPlacement"
+	:right-icon="rightIcon"
+	:right-icon-type="rightIconType"
+	:right-icon-color="rightIconColor"
+	:right-icon-spinnable="rightIconSpinnable"
+	:right-addon-text="rightAddonText"
+	:horizontal="horizontal"
+	:input-size="inputSize"
+	:input-column="inputColumn"
+	:rounded="rounded"
+	:custom-css="inputGroupCustomCss">
+		<!-- :input-width-size="inputWidthSize" -->
+	</m-input>
 </template>
 
 <script>
+	import inputMixin from "../mixins/form-input"
+
+	import mInput from "../forms/m-bootstrap-input.vue"
+
 	export default {
 		name: "MetronicComponent",
+		components: {
+			mInput
+		},
+		mixins: [
+			inputMixin
+		],
 		props: {
-			validationFunc: {
+			conditionFunction: {
 				type: Function
 			},
 			required: {
@@ -19,115 +57,138 @@
 				default: false
 			},
 			regex: {
-				type: String,
-				default: ""
+				type: RegExp,
+				default: () => new RegExp()
 			},
-			name: {
-				type: String,
-				default: ""
+			inputCustomCss: {
+				type: Array,
+				default: () => [],
+				description: "Add your custom css classes for input"
 			},
-			id: {
-				type: String,
-				default: ""
+			inputGroupCustomCss: {
+				type: Array,
+				default: () => [],
+				description: "Add your custom css classes for input's parent div"
 			}
 		},
-		data: function () {
+		data () {
 			return {
-				value: "",
+				inputValue: "",
 				pattern: "",
 				isValidating: false,
 				isValid: false,
-				timer: null,
-				reqRexPass: false
+				modified: false,
+				changeTimer: null,
+				inputChangeDelay: 450,
+				defaultErrorMessage: "",
+				modificationUUID: ""
 			}
 		},
-		computed: {
-			inputId () {
-				return this.id
-				? this.id
-				: "_" +
-				Math.random()
-				.toString(36)
-				.substring(2, 9)
-			},
-			inputLabel () {
-				return this.label
-				? this.label
-				: "Pass 'label' attribute to '" + this.name + "' component"
-			},
-			inputType () {
-				return this.type ? this.type : "text"
+		watch: {
+			inputValue (newVal, oldVal) {
+				clearTimeout(this.changeTimer)
+
+				this.modificationUUID = this.uuidv4()
+
+				this.modified = true
+
+				if (this.required && this.inputValue.length <= 0) {
+					this.helpMsg = this.defaultErrorMessage
+
+					this.modificationUUID = this.uuidv4()
+
+					this.setValidity(false)
+					return
+				}
+				if (this.regex) {
+					var regex = new RegExp(this.regex)
+					var isValid = regex.test(this.inputValue)
+
+					this.modificationUUID = this.uuidv4()
+
+					if (!isValid) return
+
+					this.helpMsg = this.defaultErrorMessage
+					this.setValidity(false)
+				}
+
+				if (!this.conditionFunction)
+					return
+
+				// var self = this
+				this.changeTimer = setTimeout((modificationUUID) => {
+					this.validationSequence(modificationUUID)
+				}, this.inputChangeDelay, this.modificationUUID)
 			}
 		},
 		methods: {
-			validate: function () {
-				clearTimeout(this.timer)
-				this.reqRexPass = false
-				if (this.required) {
-					if (!this.value.length > 0) {
-						this.setValidity(false)
-						return
-					}
-				}
-				if (this.regex) {
-					var r = new RegExp(this.regex)
-					if (!r.test(this.value)) {
-						this.setValidity(false)
-						return
-					}
-				}
-				this.reqRexPass = true
-				if (this.validationFunc)
-					this.timer = setTimeout(this.validateCustom, 500)
-				else {
-					this.setValidity(true)
-				}
-			},
-			validateCustom: function () {
+			validationSequence (modificationUUID) {
 				var self = this
+				// var oldValidationNumber = this.validationCycle
 				self.isValidating = true
-				debugger
-				var res = self.validationFunc(self.value)
-				if (res.promise) {
+
+				var validationResult = self.conditionFunction(self.inputValue)
+
+				if (validationResult.promise) {
 					// deferred
-					res.done(function (data) {
-						if (!self.reqRexPass) {
-							self.setValidity(false)
-							self.isValidating = false
-							return
-						}
-						if (data !== null) {
-							self.setValidity(data)
-						}
-						self.timer = null
+					validationResult.done((oldValidationCycle) => {
+						if (self.modificationUUID !== modificationUUID) return
+
+						self.setValidity(true)
+					}).fail((data) => {
+						if (self.modificationUUID !== modificationUUID) return
+
+						self.helpMsg = data.message || self.defaultErrorMessage
+						self.setValidity(false)
+					}).always(() => {
 						self.isValidating = false
-						console.dir(data)
 					})
-				} else {
-					self.setValidity(res)
-					this.isValidating = false
-				}
+				} else if (validationResult instanceof Promise) {
+					validationResult.then((oldValidationCycle) => {
+						if (self.modificationUUID !== modificationUUID) return
+
+						self.setValidity(true)
+					}).catch((data) => {
+						if (self.modificationUUID !== modificationUUID) return
+
+						self.helpMsg = data.message || self.defaultErrorMessage
+						self.setValidity(false)
+					}).finally(() => {
+						self.isValidating = false
+					})
+				} else if (typeof (validationResult) === "boolean") {
+					if (self.modificationUUID !== modificationUUID) return
+
+					this.setValidity(validationResult)
+				} else
+					console.warn(
+						`result of validation function:
+						${this.conditionFunction} cannot be handled
+						In validation functions return either Deferred, Promise or Boolean value`
+					)
 			},
-			setValidity: function (valid) {
-				var self = this
-				if (valid === true) {
-					self.isValid = true
-					self.$emit("isValid", true)
-					self.$emit("value", self.value)
-					self.$refs.inp.setCustomValidity("")
-				} else {
-					self.isValid = false
-					self.$emit("isValid", false)
-					self.$emit("value", self.value)
-					self.$refs.inp.setCustomValidity(" ")
-				}
+			setValidity (valid) {
+				console.log(`is valid: ${valid}`)
+
+				this.isValid = valid
+
+				this.$emit("validityChanged", valid)
+
+				// this.$emit("isValid", valid)
+				// this.$emit("input", this.inputValue)
+
+				// this.$refs.inp.setCustomValidity(valid ? "" : this.helpMsg) // Changes HTML5 validity
+				// this.$refs.inp.reportValidity()
 			}
+		},
+		mounted () {
+			this.defaultErrorMessage = this.helpMsg
 		}
 	}
 </script>
 
-<style>
-	input:invalid {
+<style scoped>
+	/* input:invalid {
 		background-color: red !important;
-	}
+	} */
 </style>
