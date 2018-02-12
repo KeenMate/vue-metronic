@@ -30,7 +30,8 @@
 	:input-size="inputSize"
 	:input-column="inputColumn"
 	:rounded="rounded"
-	:custom-css="inputGroupCustomCss">
+	:custom-css="inputGroupCustomCss"
+	@blur="onBlur">
 		<!-- :input-width-size="inputWidthSize" -->
 	</m-input>
 </template>
@@ -78,6 +79,7 @@
 				isValidating: false,
 				isValid: false,
 				modified: false,
+				visited: false,
 				changeTimer: null,
 				inputChangeDelay: 450,
 				defaultErrorMessage: "",
@@ -86,6 +88,16 @@
 		},
 		watch: {
 			inputValue (newVal, oldVal) {
+				this.modificationHandler()
+			},
+			visited (newVal) {
+				if (!newVal) return
+
+				this.modificationHandler()
+			}
+		},
+		methods: {
+			modificationHandler () {
 				clearTimeout(this.changeTimer)
 
 				this.modificationUUID = this.uuidv4()
@@ -102,14 +114,15 @@
 				}
 				if (this.regex) {
 					var regex = new RegExp(this.regex)
+
 					var isValid = regex.test(this.inputValue)
 
 					this.modificationUUID = this.uuidv4()
 
-					if (!isValid) return
-
 					this.helpMsg = this.defaultErrorMessage
-					this.setValidity(false)
+					this.setValidity(isValid)
+
+					if (!isValid) return
 				}
 
 				if (!this.conditionFunction)
@@ -119,24 +132,24 @@
 				this.changeTimer = setTimeout((modificationUUID) => {
 					this.validationSequence(modificationUUID)
 				}, this.inputChangeDelay, this.modificationUUID)
-			}
-		},
-		methods: {
+			},
 			validationSequence (modificationUUID) {
 				var self = this
 				// var oldValidationNumber = this.validationCycle
-				self.isValidating = true
+				this.isValidating = true
 
-				var validationResult = self.conditionFunction(self.inputValue)
+				var validationResult = this.conditionFunction(self.inputValue, this.modificationUUID)
 
 				if (validationResult.promise) {
 					// deferred
-					validationResult.done((oldValidationCycle) => {
+					validationResult.done((modificationUUID) => {
+						debugger
 						if (self.modificationUUID !== modificationUUID) return
 
 						self.setValidity(true)
 					}).fail((data) => {
-						if (self.modificationUUID !== modificationUUID) return
+						debugger
+						if (self.modificationUUID !== data.modificationUUID) return
 
 						self.helpMsg = data.message || self.defaultErrorMessage
 						self.setValidity(false)
@@ -179,6 +192,11 @@
 
 				// this.$refs.inp.setCustomValidity(valid ? "" : this.helpMsg) // Changes HTML5 validity
 				// this.$refs.inp.reportValidity()
+			},
+			onBlur () {
+				console.log("Focused")
+				this.visited = true
+				this.modificationHandler()
 			}
 		},
 		mounted () {

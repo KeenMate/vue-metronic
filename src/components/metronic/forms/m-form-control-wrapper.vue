@@ -109,7 +109,7 @@ export default {
 			}
 
 			style["has-error"] = this.hasError || undefined
-			style["has-success"] = !this.hasError || undefined
+			// style["has-success"] = !this.hasError || undefined
 
 			return style
 		},

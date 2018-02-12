@@ -7,6 +7,7 @@ import GridSystem from "./screens/ui/grid-system.vue"
 import GeneralComponentsScreen from "./screens/ui/general-components.vue"
 import UnderDevelopment from "./screens/under-development.vue"
 
+import DevFormValidations from "./screens/development/form-tests.vue"
 import TabsTest from "./screens/development/tab-test.vue"
 
 import PortletsLight from "./screens/portlets/light.vue"
@@ -150,6 +151,14 @@ export const routes = [{
 			component: TabsTest,
 			meta: {
 				title: "Tabs"
+			}
+		},
+		{
+			path: "form-validation",
+			name: "validations",
+			component: DevFormValidations,
+			meta: {
+				title: "Form Validation"
 			}
 		}
 	],

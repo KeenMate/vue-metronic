@@ -71,6 +71,10 @@ const menu = [
 			{
 				"Title": "Tabs testing",
 				"RouteName": "tabs"
+			},
+			{
+				"Title": "Forms testing",
+				"RouteName": "validations"
 			}
 		]
 	}

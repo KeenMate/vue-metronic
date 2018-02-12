@@ -1842,7 +1842,7 @@ export default {
 		mIcon
 	},
 	methods: {
-		myFunc: function (x, oldValidationCycle) {
+		myFunc: function (x, modificationUUID) {
 			var def = $.Deferred()
 			$.ajax({
 				url: "https://jsonplaceholder.typicode.com/users",
@@ -1852,7 +1852,8 @@ export default {
 					try {
 						data.forEach(function (el) {
 							if (el.username === x) {
-								def.resolve(oldValidationCycle)
+								debugger
+								def.resolve(modificationUUID)
 								throw Error("loop")
 							}
 						})
@@ -1860,7 +1861,7 @@ export default {
 						if (ex.message !== "loop") throw ex // If its not expected Exception pass it up
 						return
 					}
-					def.reject({ message: "Jmeno neexistuje", validationCycle: oldValidationCycle })
+					def.reject({ message: "Jmeno neexistuje", modificationUUID: modificationUUID })
 				}
 			})
 			return def
