@@ -22,7 +22,7 @@
 									<m-grid-col hAlignment="center" vAlignment="middle">Row 1, Column 7</m-grid-col>
 									<m-grid-col hAlignment="center" vAlignment="middle">Row 1, Column 8</m-grid-col>
 								</m-grid-row>
-								<m-grid-row></m-grid-row>
+								<m-grid-row>
 									<m-grid-col hAlignment="center" vAlignment="middle">Row 2, Column 1</m-grid-col>
 									<m-grid-col hAlignment="center" vAlignment="middle">Row 2, Column 2</m-grid-col>
 									<m-grid-col hAlignment="center" vAlignment="middle">Row 2, Column 3</m-grid-col>
@@ -31,7 +31,6 @@
 									<m-grid-col hAlignment="center" vAlignment="middle">Row 2, Column 6</m-grid-col>
 									<m-grid-col hAlignment="center" vAlignment="middle">Row 2, Column 7</m-grid-col>
 									<m-grid-col hAlignment="center" vAlignment="middle">Row 2, Column 8</m-grid-col>
-									<m-grid-col ></m-grid-col>
 								</m-grid-row>
 							</m-grid>
 						<!-- </div> -->

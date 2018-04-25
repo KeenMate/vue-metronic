@@ -27,7 +27,8 @@
 	:value="value"
 	:help-msg="helpMsg"
 	:help-msg-display="helpMsgDisplay"
-	:group-column="formGroupColumn">
+	:group-column="formGroupColumn"
+	>
 		<textarea
 			:style="customCss"
 			:rows="rows"
@@ -64,10 +65,6 @@ export default {
 		mFormGroup
 	},
 	props: {
-		label: {
-			type: String,
-			default: ""
-		},
 		rows: {
 			type: Number,
 			default: null
@@ -127,7 +124,6 @@ export default {
 				break
 			case "large":
 				style["input-lg"] = true
-				break
 			}
 
 			switch (this.inputWidthSize) {
@@ -187,5 +183,9 @@ export default {
 <style scoped>
 	.textarea-no-resize {
 		resize: none;
+	}
+
+	.full-width {
+		width: 100%;
 	}
 </style>

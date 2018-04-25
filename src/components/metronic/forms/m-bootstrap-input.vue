@@ -1,71 +1,31 @@
 <template>
-	<m-wrapper
-	:help-msg="helpMsg"
-	:help-msg-display="helpMsgDisplay"
-	:help-msg-size="helpMsgSize"
-	:left-icon="leftIcon"
-	:left-icon-type="leftIconType"
-	:left-icon-color="leftIconColor"
-	:left-icon-spinnable="leftIconSpinnable"
-	:left-addon-text="leftAddonText"
-	:tooltip-content="tooltipContent"
-	:tooltip-placement="tooltipPlacement"
-	:right-icon="rightIcon"
-	:right-icon-type="rightIconType"
-	:right-icon-color="rightIconColor"
-	:right-icon-spinnable="rightIconSpinnable"
-	:right-addon-text="rightAddonText"
-	:horizontal="horizontal"
-	:input-size="inputSize"
-	:input-column="inputColumn"
-	:rounded="rounded"
-	:input-width-size="inputWidthSize"
-	:custom-css="inputGroupCustomCss"
-	:has-error="hasError">
-		<input
-		:id="elemId"
-		:type="inputType"
-		:placeholder="placeholder ? placeholder : null"
-		:class="inputStyle"
-		:disabled="disabled"
-		:readonly="readonly"
-		:value="value"
-		:min="minDate && inputType === 'date' ? minDate : ''"
-		:max="maxDate && inputType === 'date' ? maxDate : ''"
-		@focus="onFocusHandler"
-		@click="onClickHandler"
-		@blur="onBlurHandler"
-		@change="onChangeHandler"
-		@input="onInputHandler">
-
-		<span v-if="helpMsg  && noAddons && hasError" :class="helpMsgSpanClass">{{helpMsg}}</span>
-
-		<template slot="leftBtn">
-			<slot name="leftBtn"></slot>
-		</template>
-		<template slot="rightBtn">
-			<slot name="rightBtn"></slot>
-		</template>
-
-		<!-- <button slot="rightBtn" class="btn green">Clicky me</button> -->
-
-		<!-- Separate into new Component for static content -->
-		<!-- <p v-else-if="staticType && staticContent" class="form-control-static">{{staticContent}}</p> -->
-	</m-wrapper>
+	<input
+	:id="inputId"
+	:type="inputType"
+	:placeholder="placeholder ? placeholder : null"
+	:class="inputStyle"
+	:disabled="disabled"
+	:readonly="readonly"
+	:value="value"
+	:min="minDate && inputType === 'date' ? minDate : ''"
+	:max="maxDate && inputType === 'date' ? maxDate : ''"
+	@focus="onFocusHandler"
+	@click="onClickHandler"
+	@blur="onBlurHandler"
+	@change="onChangeHandler"
+	@input="onInputHandler">
 </template>
 
 <script>
 import formInputMixin from "../mixins/form-input"
-// import metronicMixin from "../mixins/metronic-component"
-
-import mFormControlWrapper from "./m-form-control-wrapper.vue"
 
 import mIcon from "../graphic/m-icon.vue"
+import mFormGroup from "./m-form-group"
 
 export default {
 	mixins: [formInputMixin],
 	components: {
-		"m-wrapper": mFormControlWrapper,
+		mFormGroup,
 		mIcon
 	},
 	props: {
@@ -90,50 +50,13 @@ export default {
 		},
 		maxLength: {
 			type: Number
-		},
-		inputWidthSize: {
-			type: String,
-			default: undefined,
-			options: ["small", "medium", "large", "xlarge"]
-		},
-		inputCustomCss: {
-			type: Array,
-			default: () => [],
-			description: "Add your custom css classes for input"
-		},
-		inputGroupCustomCss: {
-			type: Array,
-			default: () => [],
-			description: "Add your custom css classes for input's parent div"
 		}
 	},
 	computed: {
-		elemId: function () {
-			return this.inputId || ("input-id-" + Number(new Date()))
-		},
-		noAddons: function () {
-			return (this.leftIconType !== "addon" && this.rightIconType !== "addon")
-		},
-		helpMsgSpanClass: function () {
-			var style = {}
-
-			switch (this.helpMsgDisplay) {
-			case "inline":
-				style["help-inline"] = true
-				break
-			case "block":
-				style["help-block"] = true
-				break
-			}
-
-			return style
-		},
 		inputStyle: function () {
 			var style = {
 				"form-control": true
 			}
-
-			style["spinner"] = this.inputSpinner
 
 			switch (this.inputSize) {
 			case "small":
@@ -141,14 +64,24 @@ export default {
 				break
 			case "large":
 				style["input-lg"] = true
+			}
+
+			switch (this.inputWidthSize) {
+			case "small":
+				style["input-small"] = true
 				break
-			case "xlarge":
-				style["input-xlarge"] = true
+			case "medium":
+				style["input-medium"] = true
+				break
+			case "large":
+				style["input-large"] = true
 				break
 			}
 
-			if (this.displayInline)
+			if (this.inputDisplay === "inline")
 				style["input-inline"] = true
+
+			style["spinner"] = this.inputSpinner
 
 			if (this.inputType === "file")
 				style["form-control"] = false
@@ -162,7 +95,7 @@ export default {
 					style["input-circle-left"] = true
 			}
 
-			return Object.assign(style, this.inputCustomCss || [])
+			return style
 		}
 	},
 	methods: {
@@ -181,13 +114,6 @@ export default {
 		onBlurHandler: function (e) {
 			this.$emit("blur", e)
 		}
-	},
-	mounted () {
-		console.warn(
-			`Help msg: ${this.helpMsg}
-			addons: ${this.noAddons}
-			trpaslikk`
-		)
 	}
 }
 </script>

@@ -22,33 +22,29 @@
 	:input-spinner="inputSpinner"
 	:static-type="staticType"
 	:static-content="staticContent"
+	
 	:help-msg="helpMsg"
 	:help-msg-display="helpMsgDisplay"
 	:group-column="formGroupColumn">
-		<select
-		:multiple="allowMultiple"
-		:value="value"
-		:disabled="disabled"
-		:readonly="readonly" 
-		:class="selectClasses"
-		@input="onInput"
-		@change="onChange">
+		<select :multiple="allowMultiple" :value="value" :disabled="disabled"
+				:readonly="readonly" 
+				:class="selectClasses"
+        @input="onInput"
+				@change="onChange">
 			<slot></slot>
 		</select>
 	</m-form-group>
 </template>
 
 <script>
-import metronicMixin from "../mixins/metronic-component"
-import formInputMixin from "../mixins/form-input"
-
 import mFormGroup from "../forms/m-form-group.vue"
+import formInputMixin from "../mixins/form-input"
 
 export default {
 	components: {
 		mFormGroup
 	},
-	mixins: [formInputMixin, metronicMixin],
+	mixins: [formInputMixin],
 	props: {
 		label: {
 			type: String,
@@ -63,19 +59,10 @@ export default {
 			default: "default",
 			options: ["small", "default", "large"]
 		},
-		selectWidthSize: {
-			type: String,
-			default: undefined,
-			options: ["xsmall", "small", "medium", "large", "xlarge"]
-		},
 		formGroupColumn: {
 			type: String,
 			default: "",
 			example: "col-md-3"
-		},
-		groupCustomCss: {
-			type: Array,
-			default: () => []
 		}
 	},
 	computed: {
@@ -90,24 +77,6 @@ export default {
 				break
 			case "large":
 				style["input-lg"] = true
-				break
-			}
-
-			switch (this.selectWidthSize) {
-			case "xsmall":
-				style["input-xsmall"] = true
-				break
-			case "small":
-				style["input-small"] = true
-				break
-			case "medium":
-				style["input-medium"] = true
-				break
-			case "large":
-				style["input-large"] = true
-				break
-			case "xlarge":
-				style["input-xlarge"] = true
 				break
 			}
 

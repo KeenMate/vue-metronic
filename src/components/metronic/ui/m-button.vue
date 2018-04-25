@@ -1,5 +1,6 @@
 <template>
 	<button
+		:type="type"
 		:class="btnStyle"
 		@click="onClick"
 		:disabled="disabled"
@@ -11,9 +12,9 @@
 		:data-trigger="(popoverTrigger == 'hover')? 'hover' : null"
 	>
 		<i v-if="preIcon?preIcon.length>0:false" :class="preIcon"></i>
-		<i v-if="preIcon?preIcon.length>0:false" :class="icon"></i>
+		<i v-if="icon?icon.length>0:false" :class="icon"></i>
 		<slot></slot>
-		<i v-if="preIcon?preIcon.length>0:false" :class="postIcon"></i>
+		<i v-if="postIcon?postIcon.length>0:false" :class="postIcon"></i>
 	</button>
 </template>
 

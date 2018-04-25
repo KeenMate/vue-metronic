@@ -1,7 +1,33 @@
 <template>
-	<div :class="formGroupStyle">
-		<label :for="elemId" :class="labelStyle">{{label}}</label>
-		<slot></slot>
+	<div class="form-group" :class="formGroupStyle">
+		<label v-if="label" :for="elemId" :class="labelClass">{{label}}</label>
+		<div :class="inputDivStyle">
+			<span :class="leftAddonSpanStyle" v-if="(leftIcon && leftIconType === 'addon') || leftAddonText">
+				<m-icon
+					:color="leftIconColor"
+					:name="leftIcon !== null ? leftIcon + (leftIconSpinnable ? ' fa-spin' : '') : null"
+					v-if="!leftAddonText"
+				/>
+				<template v-else>{{leftAddonText}}</template>
+			</span>
+			<m-icon
+				:color="iconStyle.iconColor"
+				:name="iconStyle.iconName"
+				:tooltip="tooltipContent ? tooltipContent : null"
+				:tooltip-placement="tooltipPlacement ? tooltipPlacement : null"
+			/>
+			<slot v-if="!staticType && !staticContent"></slot>
+			<p v-else-if="staticType && staticContent" class="form-control-static">{{staticContent}}</p>
+			<span v-if="helpMsg" :class="helpMsgSpanClass">{{helpMsg}}</span>
+			<span :class="rightAddonSpanStyle" v-if="(rightIcon && rightIconType === 'addon') || rightAddonText">
+				<m-icon
+					:color="rightIconColor"
+					:name="rightIcon ? rightIcon + (rightIconSpinnable ? ' fa-spin' : '') : null"
+					v-if="rightAddonText"
+				/>
+				<template v-else>{{rightAddonText}}</template>
+			</span>
+		</div>
 	</div>
 </template>
 
@@ -127,27 +153,86 @@ export default {
 		// 	default: "block",
 		// 	options: ["block", "inline"]
 		// },
-		// groupColumn: {
-		// 	type: String,
-		// 	default: "",
-		// 	example: "col-md-3"
-		// }
+		groupColumn: {
+			type: String,
+			default: "",
+			example: "col-md-3"
+		}
 	},
 	computed: {
-		elemId: function () {
-			return this.inputId || ("input-id-" + Number(new Date()))
-		},
 		formGroupStyle: function () {
-			var style = {
-				"form-group": true
-			}
+			var style = {}
 
 			if (this.groupColumn)
 				style[this.groupColumn] = true
 
 			return style
 		},
-		labelStyle: function () {
+		elemId: function () {
+			if (this.inputId)
+				return this.inputId
+			else
+				return "input-id-" + Number(new Date())
+		},
+		inputDivStyle: function () {
+			var style = {}
+
+			if (this.leftIconType === "icon" || this.rightIconType === "icon")
+				style["input-icon"] = true
+			if (this.leftIconType === "addon" || this.rightIconType === "addon")
+				style["input-group"] = true
+			if (this.inputSize === "small")
+				style["input-group-sm"] = true
+			else if (this.inputSize === "large")
+				style["input-group-lg"] = true
+			if (this.inputColumn)
+				style[this.inputColumn] = true
+			if (this.rightIcon && this.rightIconType === "icon")
+				style["right"] = true
+
+			return style
+		},
+		leftAddonSpanStyle: function () {
+			var style = {}
+
+			if (this.leftIcon && this.leftIconType === "addon")
+				style["input-group-addon"] = true
+
+			if (this.rounded)
+				style["input-circle-left"] = true
+
+			return style
+		},
+		rightAddonSpanStyle: function () {
+			var style = {
+				"input-group-addon": true
+			}
+
+			if (this.rounded)
+				style["input-circle-right"] = true
+
+			return style
+		},
+		iconStyle: function () {
+			var objectStyle = {
+				iconColor: null,
+				iconName: null
+			}
+
+			if (this.leftIconType === "icon" && this.leftIcon) {
+				objectStyle.iconName = this.leftIcon
+				objectStyle.iconColor = this.leftIconColor
+			} else if (this.rightIconType === "icon" && this.rightIcon) {
+				objectStyle.iconName = this.rightIcon
+				objectStyle.iconColor = this.rightIconColor
+			}
+
+			if (this.leftIconSpinnable || this.rightIconSpinnable)
+				objectStyle.iconName += " fa-spin"
+
+			return objectStyle
+		},
+		labelClass: function () {
 			var style = {}
 
 			if (this.labelColumn)
@@ -155,6 +240,16 @@ export default {
 
 			if (this.horizontal)
 				style["control-label"] = true
+
+			return style
+		},
+		helpMsgSpanClass: function () {
+			var style = {}
+
+			if (this.helpMsgDisplay === "inline")
+				style["help-inline"] = true
+			if (this.helpMsgDisplay === "block")
+				style["help-block"] = true
 
 			return style
 		}
