@@ -9,7 +9,9 @@
 					<router-link :to="{ name: action.RouteName }">
 						<i :class="action.LinkIcon"></i>
 						{{action.Title}}
-						<span class="badge"></span>
+						<span class="badge">
+							<!-- TODO: add Badge support -->
+						</span>
 					</router-link>
 				</li>
 				<li :key="index" v-else class="divider"></li>

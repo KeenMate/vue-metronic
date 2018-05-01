@@ -663,7 +663,7 @@
 									label="Input Group"
 									label-column="col-md-3"
 									horizontal>
-										<m-column size="9">
+										<m-column :size="9">
 											<m-bs-input
 											placeholder="Email Address"
 											input-column="col-md-9"
@@ -875,15 +875,15 @@
 											<div class="col-md-9">
 													<div class="mt-radio-list">
 															<label class="mt-radio mt-radio-outline">
-																	<input type="radio" name="optionsRadios" id="optionsRadios22" value="option1" checked> Option 1
+																	<input type="radio" name="optionsRadios" id="optionsRadios221" value="option1" checked> Option 1
 																	<span></span>
 															</label>
 															<label class="mt-radio mt-radio-outline">
-																	<input type="radio" name="optionsRadios" id="optionsRadios23" value="option2" checked> Option 2
+																	<input type="radio" name="optionsRadios" id="optionsRadios231" value="option2" checked> Option 2
 																	<span></span>
 															</label>
 															<label class="mt-radio mt-radio-outline mt-radio-disabled">
-																	<input type="radio" name="optionsRadios" id="optionsRadios24" value="option2" disabled> Disabled
+																	<input type="radio" name="optionsRadios" id="optionsRadios241" value="option2" disabled> Disabled
 																	<span></span>
 															</label>
 													</div>

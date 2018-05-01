@@ -28,8 +28,13 @@ export default {
 			default: false
 		}
 	},
+	data () {
+		return {
+			fields: []
+		}
+	},
 	computed: {
-		formCss: function () {
+		formCss () {
 			var style = {}
 
 			switch (this.formStyle.toLowerCase()) {
@@ -48,6 +53,12 @@ export default {
 
 			return style
 		}
+	},
+	mounted () {
+		this.$children.forEach((input) => {
+			this.fields.push(input)
+			input.$on()
+		}, this)
 	}
 }
 </script>

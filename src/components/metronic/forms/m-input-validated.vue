@@ -8,7 +8,7 @@
 	<m-input
 	v-model="inputValue"
 	:has-error="modified && !isValid"
-	:help-msg="helpMsg"
+	:help-msg="innerHelpMsg"
 	:input-custom-css="inputCustomCss"
 	:placeholder="placeholder"
 	:input-group-custom-css="inputGroupCustomCss"
@@ -83,7 +83,8 @@
 				changeTimer: null,
 				inputChangeDelay: 450,
 				defaultErrorMessage: "",
-				modificationUUID: ""
+				modificationUUID: "",
+				innerHelpMsg: ""
 			}
 		},
 		watch: {
@@ -105,7 +106,7 @@
 				this.modified = true
 
 				if (this.required && this.inputValue.length <= 0) {
-					this.helpMsg = this.defaultErrorMessage
+					this.innerHelpMsg = this.defaultErrorMessage
 
 					this.modificationUUID = this.uuidv4()
 
@@ -119,7 +120,7 @@
 
 					this.modificationUUID = this.uuidv4()
 
-					this.helpMsg = this.defaultErrorMessage
+					this.innerHelpMsg = this.defaultErrorMessage
 					this.setValidity(isValid)
 
 					if (!isValid) return
@@ -151,7 +152,7 @@
 						debugger
 						if (self.modificationUUID !== data.modificationUUID) return
 
-						self.helpMsg = data.message || self.defaultErrorMessage
+						self.innerHelpMsg = data.message || self.defaultErrorMessage
 						self.setValidity(false)
 					}).always(() => {
 						self.isValidating = false
@@ -164,7 +165,7 @@
 					}).catch((data) => {
 						if (self.modificationUUID !== modificationUUID) return
 
-						self.helpMsg = data.message || self.defaultErrorMessage
+						self.innerHelpMsg = data.message || self.defaultErrorMessage
 						self.setValidity(false)
 					}).finally(() => {
 						self.isValidating = false
@@ -190,7 +191,7 @@
 				// this.$emit("isValid", valid)
 				// this.$emit("input", this.inputValue)
 
-				// this.$refs.inp.setCustomValidity(valid ? "" : this.helpMsg) // Changes HTML5 validity
+				// this.$refs.inp.setCustomValidity(valid ? "" : this.innerHelpMsg) // Changes HTML5 validity
 				// this.$refs.inp.reportValidity()
 			},
 			onBlur () {
@@ -200,7 +201,7 @@
 			}
 		},
 		mounted () {
-			this.defaultErrorMessage = this.helpMsg
+			this.defaultErrorMessage = this.innerHelpMsg
 		}
 	}
 </script>

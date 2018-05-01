@@ -19,7 +19,7 @@ Vue.use(VueRawModel)
 
 Vue.mixin(baseMixin)
 
-var vue = new Vue({
+new Vue({
 	el: "#app",
 	models: { Model1, Model2 },
 	router,

@@ -12,7 +12,7 @@
 				<template slot="actions">
 					<m-button post-icon="fa fa-upload" @click="submitForm1">Submit</m-button>
 				</template>
-				<m-form>
+				<m-form ref="form1">
 					<m-input
 					help-msg="Length of word must be longer than 5 and must start with space"
 					:condition-function="(val) => val.length > 5"
@@ -44,12 +44,13 @@
 			title-bold
 			title-uppercased>
 				<template slot="actions">
-					<m-button post-icon="fa fa-upload" @click="submitForm2">Submit</m-button>
+					<m-button post-icon="fa fa-upload" @click="submitForm2" :disabled="!form2Valid">Submit</m-button>
 				</template>
-				<m-form>
+				<m-form ref="form2">
 					<m-input
 					help-msg="Length of word must be longer than 5 and must start with space"
 					:condition-function="(val) => val.length > 5"
+					v-model="field1"
 					:regex="/^\s\w+$/"
 					placeholder="Name"
 					@validityChanged="valid => nameValid = valid"
@@ -101,18 +102,31 @@ export default {
 	},
 	data () {
 		return {
-			msg: "Welcome to Your Vue.js App"
+			msg: "Welcome to Your Vue.js App",
+			// form2Valid: false,
+			field1: "",
+			validationRules: {
+				"field1": {
+				}
+			}
+		}
+	},
+	computed: {
+		form2Valid () {
 		}
 	},
 	methods: {
 		submitForm1 () {
+			alert("submitted")
 		},
 		submitForm2 () {
+			if (!this.form2Valid) return
+			alert("submitted")
 		},
 		validateUsername (value, modificationUUID) {
 			var fn = (resolve, reject, val, uuid) => {
 				console.log(`custom valid called: ${val.toLowerCase() !== "Jonathan"}`)
-				if (val.toLowerCase() !== "Jonathan".toLowerCase())
+				if (val.toLowerCase() !== "jonathan")
 					resolve(uuid)
 					/* eslint prefer-promise-reject-errors: 0 */
 				else reject({
@@ -126,6 +140,11 @@ export default {
 
 			return promise
 		}
+	},
+	mounted () {
+		this.$refs.form2.$children.forEach((input, index) => {
+			input.$on("validityChanged", this.updateValidity)
+		}, this)
 	}
 }
 </script>

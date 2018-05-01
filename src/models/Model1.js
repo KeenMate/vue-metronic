@@ -1,7 +1,9 @@
 import {ReactiveModel} from "vue-rawmodel"
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
+
+function sleep (ms) {
+	return new Promise(resolve => setTimeout(resolve, ms))
 }
+
 class Model1 extends ReactiveModel {
 	constructor (data = {}) {
 		super(data)
@@ -17,21 +19,21 @@ class Model1 extends ReactiveModel {
 			// check the API for all available options
 		})
 
-		this.defineValidator('customValidation', async function (v) {
+		this.defineValidator("customValidation", async function (v) {
 			await sleep(2000)
-      return v === 'cool'
+			return v === "cool"
 		})
-		
+
 		this.defineField("surname", { // defining class property `name`
-		type: "String", // setting type casting
-		validate: [ // field validations
-			{ // validator recipe
-				validator: "customValidation", // validator name
-				message: "only cool is accepted" // validator error message
-			}
-		]
+			type: "String", // setting type casting
+			validate: [ // field validations
+				{ // validator recipe
+					validator: "customValidation", // validator name
+					message: "only cool is accepted" // validator error message
+				}
+			]
 		// check the API for all available options
-	})
+		})
 	}
 }
 export default Model1
